@@ -8,6 +8,11 @@ import org.springframework.web.servlet.support.RequestContextUtils;
 
 import edu.cmucdu.ecommerce.domain.util.LocaleEnum;
 
+/**
+ * web utills 
+ * @author Administrator
+ *
+ */
 public class WebUtil {
 	public static LocaleEnum getLocaleEnum(HttpServletRequest httpServletRequest){
 		Locale locale = RequestContextUtils.getLocale(httpServletRequest);
