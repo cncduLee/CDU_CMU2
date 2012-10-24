@@ -9,7 +9,7 @@ import org.springframework.web.servlet.support.RequestContextUtils;
 import edu.cmucdu.ecommerce.domain.util.LocaleEnum;
 
 /**
- * web utills 
+ * web xxxx
  * @author Administrator
  *
  */
