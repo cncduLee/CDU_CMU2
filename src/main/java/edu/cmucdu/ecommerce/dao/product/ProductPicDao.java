@@ -1,0 +1,8 @@
+package edu.cmucdu.ecommerce.dao.product;
+
+import edu.cmucdu.ecommerce.domain.product.ProductPic;
+import org.springframework.roo.addon.layers.repository.jpa.RooJpaRepository;
+
+@RooJpaRepository(domainType = ProductPic.class)
+public interface ProductPicDao {
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_edu_cmucdu_ecommerce_domain_product_Promotion" object="${promotion}" path="/promotions" z="d/YgD4L0oMMkBvyQ0hZ5O7AOKRw=">
+        <field:display field="product" id="s_edu_cmucdu_ecommerce_domain_product_Promotion_product" object="${promotion}" z="spGRgsYjmUi1snbWuDVj0KJGZ80="/>
+        <field:display field="description" id="s_edu_cmucdu_ecommerce_domain_product_Promotion_description" object="${promotion}" z="T/YE3okmr2CwoZUgTTBtX5yGcUA="/>
+        <field:display field="percentDiscount" id="s_edu_cmucdu_ecommerce_domain_product_Promotion_percentDiscount" object="${promotion}" z="nWgYXQKAdn1k4BiRQAGDvcQXhXw="/>
+        <field:display field="absoluteDiscount" id="s_edu_cmucdu_ecommerce_domain_product_Promotion_absoluteDiscount" object="${promotion}" z="QUYPB9K6qCtHMvzOzoMWckeonVU="/>
+        <field:display date="true" dateTimePattern="${promotion_startdate_date_format}" field="startDate" id="s_edu_cmucdu_ecommerce_domain_product_Promotion_startDate" object="${promotion}" z="rUQBRyi6ANc8APAGRdHUicHPJz4="/>
+        <field:display date="true" dateTimePattern="${promotion_stopdate_date_format}" field="stopDate" id="s_edu_cmucdu_ecommerce_domain_product_Promotion_stopDate" object="${promotion}" z="5szA+Z3mDxpH2zo+hQ4FxvqXScA="/>
+    </page:show>
+</div>

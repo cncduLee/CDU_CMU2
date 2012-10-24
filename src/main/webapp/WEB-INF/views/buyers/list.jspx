@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_edu_cmucdu_ecommerce_domain_user_Buyer" items="${buyers}" z="4ImS9yAsLRqBVazjTrk0PT5TG4I=">
+        <table:table data="${buyers}" id="l_edu_cmucdu_ecommerce_domain_user_Buyer" path="/buyers" z="vdAOyZvhrYXfrUrVB9YV7aQFv5s=">
+            <table:column id="c_edu_cmucdu_ecommerce_domain_user_Buyer_principle" property="principle" z="T/HWAuQ9pSBQsDeSpjvXJbFe6O4="/>
+            <table:column id="c_edu_cmucdu_ecommerce_domain_user_Buyer_locale" property="locale" z="T88MGQbjQrY5/Z8ImMPGJ6NQkvw="/>
+            <table:column id="c_edu_cmucdu_ecommerce_domain_user_Buyer_name" property="name" z="oIRhsdof29ILL2lziXPxIzsGuHU="/>
+            <table:column id="c_edu_cmucdu_ecommerce_domain_user_Buyer_description" property="description" z="NGp1IsP9FttoLtey0/7sEF9S9oU="/>
+        </table:table>
+    </page:list>
+</div>
