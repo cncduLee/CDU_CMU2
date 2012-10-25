@@ -44,6 +44,9 @@ public abstract class UserDetail {
 		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder
 
 				.getRequestAttributes()).getRequest();
+		if (request ==null){
+			return toString();
+		}
 		locale = WebUtil.getLocaleEnum(request);
 		if (locale == LocaleEnum.CHINESE){
 			return name.getChineseDesc();
@@ -58,6 +61,9 @@ public abstract class UserDetail {
 		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder
 
 				.getRequestAttributes()).getRequest();
+		if (request == null){
+			return toString();
+		}
 		locale = WebUtil.getLocaleEnum(request);
 		if (locale == LocaleEnum.CHINESE){
 			return description.getChineseDesc();
