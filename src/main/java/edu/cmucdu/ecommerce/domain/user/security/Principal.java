@@ -26,4 +26,6 @@ public class Principal {
     private Boolean enabled;
     @OneToOne(cascade=CascadeType.ALL)
     private UserDetail user;
+    
+    
 }

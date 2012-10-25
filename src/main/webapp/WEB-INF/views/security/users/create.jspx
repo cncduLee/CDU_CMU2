@@ -21,9 +21,13 @@
 		<field:checkbox field="enabled"
 			id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_enabled"
 			z="tvmOwEcrhTDPiIDTRAXdYcPX3Ow=" />
-		 <field:select field="user" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_user" itemValue="id" items="${userdetails}" path="/userdetails" z="kXCLutt6vrVpvoB6ytSkOXyBa5A="/>
-    	
-    
+		<field:select field="user"
+			id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_user"
+			itemValue="id" items="${userdetails}" path="/userdetails"
+			itemLabel="localName"
+			z="kXCLutt6vrVpvoB6ytSkOXyBa5A=" />
+
+
 		<!-- <sform:select path="user" id="_user_id">
 			<sform:options items="${userdetails}" itemValue="id"
 			/>
