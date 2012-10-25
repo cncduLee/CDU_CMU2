@@ -6,6 +6,12 @@
         <field:display field="userName" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_userName" object="${principal}" z="f8eFXSNPKBP2OnvugTBXaBeVpTc="/>
         <field:display field="password" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_password" object="${principal}" z="U9+RmQA5F8D5qo8hxFsyVrtLtHg="/>
         <field:display field="enabled" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_enabled" object="${principal}" z="/UAfsf6kYgQ9I+JThZcMYNK52Ik="/>
-        <field:display field="user" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_user" object="${principal}" z="bRagRVthoyxqKteAIYxFPs5EeD8="/>
+        <!-- <field:display field="user" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_user" object="${principal}" z="bRagRVthoyxqKteAIYxFPs5EeD8="/>
+		-->
+		<label for="_user_id">User
+        :
+      </label>
+	<div id="_s_edu_cmucdu_ecommerce_domain_user_security_Principal_user_user_id" class="box">${principal.user.localName}</div>	  
+	  <br/>    
     </page:show>
 </div>
