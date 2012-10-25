@@ -6,8 +6,18 @@
         <field:select field="principle" id="c_edu_cmucdu_ecommerce_domain_user_Seller_principle" itemValue="id" items="${principals}" path="/principals" z="bUweOcKBuooWyd4xu41qjSZGZWo="/>
         <field:input field="locale" id="c_edu_cmucdu_ecommerce_domain_user_Seller_locale" z="YDnfb4X+fe+wH+VGqBNYWteNfm8="/>
         <field:simple field="products" id="c_edu_cmucdu_ecommerce_domain_user_Seller_products" messageCode="entity_reference_not_managed" messageCodeAttribute="Seller Product" z="XcFhhoX7FdM9RBwZHXFrGS5wsS0="/>
+        <field:input field="name.thaiDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_name_thaiDesc"/>
+        <field:input field="name.chineseDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_name_chineseDesc"/>
+        <field:input field="name.englishDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_name_englishDesc"/>
+        <field:textarea field="description.thaiDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_description_thaiDesc"/>
+        <field:textarea field="description.chineseDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_description_chineseDesc"/>
+        <field:textarea field="description.englishDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_description_englishDesc"/>
+        <!-- 
         <field:select field="name" id="c_edu_cmucdu_ecommerce_domain_user_Seller_name" itemValue="id" items="${descriptions}" path="/descriptions" z="fWlgUe3wq5tz6Mou2/IQ+5zqGdg="/>
         <field:select field="description" id="c_edu_cmucdu_ecommerce_domain_user_Seller_description" itemValue="id" items="${descriptions}" path="/descriptions" z="An3vK93yeiluYQiwkBMSp2nN7VU="/>
+        <field:select field="name" id="c_edu_cmucdu_ecommerce_domain_user_Seller_name" itemValue="id" items="${descriptions}" path="/descriptions" z="fWlgUe3wq5tz6Mou2/IQ+5zqGdg="/>
+        <field:select field="description" id="c_edu_cmucdu_ecommerce_domain_user_Seller_description" itemValue="id" items="${descriptions}" path="/descriptions" z="An3vK93yeiluYQiwkBMSp2nN7VU="/>
+        -->
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_edu_cmucdu_ecommerce_domain_user_Seller" render="${not empty dependencies}" z="9YLfJvf9jSUmo3xX07nzIqg14xY="/>
 </div>
