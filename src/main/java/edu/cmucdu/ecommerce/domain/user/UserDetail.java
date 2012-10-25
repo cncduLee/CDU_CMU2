@@ -27,51 +27,23 @@ public abstract class UserDetail {
 	/**
 	 * the username and password of the user
 	 */
-	@OneToOne (cascade=CascadeType.ALL)
-	private Principal principle; 
-	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Principal principle;
 
 	@Transient
-	LocaleEnum locale =LocaleEnum.CHINESE;
+	LocaleEnum locale = LocaleEnum.CHINESE;
 
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL)
 	Description name;
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL)
 	Description description;
-	
-	
-	public String getLocalName(){
-		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder
 
-				.getRequestAttributes()).getRequest();
-		if (request ==null){
-			return toString();
-		}
-		locale = WebUtil.getLocaleEnum(request);
-		if (locale == LocaleEnum.CHINESE){
-			return name.getChineseDesc();
-		}else if(locale == LocaleEnum.THAI ){
-			return name.getThaiDesc();
-		}else{
-			return name.getEnglishDesc();
-		}
+	public String getLocalName() {
+		return name.getLocalDescription();
 	}
-	
-	public String getLocalDescription(){
-		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder
 
-				.getRequestAttributes()).getRequest();
-		if (request == null){
-			return toString();
-		}
-		locale = WebUtil.getLocaleEnum(request);
-		if (locale == LocaleEnum.CHINESE){
-			return description.getChineseDesc();
-		}else if(locale == LocaleEnum.THAI ){
-			return description.getThaiDesc();
-		}else{
-			return description.getEnglishDesc();
-		}
+	public String getLocalDescription() {
+		return description.getLocalDescription();
 	}
-	
+
 }

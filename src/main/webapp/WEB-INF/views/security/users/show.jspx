@@ -8,10 +8,11 @@
         <field:display field="enabled" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_enabled" object="${principal}" z="/UAfsf6kYgQ9I+JThZcMYNK52Ik="/>
         <!-- <field:display field="user" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_user" object="${principal}" z="bRagRVthoyxqKteAIYxFPs5EeD8="/>
 		-->
-		<label for="_user_id">User
+        <label for="_user_id">User
         :
       </label>
-	<div id="_s_edu_cmucdu_ecommerce_domain_user_security_Principal_user_user_id" class="box">${principal.user.localName}</div>	  
-	  <br/>    
+        <div class="box" id="_s_edu_cmucdu_ecommerce_domain_user_security_Principal_user_user_id">${principal.user.localName}</div>
+        <br/>
+        <field:display field="user" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_user" object="${principal}" render="false" />
     </page:show>
 </div>

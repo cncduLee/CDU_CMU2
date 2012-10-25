@@ -18,5 +18,7 @@
         <field:select field="name" id="c_edu_cmucdu_ecommerce_domain_user_Seller_name" itemValue="id" items="${descriptions}" path="/descriptions" z="fWlgUe3wq5tz6Mou2/IQ+5zqGdg="/>
         <field:select field="description" id="c_edu_cmucdu_ecommerce_domain_user_Seller_description" itemValue="id" items="${descriptions}" path="/descriptions" z="An3vK93yeiluYQiwkBMSp2nN7VU="/>
         -->
+        <field:select field="name" id="c_edu_cmucdu_ecommerce_domain_user_Seller_name" itemValue="id" items="${descriptions}" path="/descriptions" render="false"/>
+        <field:select field="description" id="c_edu_cmucdu_ecommerce_domain_user_Seller_description" itemValue="id" items="${descriptions}" path="/descriptions" render="false"/>
     </form:update>
 </div>

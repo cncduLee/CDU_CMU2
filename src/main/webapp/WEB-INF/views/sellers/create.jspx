@@ -18,6 +18,8 @@
         <field:select field="name" id="c_edu_cmucdu_ecommerce_domain_user_Seller_name" itemValue="id" items="${descriptions}" path="/descriptions" z="fWlgUe3wq5tz6Mou2/IQ+5zqGdg="/>
         <field:select field="description" id="c_edu_cmucdu_ecommerce_domain_user_Seller_description" itemValue="id" items="${descriptions}" path="/descriptions" z="An3vK93yeiluYQiwkBMSp2nN7VU="/>
         -->
+        <field:select field="name" id="c_edu_cmucdu_ecommerce_domain_user_Seller_name" itemValue="id" items="${descriptions}" path="/descriptions" render="false"/>
+        <field:select field="description" id="c_edu_cmucdu_ecommerce_domain_user_Seller_description" itemValue="id" items="${descriptions}" path="/descriptions" render="false"/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_edu_cmucdu_ecommerce_domain_user_Seller" render="${not empty dependencies}" z="9YLfJvf9jSUmo3xX07nzIqg14xY="/>
 </div>
