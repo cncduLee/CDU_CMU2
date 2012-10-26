@@ -10,10 +10,6 @@
         <field:textarea field="description.chineseDesc" id="c_edu_cmucdu_ecommerce_domain_product_Product_description_chineseDesc"/>
         <field:textarea field="description.englishDesc" id="c_edu_cmucdu_ecommerce_domain_product_Product_description_englishDesc"/>
         <field:simple field="images" id="c_edu_cmucdu_ecommerce_domain_product_Product_images" messageCode="entity_reference_not_managed" messageCodeAttribute="Product Pic" z="BkQRn2UjwQCCuOJ1MtlILnCoAmg="/>
-        <field:select field="name" id="c_edu_cmucdu_ecommerce_domain_product_Product_name" itemValue="id" items="${descriptions}" path="/descriptions" z="umIu3SNKDYJ7HaxSFCoKczuYjTI="/>
-        <field:select field="description" id="c_edu_cmucdu_ecommerce_domain_product_Product_description" itemValue="id" items="${descriptions}" path="/descriptions" z="ANmLPceYjYfHtGACICyj1awDOBE="/>
-        <field:input field="locale" id="c_edu_cmucdu_ecommerce_domain_product_Product_locale" z="0vpj7VdgftMtsydkNBfQJz6fi8k="/>
-        <field:simple field="sellerProducts" id="c_edu_cmucdu_ecommerce_domain_product_Product_sellerProducts" messageCode="entity_reference_not_managed" messageCodeAttribute="Seller Product" z="Y1zikx3jLKupAibbS1RGnl9oFEo="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_edu_cmucdu_ecommerce_domain_product_Product" render="${not empty dependencies}" z="OLKSQJz8IOsmx8uJ+oLg7K3ySz4="/>
 </div>
