@@ -37,9 +37,9 @@ public class SellerController {
 	    
 	    @RequestMapping(method = RequestMethod.POST, produces = "text/html")
 	    public String create(@Valid Seller seller, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest,
+
 	    				@RequestParam String username, @RequestParam String password) {
 	        if (bindingResult.hasErrors()) {
-	            populateEditForm(uiModel, seller);
 	            return "sellers/create";
 	        }
 	        Principal principal = new Principal();

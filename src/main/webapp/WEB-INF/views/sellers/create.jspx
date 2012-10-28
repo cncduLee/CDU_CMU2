@@ -25,7 +25,6 @@
             <input id="password2" name="password2" type="password"/>
         </div>
         <br/>
-  
         <field:input field="locale" id="c_edu_cmucdu_ecommerce_domain_user_Seller_locale" render="false" z="user-managed"/>
         <field:simple field="products" id="c_edu_cmucdu_ecommerce_domain_user_Seller_products" messageCode="entity_reference_not_managed" messageCodeAttribute="Seller Product" render="false" z="user-managed"/>
         <field:input field="name.thaiDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_name_thaiDesc"/>
@@ -34,9 +33,10 @@
         <field:textarea field="description.thaiDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_description_thaiDesc"/>
         <field:textarea field="description.chineseDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_description_chineseDesc"/>
         <field:textarea field="description.englishDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_description_englishDesc"/>
-
         <field:select field="name" id="c_edu_cmucdu_ecommerce_domain_user_Seller_name" itemValue="id" items="${descriptions}" path="/descriptions" render="false"/>
         <field:select field="description" id="c_edu_cmucdu_ecommerce_domain_user_Seller_description" itemValue="id" items="${descriptions}" path="/descriptions" render="false"/>
+        <field:input field="telephoneNo" id="c_edu_cmucdu_ecommerce_domain_user_Seller_telephoneNo" z="ymhrQvpHQQAofiumt4LA9SnGEHQ="/>
+        <field:select field="address" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address" itemValue="id" items="${descriptions}" path="/descriptions" z="n3iBwOenNmCJXQ4hIn5Jsb5XbJ0="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_edu_cmucdu_ecommerce_domain_user_Seller" render="${not empty dependencies}" z="9YLfJvf9jSUmo3xX07nzIqg14xY="/>
 </div>

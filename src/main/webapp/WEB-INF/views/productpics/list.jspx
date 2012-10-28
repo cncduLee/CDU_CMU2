@@ -8,6 +8,7 @@
             <table:column id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_imageType" property="imageType" z="POnxvUjCzLYZ+rNFLANjOUgwzPQ="/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_description" property="description" z="atF9O34hFtB7He8cADxwDvQayAs="/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_product" property="product" z="Pf2vWCJKiFg5WmaNFuF8f5gBRgg="/>
+            <table:column id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_url" property="url" z="npe/yre/hQMlnetQIcey0ZlZVSw="/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_sellerProduct" property="sellerProduct" z="1s6KCKFn1Nzm/U5Ke7lvUfh4q48="/>
         </table:table>
     </page:list>

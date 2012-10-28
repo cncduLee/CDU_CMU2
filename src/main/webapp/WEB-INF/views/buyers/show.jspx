@@ -7,5 +7,7 @@
         <field:display field="locale" id="s_edu_cmucdu_ecommerce_domain_user_Buyer_locale" object="${buyer}" z="q82PtC9XbvdZS7TLgmJVhAAioD0="/>
         <field:display field="name" id="s_edu_cmucdu_ecommerce_domain_user_Buyer_name" object="${buyer}" z="bAfacTX4jsOiZECM8VunlxLmtSU="/>
         <field:display field="description" id="s_edu_cmucdu_ecommerce_domain_user_Buyer_description" object="${buyer}" z="AG54VOBMisx/gdGyBKkhegzWCBQ="/>
+        <field:display field="telephoneNo" id="s_edu_cmucdu_ecommerce_domain_user_Buyer_telephoneNo" object="${buyer}" z="LKMWZGlGORB7dEIN7YI8xo7v1Ts="/>
+        <field:display field="address" id="s_edu_cmucdu_ecommerce_domain_user_Buyer_address" object="${buyer}" z="ntQZzyHoi78GT8ARMgaWPybjwrw="/>
     </page:show>
 </div>
