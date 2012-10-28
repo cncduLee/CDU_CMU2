@@ -9,7 +9,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord(table = "security_authorities")
+@RooJpaActiveRecord(table = "security_authorities", finders = { "findAuthoritysByAuthorityLike" })
 public class Authority {
 
     @NotNull
