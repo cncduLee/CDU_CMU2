@@ -1,31 +1,15 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_edu_cmucdu_ecommerce_domain_product_ProductPic" items="${productpics}" z="W5eexe7OESaHYSKCJRo/No5nkJw=">
         <table:table data="${productpics}" id="l_edu_cmucdu_ecommerce_domain_product_ProductPic" path="/productpics" z="M3fq9GaaIyQXzy6gyP6SmIydj5k=">
-           	 <table:column id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_image" property="image" z="3Q9yqgXMG2OwAAy41ML9oKOc2vo="/>
-             <table:column id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_imageType" property="imageType" z="POnxvUjCzLYZ+rNFLANjOUgwzPQ="/>
-             <table:column id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_description" property="description" z="atF9O34hFtB7He8cADxwDvQayAs="/>
-             <table:column id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_product" property="product" z="Pf2vWCJKiFg5WmaNFuF8f5gBRgg="/>
-        </table:table>
-    </page:list>
-</div>
-=======
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:list id="pl_edu_cmucdu_ecommerce_domain_product_ProductPic" items="${productpics}" z="W5eexe7OESaHYSKCJRo/No5nkJw=">
-        <table:table data="${productpics}" id="l_edu_cmucdu_ecommerce_domain_product_ProductPic" path="/productpics" z="M3fq9GaaIyQXzy6gyP6SmIydj5k=">
+            <table:column id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_image" property="image" z="3Q9yqgXMG2OwAAy41ML9oKOc2vo="/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_imageType" property="imageType" z="POnxvUjCzLYZ+rNFLANjOUgwzPQ="/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_description" property="description" z="atF9O34hFtB7He8cADxwDvQayAs="/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_product" property="product" z="Pf2vWCJKiFg5WmaNFuF8f5gBRgg="/>
-            <table:column id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_sellerProduct" property="sellerProduct" z="1s6KCKFn1Nzm/U5Ke7lvUfh4q48="/>
-            <table:column id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_image" property="image" z="3Q9yqgXMG2OwAAy41ML9oKOc2vo="/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_url" property="url" z="npe/yre/hQMlnetQIcey0ZlZVSw="/>
+            <table:column id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_sellerProduct" property="sellerProduct" z="1s6KCKFn1Nzm/U5Ke7lvUfh4q48="/>
         </table:table>
     </page:list>
 </div>
->>>>>>> 72b5e2945f0297476f2e81c2950157e221e75c7d
