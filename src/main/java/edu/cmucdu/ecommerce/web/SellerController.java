@@ -34,8 +34,10 @@ public class SellerController {
 	    SellerProductDao sellerProductDao;
 	    
 	    @RequestMapping(method = RequestMethod.POST, produces = "text/html")
-	    public String create(@Valid Seller seller, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-	        if (bindingResult.hasErrors()) {
+	    public String create(@Valid Seller seller, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest,
+	    						@RequestParam("username") String username) {
+	        System.out.println(username);
+	    	if (bindingResult.hasErrors()) {
 	            populateEditForm(uiModel, seller);
 	            return "sellers/create";
 	        }

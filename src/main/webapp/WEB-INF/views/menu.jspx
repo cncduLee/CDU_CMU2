@@ -17,6 +17,7 @@
         </menu:category>
         <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
             <menu:item id="i_controller__productindex_id" messageCode="global_generic" url="/product/index" z="tM4aYXS1zcP2S0/wp3l9m3l1PVE="/>
+            <menu:item id="i_controller__sellerregisterindex_id" messageCode="global_generic" url="/sellerregister/index" z="upwk2IPlNuEbzsOp+xGVsomoE/8="/>
         </menu:category>
         <menu:category id="c_seller" z="WlsOMc1O7s/g2W1aWsDxWyIlXs4=">
             <menu:item id="i_seller_new" messageCode="global_menu_new" url="/sellers?form" z="P5b2bMOsiz3w1RhqEWW5MdlEqwA="/>
