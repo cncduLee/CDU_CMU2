@@ -45,8 +45,8 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 	AuthorityDao authorityDao;
 	@Autowired
 	AuthorityPrincipalAssignmentDao authorityPrincipalAssignmentDao;
-	@Autowired
-	PromotionDao promotionDao;
+//	@Autowired
+//	PromotionDao promotionDao;
 	
 	@Override
 	@Transactional
@@ -152,18 +152,18 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 		authorityDao.save(a2);
 		authorityPrincipalAssignmentDao.save(apa2);
 		
-		// ########## Create Promotion ##########
-		Promotion pro1 = new Promotion();
-		pro1.setAbsoluteDiscount(10.0);
-		pro1.setDescription(new Description(Messages.getString("Loader.34"), Messages.getString("Loader.35"), Messages.getString("Loader.36")));
-		pro1.setPercentDiscount(10.0);
-		pro1.setProduct(sp1);
-		Date date = new Date();
-		date.setTime(0);
-		pro1.setStartDate(date);
-		date.setTime(1);
-		pro1.setStopDate(date);
-		promotionDao.save(pro1);
+//		// ########## Create Promotion ##########
+//		Promotion pro1 = new Promotion();
+//		pro1.setAbsoluteDiscount(10.0);
+//		pro1.setDescription(new Description(Messages.getString("Loader.34"), Messages.getString("Loader.35"), Messages.getString("Loader.36")));
+//		pro1.setPercentDiscount(10.0);
+//		pro1.setProduct(sp1);
+//		Date date = new Date();
+//		date.setTime(0);
+//		pro1.setStartDate(date);
+//		date.setTime(1);
+//		pro1.setStopDate(date);
+//		promotionDao.save(pro1);
 		
 		// ########## Create Buyer ############
 	}
