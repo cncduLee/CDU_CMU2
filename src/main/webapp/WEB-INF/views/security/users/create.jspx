@@ -7,6 +7,10 @@
         <field:textarea field="password" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_password" required="true" z="0RF68bojrycWF4zXLDLp+5nfpiE="/>
         <field:checkbox field="enabled" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_enabled" z="tvmOwEcrhTDPiIDTRAXdYcPX3Ow="/>
         <field:select field="user" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_user" itemLabel="localName" itemValue="id" items="${userdetails}" path="/userdetails" z="user-managed"/>
+        <!-- <sform:select path="user" id="_user_id">
+			<sform:options items="${userdetails}" itemValue="id"
+			/>
+		</sform:select> -->
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_edu_cmucdu_ecommerce_domain_user_security_Principal" render="${not empty dependencies}" z="Vm3ZuYtZuV4BxKxOrEaBmyQ+bq0="/>
 </div>
