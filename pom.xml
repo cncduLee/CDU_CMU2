@@ -50,6 +50,18 @@
 		</pluginRepository>
 	</pluginRepositories>
 	<dependencies>
+	
+	
+	
+	
+	
+	
+	 <!-- file up load-->
+		<dependency>
+		   <groupId>commons-io</groupId>
+		   <artifactId>commons-io</artifactId>
+		   <version>2.1</version>
+		</dependency>
 		<!-- General dependencies for standard applications -->
 
 		<dependency>
