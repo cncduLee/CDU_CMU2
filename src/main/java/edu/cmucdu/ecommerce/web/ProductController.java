@@ -12,6 +12,7 @@ import edu.cmucdu.ecommerce.dao.product.ProductDao;
 import edu.cmucdu.ecommerce.dao.product.ProductPicDao;
 import edu.cmucdu.ecommerce.dao.product.SellerProductDao;
 import edu.cmucdu.ecommerce.domain.product.Product;
+import edu.cmucdu.ecommerce.domain.product.ProductPic;
 import edu.cmucdu.ecommerce.domain.util.LocaleEnum;
 
 import org.apache.commons.io.filefilter.FalseFileFilter;
@@ -105,7 +106,11 @@ public class ProductController {
 
 	@RequestMapping(params = "form", produces = "text/html")
 	public String createForm(Model uiModel) {
-		populateEditForm(uiModel, new Product());
+		List<ProductPic> all = productPicDao.findAll();
+		Product product = new Product();
+		product.setImages(all);
+		
+		populateEditForm(uiModel,product);
 		return "products/create";
 	}
 
