@@ -3,10 +3,10 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_edu_cmucdu_ecommerce_domain_product_ProductPic" object="${productpic}" path="/productpics" z="e5lIYPpc88YkeAs3qVIP1TC8mRU=">
-        <field:display field="image" id="s_edu_cmucdu_ecommerce_domain_product_ProductPic_image" object="${productpic}" z="nd+EOsTUYNODL2WbkJnvi6w8foI="/>
         <field:display field="imageType" id="s_edu_cmucdu_ecommerce_domain_product_ProductPic_imageType" object="${productpic}" z="BK/WizFdDr2faP2sUDW09/PCmg0="/>
-        <field:display field="description" id="s_edu_cmucdu_ecommerce_domain_product_ProductPic_description" object="${productpic}" z="xLIr8AGY1nQnllfnDRhuIe9etfs="/>
+        <field:display field="localDescription" id="s_edu_cmucdu_ecommerce_domain_product_ProductPic_description" object="${productpic}" z="user-managed"/>
         <field:display field="product" id="s_edu_cmucdu_ecommerce_domain_product_ProductPic_product" object="${productpic}" z="6y4BVGUysttTUC3ABLrwwJo6Z4o="/>
         <field:display field="sellerProduct" id="s_edu_cmucdu_ecommerce_domain_product_ProductPic_sellerProduct" object="${productpic}" z="jfyOZDIhGnxFH0wQ55OvUSLrVjw="/>
+        <field:frame field="url" id="s_edu_cmucdu_ecommerce_domain_product_ProductPic_url" object="${productpic}" z="user-managed"/>
     </page:show>
 </div>
