@@ -45,5 +45,14 @@ public abstract class UserDetail {
 	public String getLocalDescription() {
 		return description.getLocalDescription();
 	}
-
+	
+	public String telephoneNo;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	Description address;
+	
+	public String getLocalAddres()
+	{
+		return address.getLocalDescription();
+	}
 }

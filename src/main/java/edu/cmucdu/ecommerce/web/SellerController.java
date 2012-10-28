@@ -9,6 +9,8 @@ import javax.validation.Valid;
 import edu.cmucdu.ecommerce.dao.product.SellerProductDao;
 import edu.cmucdu.ecommerce.dao.user.SellerDao;
 import edu.cmucdu.ecommerce.domain.user.Seller;
+import edu.cmucdu.ecommerce.domain.user.security.Authority;
+import edu.cmucdu.ecommerce.domain.user.security.AuthorityPrincipalAssignment;
 import edu.cmucdu.ecommerce.domain.user.security.Principal;
 import edu.cmucdu.ecommerce.web.util.WebUtil;
 
@@ -34,11 +36,24 @@ public class SellerController {
 	    SellerProductDao sellerProductDao;
 	    
 	    @RequestMapping(method = RequestMethod.POST, produces = "text/html")
-	    public String create(@Valid Seller seller, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+	    public String create(@Valid Seller seller, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest,
+	    				@RequestParam String username, @RequestParam String password) {
 	        if (bindingResult.hasErrors()) {
 	            populateEditForm(uiModel, seller);
 	            return "sellers/create";
 	        }
+	        Principal principal = new Principal();
+	        principal.setUserName(username);
+	        principal.setPassword(password);
+	        principal.setEnabled(true);
+	        principal.setUser(seller);
+	        Authority a = Authority.findAuthoritysByAuthorityLike("ROLE_USER").getResultList().get(0);
+	        AuthorityPrincipalAssignment as = new AuthorityPrincipalAssignment();
+	        as.setRoleId(a);
+	        as.setUsername(principal);
+	        seller.setPrinciple(principal);
+	        principal.persist();
+	        as.persist();
 	        uiModel.asMap().clear();
 	        sellerDao.save(seller);
 	        return "redirect:/sellers/" + encodeUrlPathSegment(seller.getId().toString(), httpServletRequest);
