@@ -44,23 +44,11 @@ public class Product {
 
 	
 	public String getLocalName(){
-		if (locale == LocaleEnum.CHINESE){
-			return name.getChineseDesc();
-		}else if(locale == LocaleEnum.THAI ){
-			return name.getThaiDesc();
-		}else{
-			return name.getEnglishDesc();
-		}
+		return name.getLocalDescription();
 	}
 	
 	public String getLocalDescription(){
-		if (locale == LocaleEnum.CHINESE){
-			return description.getChineseDesc();
-		}else if(locale == LocaleEnum.THAI ){
-			return description.getThaiDesc();
-		}else{
-			return description.getEnglishDesc();
-		}
+		return description.getLocalDescription();
 	}
 	
 
