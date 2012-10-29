@@ -7,7 +7,7 @@
         <field:textarea field="description.thaiDesc" id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_description_thaiDesc"/>
         <field:textarea field="description.chineseDesc" id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_description_chineseDesc"/>
         <field:textarea field="description.englishDesc" id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_description_englishDesc"/>
-        <field:select field="product" id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_product" itemLabel="localName" itemValue="id" items="${products}" path="/products" z="user-managed"/>
+        <field:select field="product" id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_product" itemValue="id"  itemLabel="localName"  items="${products}" path="/products" z="1XbDQbZ4bBk+l6PQY1jOxU0QSbM="/>
         <field:select field="sellerProduct" id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_sellerProduct" itemValue="id" items="${sellerproducts}" path="/sellerproducts" z="pbPWxxOsqcZ47Ifo+v+f8gRF818="/>
         <field:input field="locale" id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_locale" z="01b+Xrw4Zsz4KwlYuKski0yHkVk="/>
         <field:input field="imageType" id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_imageType" z="stztEd4/11kL2AAzhMyko3UVpOo="/>
