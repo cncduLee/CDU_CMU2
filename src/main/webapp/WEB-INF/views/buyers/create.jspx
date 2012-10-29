@@ -7,6 +7,8 @@
         <field:input field="locale" id="c_edu_cmucdu_ecommerce_domain_user_Buyer_locale" z="5X4FewrJx4eAZ+NEVWFta5t4lXE="/>
         <field:select field="name" id="c_edu_cmucdu_ecommerce_domain_user_Buyer_name" itemValue="id" items="${descriptions}" path="/descriptions" z="dvF+j/VJtQDlyFe0EIuD2e+iY4A="/>
         <field:select field="description" id="c_edu_cmucdu_ecommerce_domain_user_Buyer_description" itemValue="id" items="${descriptions}" path="/descriptions" z="X4dyAsUZ3DFgI8IeXH+ZRLxYHPA="/>
+        <field:input field="telephoneNo" id="c_edu_cmucdu_ecommerce_domain_user_Buyer_telephoneNo" z="FhrECn4oYxFZ+IxOMf+YmsQX1oI="/>
+        <field:select field="address" id="c_edu_cmucdu_ecommerce_domain_user_Buyer_address" itemValue="id" items="${descriptions}" path="/descriptions" z="pdu0SuhATcr5XZJmt8fCxe87jP8="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_edu_cmucdu_ecommerce_domain_user_Buyer" render="${not empty dependencies}" z="SIGxJR8Y4YzHLSMWiJS0acteQKE="/>
 </div>

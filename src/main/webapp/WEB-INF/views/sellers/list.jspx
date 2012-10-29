@@ -7,7 +7,9 @@
             <table:column id="c_edu_cmucdu_ecommerce_domain_user_Seller_principle" property="principle" z="/Qqtjj0oj0S0ltNOEyVliY+XOp4="/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_user_Seller_locale" property="locale" z="uoD/emilEHfP9YXkvjUcdMriEFE="/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_user_Seller_name" property="localName"/>
-            <table:column id="c_edu_cmucdu_ecommerce_domain_user_Seller_description" property="localDescription" />
+            <table:column id="c_edu_cmucdu_ecommerce_domain_user_Seller_description" property="localDescription"/>
+            <table:column id="c_edu_cmucdu_ecommerce_domain_user_Seller_telephoneNo" property="telephoneNo" z="TKBpTJjcpq8QA8qSppNHw2HZ74c="/>
+            <table:column id="c_edu_cmucdu_ecommerce_domain_user_Seller_address" property="address" z="DqSy+G68dLTPAfNkZvFQqmlw5xg="/>
         </table:table>
     </page:list>
 </div>
