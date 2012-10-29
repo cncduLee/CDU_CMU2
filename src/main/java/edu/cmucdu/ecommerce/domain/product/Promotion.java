@@ -2,6 +2,8 @@ package edu.cmucdu.ecommerce.domain.product;
 
 import edu.cmucdu.ecommerce.domain.util.Description;
 import java.util.Date;
+
+import javax.persistence.CascadeType;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -15,10 +17,10 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJpaEntity
 public class Promotion {
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private SellerProduct product;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Description description;
 
     private double percentDiscount;
