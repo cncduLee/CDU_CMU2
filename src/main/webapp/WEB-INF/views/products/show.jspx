@@ -1,10 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_edu_cmucdu_ecommerce_domain_product_Product" object="${product}" path="/products" z="Gwf6E/quP0fNjWd0Jpd4RXmma8k=">
         <field:display field="localName" id="s_edu_cmucdu_ecommerce_domain_product_Product_name" object="${product}" z="user-managed"/>
         <field:display field="localDescription" id="s_edu_cmucdu_ecommerce_domain_product_Product_description" object="${product}" z="user-managed"/>
         <field:display field="locale" id="s_edu_cmucdu_ecommerce_domain_product_Product_locale" object="${product}" z="7I9FdLviaR1mORXUkf0ec2fvcyY="/>
+		
+		<div>
+		<table width="34%" border="0">
+			
+			<c:if test="${empty requestScope.product.images}">
+				<a href="/CDU_CMU3/productpics?form">sorry,this product have no pic,click here add a pic for this</a>
+			</c:if>			
+			<c:forEach items="${requestScope.product.images }" var="image">
+						<tr>
+							<td width="10%">
+								<table width="100%" border="1">
+									<tr>
+										<td><IMG alt="add faile" src="${image.url}" /></td>
+									</tr>
+									<tr>
+										<td>${image.localDescription}</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+			</c:forEach>
+			
+		</table>
+		</div>
+		
+        
     </page:show>
 </div>
