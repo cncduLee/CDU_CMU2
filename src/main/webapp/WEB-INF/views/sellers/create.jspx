@@ -6,6 +6,18 @@
 	xmlns:spring="http://www.springframework.org/tags" version="2.0">
 	<jsp:directive.page contentType="text/html;charset=UTF-8" />
 	<jsp:output omit-xml-declaration="yes" />
+	
+	<script language="javascript"> 
+		function validatePass(p1, p2) 
+		{
+		    if (p1.value != p2.value || p1.value == '' || p2.value == '') {
+		        p2.setCustomValidity('Passwords are not match!');
+		    } else {
+		        p2.setCustomValidity('');
+		    }
+		}
+	</script>
+	
 	<form:multi id="fc_edu_cmucdu_ecommerce_domain_user_Seller"
 		modelAttribute="seller" path="/sellers" render="${empty dependencies}">
 		<field:select field="principle"
@@ -17,15 +29,17 @@
 				name="username" type="text" value="${username }" />
 		</div>
 		<br />
-		<div id="_c_edu_cmucdu_ecommerce_domain_user_Seller_principle_id">
+		<div id="_c_edu_cmucdu_ecommerce_domain_user_Buyer_principle_id">
 			<label for="_principle_id">Password : </label> <input id="password"
 				name="password" type="password" />
 		</div>
 		<br />
-		<div id="_c_edu_cmucdu_ecommerce_domain_user_Seller_principle_id">
+		<div id="_c_edu_cmucdu_ecommerce_domain_user_Buyer_principle_id">
 			<label for="_principle_id">Confirm password : </label> <input
-				id="password2" name="password2" type="password" />
-		</div>
+				id="password2" name="password2" type="password"
+				onfocus="validatePass(document.getElementById('password'), this);" 
+				oninput="validatePass(document.getElementById('password'), this);"/>
+        </div>
 		<br />
 		<field:input field="locale"
 			id="c_edu_cmucdu_ecommerce_domain_user_Seller_locale" render="false"
@@ -56,10 +70,16 @@
 		<field:input field="telephoneNo"
 			id="c_edu_cmucdu_ecommerce_domain_user_Seller_telephoneNo"
 			z="ymhrQvpHQQAofiumt4LA9SnGEHQ=" />
+			
+		<!-- Seller Address -->
+        <field:textarea field="address.thaiDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address_thaiDesc"/>
+        <field:textarea field="address.chineseDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address_chineseDesc"/>
+        <field:textarea field="address.englishDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address_englishDesc"/>		
+			
 		<field:select field="address"
 			id="c_edu_cmucdu_ecommerce_domain_user_Seller_address" itemValue="id"
 			items="${descriptions}" path="/descriptions"
-			z="n3iBwOenNmCJXQ4hIn5Jsb5XbJ0=" />
+			z="n3iBwOenNmCJXQ4hIn5Jsb5XbJ0=" render="false"/>
 		<field:simple field="images"
 			id="c_edu_cmucdu_ecommerce_domain_user_Seller_images"
 			messageCode="entity_reference_not_managed"

@@ -51,6 +51,9 @@ public abstract class UserDetail {
 	
 	public String getLocalAddress()
 	{
-		return address.getLocalDescription();
+		if(address==null)
+			return "No address";
+		else
+			return address.getLocalDescription();
 	}
 }
