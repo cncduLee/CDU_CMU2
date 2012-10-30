@@ -6,8 +6,8 @@
         <field:textarea field="image" id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_image" required="true" z="SZjVvJpLZRd8JzMYceCmdSmrnNM="/>
         <field:input field="imageType" id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_imageType" z="stztEd4/11kL2AAzhMyko3UVpOo="/>
         <field:select field="description" id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_description" itemValue="id" items="${descriptions}" path="/descriptions" z="1IAub9aKObCRobzClHU9vMs7o/4="/>
-        <field:select field="product" id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_product" itemLabel="localName" itemValue="id" items="${products}" path="/products" z="1XbDQbZ4bBk+l6PQY1jOxU0QSbM="/>
-        <field:select field="sellerProduct" id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_sellerProduct" itemLabel="product.localName" itemValue="id" items="${sellerproducts}" path="/sellerproducts" z="pbPWxxOsqcZ47Ifo+v+f8gRF818="/>
+        <field:select field="product" id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_product" itemLabel="localName" itemValue="id" items="${products}" path="/products" z="user-managed"/>
+        <field:select field="sellerProduct" id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_sellerProduct" itemLabel="product.localName" itemValue="id" items="${sellerproducts}" path="/sellerproducts" z="user-managed"/>
         <field:input field="url" id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_url" z="1ZB+qyb4igVU0P9h9rJ7+I4eDAk="/>
         <field:input field="locale" id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_locale" z="01b+Xrw4Zsz4KwlYuKski0yHkVk="/>
     </form:update>

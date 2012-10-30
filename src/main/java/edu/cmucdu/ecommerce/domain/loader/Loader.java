@@ -1,18 +1,9 @@
 package edu.cmucdu.ecommerce.domain.loader;
 
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.util.Date;
 import java.util.HashSet;
-import java.util.List;
-import java.util.Locale;
 import java.util.Set;
 
-import javax.imageio.ImageIO;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.LocaleEditor;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -20,12 +11,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import edu.cmucdu.ecommerce.dao.product.ProductDao;
 import edu.cmucdu.ecommerce.dao.product.ProductPicDao;
-import edu.cmucdu.ecommerce.dao.product.PromotionDao;
 import edu.cmucdu.ecommerce.dao.security.AuthorityDao;
 import edu.cmucdu.ecommerce.dao.security.AuthorityPrincipalAssignmentDao;
 import edu.cmucdu.ecommerce.dao.user.BuyerDao;
 import edu.cmucdu.ecommerce.dao.user.SellerDao;
-import edu.cmucdu.ecommerce.domain.product.*;
+import edu.cmucdu.ecommerce.domain.product.Product;
+import edu.cmucdu.ecommerce.domain.product.ProductPic;
+import edu.cmucdu.ecommerce.domain.product.SellerProduct;
 import edu.cmucdu.ecommerce.domain.user.Buyer;
 import edu.cmucdu.ecommerce.domain.user.Seller;
 import edu.cmucdu.ecommerce.domain.user.security.Authority;
@@ -94,33 +86,52 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 		Product p1 = new Product();
 		p1.setName(new Description(Messages.getString("Loader.16"), Messages.getString("Loader.17"), Messages.getString("Loader.18"))); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		p1.setDescription(new Description(Messages.getString("Loader.16"), Messages.getString("Loader.17"), Messages.getString("Loader.18"))); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		
-		Set<SellerProduct> sellerlist = new HashSet<SellerProduct>();
-		p1.setSellerProducts(sellerlist);
-			//Create Seller Product
-			SellerProduct sp1 = new SellerProduct();
-			sp1.setSeller(s1);
-			sp1.setProduct(p1);
-			sp1.setPrice(100);
-			sp1.setWeight(100);
-			SellerProduct sp2 = new SellerProduct();
-			sp2.setSeller(s2);
-			sp2.setProduct(p1);
-			sp2.setPrice(200);
-			sp2.setWeight(1000);
-		sellerlist.add(sp1);
-		sellerlist.add(sp2);
+			//Add seller list
+			Set<SellerProduct> sellerlist = new HashSet<SellerProduct>();
+			p1.setSellerProducts(sellerlist);
+				//Create Seller Product
+				SellerProduct sp1 = new SellerProduct();
+				sp1.setSeller(s1);
+				sp1.setProduct(p1);
+				sp1.setPrice(100);
+				sp1.setWeight(100);
+				SellerProduct sp2 = new SellerProduct();
+				sp2.setSeller(s2);
+				sp2.setProduct(p1);
+				sp2.setPrice(200);
+				sp2.setWeight(1000);
+			sellerlist.add(sp1);
+			sellerlist.add(sp2);
 			//Add product picture
 			ProductPic pp = new ProductPic();
-			pp.loadFile("/images/test/test.jpg");
+			pp.loadFile("/images/fruits/longan.jpg");
 			pp.setProduct(p1);
 			pp.setSellerProduct(sp1);
 			pp.setDescription(new Description(Messages.getString("Loader.31"), Messages.getString("Loader.32"), Messages.getString("Loader.33")));
+			productPicDao.save(pp);
 		p1.getImages().add(pp);
 		productDao.save(p1);
 		Product p2 = new Product();
 		p2.setName(new Description(Messages.getString("Loader.22"), Messages.getString("Loader.23"), Messages.getString("Loader.24"))); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		p2.setDescription(new Description(Messages.getString("Loader.22"), Messages.getString("Loader.23"), Messages.getString("Loader.24"))); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		//Add seller list
+			Set<SellerProduct> sellerlist2 = new HashSet<SellerProduct>();
+		p2.setSellerProducts(sellerlist2);
+			//Create Seller Product
+			SellerProduct sp3 = new SellerProduct();
+			sp3.setSeller(s2);
+			sp3.setProduct(p2);
+			sp3.setPrice(400);
+			sp3.setWeight(100);
+			sellerlist2.add(sp3);
+			//Add product picture
+			ProductPic pp2 = new ProductPic();
+			pp2.loadFile("/images/fruits/durian.jpg");
+			pp2.setProduct(p2);
+			pp2.setSellerProduct(sp3);
+			pp2.setDescription(new Description(Messages.getString("Loader.49"), Messages.getString("Loader.50"), Messages.getString("Loader.51")));
+			productPicDao.save(pp2);
+		p2.getImages().add(pp2);
 		productDao.save(p2);
 		Product p3 = new Product();
 		p3.setName(new Description(Messages.getString("Loader.28"), Messages.getString("Loader.29"), Messages.getString("Loader.30"))); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
