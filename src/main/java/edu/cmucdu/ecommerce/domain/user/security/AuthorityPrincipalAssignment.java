@@ -8,7 +8,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord(table = "security_role_assiments")
+@RooJpaActiveRecord(table = "user_role")
 public class AuthorityPrincipalAssignment {
 
     @ManyToOne(cascade=CascadeType.ALL)

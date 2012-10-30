@@ -117,11 +117,11 @@ public class SellerController {
 			return "sellers/create";
 		}
 		Principal principal = new Principal();
-		principal.setUserName(username);
+		principal.setUsername(username);
 		principal.setPassword(password);
 		principal.setEnabled(true);
 		principal.setUser(seller);
-		Authority a = Authority.findAuthoritysByAuthorityLike("ROLE_USER")
+		Authority a = Authority.findAuthoritysByAuthorityLike("ROLE_SELLER")
 				.getResultList().get(0);
 		AuthorityPrincipalAssignment as = new AuthorityPrincipalAssignment();
 		as.setRoleId(a);

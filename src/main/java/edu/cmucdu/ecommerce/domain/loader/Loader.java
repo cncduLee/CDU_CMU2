@@ -1,5 +1,8 @@
 package edu.cmucdu.ecommerce.domain.loader;
 
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -61,8 +64,8 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 			Principal s1p = new Principal();
 			s1p.setUser(s1);
 			s1p.setEnabled(true);
-			s1p.setUserName("seller1"); //$NON-NLS-1$
-			s1p.setPassword("1234"); //$NON-NLS-1$
+			s1p.setUsername("seller1"); //$NON-NLS-1$
+			s1p.setPassword(("1234")); //$NON-NLS-1$
 		s1.setPrinciple(s1p);
 		s1.setAddress(new Description(Messages.getString("Loader.40"), Messages.getString("Loader.41"), Messages.getString("Loader.42")));
 		s1.setTelephoneNo("+6653123456");
@@ -75,7 +78,7 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 			Principal s2p = new Principal();
 			s2p.setUser(s2);
 			s2p.setEnabled(false);
-			s2p.setUserName("seller2"); //$NON-NLS-1$
+			s2p.setUsername("seller2"); //$NON-NLS-1$
 			s2p.setPassword("1234"); //$NON-NLS-1$
 		s2.setPrinciple(s2p);
 		s2.setAddress(new Description(Messages.getString("Loader.40"), Messages.getString("Loader.41"), Messages.getString("Loader.42")));
@@ -145,8 +148,8 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 		b1.setTelephoneNo("+66876610103");
 			Principal b1p = new Principal();
 			b1p.setUser(b1);
-			b1p.setUserName("buyer1");
-			b1p.setPassword("1234");
+			b1p.setUsername("buyer1");
+			b1p.setPassword(("1234"));
 			b1p.setEnabled(true);
 		b1.setPrinciple(b1p);
 		b1.setDescription(new Description(Messages.getString("Loader.37"), Messages.getString("Loader.38"), Messages.getString("Loader.39")));
@@ -157,8 +160,8 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 		b2.setTelephoneNo("18000000000");
 			Principal b2p = new Principal();
 			b2p.setUser(b2);
-			b2p.setUserName("buyer2");
-			b2p.setPassword("1234");
+			b2p.setUsername("buyer2");
+			b2p.setPassword(("1234"));
 			b2p.setEnabled(true);
 		b2.setPrinciple(b2p);
 		b2.setDescription(new Description(Messages.getString("Loader.46"), Messages.getString("Loader.47"), Messages.getString("Loader.48")));
@@ -191,6 +194,21 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 		apa3.setUsername(b1p);
 		authorityPrincipalAssignmentDao.save(apa3);
 		
+		Principal b2p1 = new Principal();
+
+		b2p1.setUsername("admin");
+		b2p1.setPassword(("admin"));
+		b2p1.setEnabled(true);
+		AuthorityPrincipalAssignment apa4 = new AuthorityPrincipalAssignment();
+		apa4.setRoleId(a1);
+		apa4.setUsername(b2p1);
+		Seller s5 = new Seller();
+		s5.setName(new Description(Messages.getString("Loader.0"), Messages.getString("Loader.1"), Messages.getString("Loader.2"))); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		s5.setDescription(new Description(Messages.getString("Loader.3"), Messages.getString("Loader.4"), Messages.getString("Loader.5"))); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		s5.setPrinciple(b2p1);
+		b2p1.setUser(s5);
+		authorityPrincipalAssignmentDao.save(apa4);
+		sellerDao.save(s5);
 //		// ########## Create Promotion ##########
 //		Promotion pro1 = new Promotion();
 //		pro1.setAbsoluteDiscount(10.0);
@@ -209,6 +227,28 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 //		pp.loadFile("/images/test/test.jpg");
 //		productPicDao.save(pp);
 		
+		
+	}
+	
+	private String getMD5Encode(String password){
+//		byte[] bytesOfMessage;
+//		try {
+//			bytesOfMessage = password.getBytes("UTF-8");
+//			MessageDigest md = MessageDigest.getInstance("MD5");
+//			byte[] thedigest = md.digest(bytesOfMessage);
+//			return new String(thedigest);
+			return password;
+//		} catch (UnsupportedEncodingException e) {
+//			// TODO Auto-generated catch block
+//		
+//			e.printStackTrace();
+//			return null;
+//		} catch (NoSuchAlgorithmException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//			return null;
+//		}
+
 		
 	}
 }
