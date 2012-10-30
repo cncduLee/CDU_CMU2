@@ -7,6 +7,6 @@
         <field:display field="price" id="s_edu_cmucdu_ecommerce_domain_product_SellerProduct_price" object="${sellerproduct}" z="swUPU8Hfz2BHPeQmp3gBLn15cOU="/>
         <field:display field="weight" id="s_edu_cmucdu_ecommerce_domain_product_SellerProduct_weight" object="${sellerproduct}" z="MiwQCWFtBuarlS8t9dqN+9sQHB4="/>
         <field:display field="promotion" id="s_edu_cmucdu_ecommerce_domain_product_SellerProduct_promotion" object="${sellerproduct}" z="zh7ypdgBY6XgW+lRluB5FbBXagQ="/>
-        <field:display field="product" id="s_edu_cmucdu_ecommerce_domain_product_SellerProduct_product" object="${sellerproduct}" z="T5bxIlp5bF/QYnr5zGP5NGKLY8Y="/>
+        <field:display field="product.localName" id="s_edu_cmucdu_ecommerce_domain_product_SellerProduct_product" object="${sellerproduct}" z="T5bxIlp5bF/QYnr5zGP5NGKLY8Y="/>
     </page:show>
 </div>
