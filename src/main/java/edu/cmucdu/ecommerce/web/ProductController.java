@@ -4,6 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Set;
 import java.util.List;
@@ -17,6 +18,7 @@ import edu.cmucdu.ecommerce.dao.product.ProductPicDao;
 import edu.cmucdu.ecommerce.dao.product.SellerProductDao;
 import edu.cmucdu.ecommerce.domain.product.Product;
 import edu.cmucdu.ecommerce.domain.product.ProductPic;
+import edu.cmucdu.ecommerce.domain.util.Description;
 import edu.cmucdu.ecommerce.domain.util.LocaleEnum;
 
 import org.apache.commons.io.IOUtils;
@@ -26,12 +28,16 @@ import org.springframework.data.domain.Page;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.RequestContextUtils;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
@@ -54,6 +60,34 @@ public class ProductController {
 
 	@Autowired
 	SellerProductDao sellerProductDao;
+	
+	@ModelAttribute("picList")
+	public List<ProductPic> getProductModel() {
+		return new ArrayList<ProductPic>();
+	}
+	
+	@RequestMapping(value = "/image/{id}", method = RequestMethod.GET)
+	public String showdoc(@PathVariable("id") Long id,
+			HttpServletResponse response, Model model,
+			@ModelAttribute("picList") List<ProductPic> picList,
+			HttpServletRequest httpServletRequest) {
+
+		try {
+			// response.setHeader("Content-Disposition", "inline;filename=\""
+			// +pic.getUrl()+ "\"");
+			OutputStream out = response.getOutputStream();
+			ProductPic pic = picList.get(id.intValue());
+			response.setContentType(pic.getImageType());
+
+			IOUtils.copy(new ByteArrayInputStream(pic.getImage()), out);
+			out.flush();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 
 	@RequestMapping(value = "/{id}", produces = "text/html")
 	public String show(@PathVariable("id") Long id, Model uiModel,
@@ -105,7 +139,33 @@ public class ProductController {
 
 	@RequestMapping(method = RequestMethod.POST, produces = "text/html")
 	public String create(@Valid Product product, BindingResult bindingResult,
-			Model uiModel, HttpServletRequest httpServletRequest) {
+			Model uiModel, 
+			HttpServletRequest httpServletRequest,
+			
+			// this part is for uploading picture
+						@RequestParam(value = "action", required = false) String action,
+						@RequestParam(value = "uploadImages", required = false) MultipartFile uploadImages,
+						@RequestParam(value = "img_cn_desc", required = false) String imgCnDesc,
+						@RequestParam(value = "img_thai_desc", required = false) String imgThDesc,
+						@RequestParam(value = "img_eng_desc", required = false) String imgEnDesc,
+						@ModelAttribute("picList") List<ProductPic> picList) {
+					if (action != null && action.equals("Upload")) {
+						ProductPic pp = new ProductPic();
+						if (uploadImages.getSize() > 0) {
+							try {
+								pp.setImage(uploadImages.getBytes());
+							} catch (IOException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							pp.setImageType(uploadImages.getContentType());
+							pp.setDescription(new Description(imgThDesc, imgCnDesc,
+									imgEnDesc));
+							picList.add(pp);
+							uiModel.addAttribute("picList", picList);
+						}
+						return "products/create";
+					}
 		if (bindingResult.hasErrors()) {
 			populateEditForm(uiModel, product);
 			return "products/create";
@@ -118,7 +178,13 @@ public class ProductController {
 	}
 
 	@RequestMapping(params = "form", produces = "text/html")
-	public String createForm(Model uiModel) {
+	public String createForm(Model uiModel, SessionStatus status,
+			HttpServletRequest request) {
+		
+		// clean all the session attribute
+		((ModelMap) uiModel).clear();
+		status.setComplete();
+		
 		List<ProductPic> all = productPicDao.findAll();
 		Product product = new Product();
 		product.setImages(all);

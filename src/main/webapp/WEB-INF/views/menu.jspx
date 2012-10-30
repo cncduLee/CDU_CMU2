@@ -23,8 +23,8 @@
             <menu:item id="i_seller_list" messageCode="global_menu_list" url="/sellers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="57f7mMa6rXXGgX7UBUaUGHmBSqg="/>
         </menu:category>
         <menu:category id="c_product" z="vJ6efqiSxFssuvqFTsXpvZ3AvA8=">
-            <menu:item id="i_product_list" messageCode="global_menu_list" url="/products?page=1&amp;size=${empty param.size ? 10 : param.size}" z="kEeyCmUUYXShbDEWwOLheaAkM50="/>
             <menu:item id="i_product_new" messageCode="global_menu_new" url="/products?form" z="Ezf8cTW61d2RkMNEcYkDJpG01kc="/>
+            <menu:item id="i_product_list" messageCode="global_menu_list" url="/products?page=1&amp;size=${empty param.size ? 10 : param.size}" z="kEeyCmUUYXShbDEWwOLheaAkM50="/>
         </menu:category>
         <menu:category id="c_promotion" z="N0OacQb6uAS3kqi0gUsvItxEk+Q=">
             <menu:item id="i_promotion_new" messageCode="global_menu_new" url="/promotions?form" z="vIRg6/c1jXWNdovKhtkTejeI8iY="/>
