@@ -23,8 +23,10 @@ import edu.cmucdu.ecommerce.dao.product.ProductPicDao;
 import edu.cmucdu.ecommerce.dao.product.PromotionDao;
 import edu.cmucdu.ecommerce.dao.security.AuthorityDao;
 import edu.cmucdu.ecommerce.dao.security.AuthorityPrincipalAssignmentDao;
+import edu.cmucdu.ecommerce.dao.user.BuyerDao;
 import edu.cmucdu.ecommerce.dao.user.SellerDao;
 import edu.cmucdu.ecommerce.domain.product.*;
+import edu.cmucdu.ecommerce.domain.user.Buyer;
 import edu.cmucdu.ecommerce.domain.user.Seller;
 import edu.cmucdu.ecommerce.domain.user.security.Authority;
 import edu.cmucdu.ecommerce.domain.user.security.AuthorityPrincipalAssignment;
@@ -49,7 +51,10 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 //	@Autowired
 //	PromotionDao promotionDao;
 	@Autowired
+	BuyerDao buyerDao;
+	@Autowired
 	ProductPicDao productPicDao;
+	
 	@Override
 	@Transactional
 	public void onApplicationEvent(ContextRefreshedEvent event) {
@@ -64,9 +69,11 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 			Principal s1p = new Principal();
 			s1p.setUser(s1);
 			s1p.setEnabled(true);
-			s1p.setUserName(Messages.getString("Loader.6")); //$NON-NLS-1$
-			s1p.setPassword(Messages.getString("Loader.7")); //$NON-NLS-1$
+			s1p.setUserName("seller1"); //$NON-NLS-1$
+			s1p.setPassword("1234"); //$NON-NLS-1$
 		s1.setPrinciple(s1p);
+		s1.setAddress(new Description(Messages.getString("Loader.40"), Messages.getString("Loader.41"), Messages.getString("Loader.42")));
+		s1.setTelephoneNo("+6653123456");
 		sellerDao.save(s1);
 
 		Seller s2 = new Seller();
@@ -76,15 +83,17 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 			Principal s2p = new Principal();
 			s2p.setUser(s2);
 			s2p.setEnabled(false);
-			s2p.setUserName(Messages.getString("Loader.14")); //$NON-NLS-1$
-			s2p.setPassword(Messages.getString("Loader.15")); //$NON-NLS-1$
+			s2p.setUserName("seller2"); //$NON-NLS-1$
+			s2p.setPassword("1234"); //$NON-NLS-1$
 		s2.setPrinciple(s2p);
+		s2.setAddress(new Description(Messages.getString("Loader.40"), Messages.getString("Loader.41"), Messages.getString("Loader.42")));
+		s2.setTelephoneNo("+6653666666");
 		sellerDao.save(s2);
 		
 		// ############### Create Product ################
 		Product p1 = new Product();
 		p1.setName(new Description(Messages.getString("Loader.16"), Messages.getString("Loader.17"), Messages.getString("Loader.18"))); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		p1.setDescription(new Description("","","")); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		p1.setDescription(new Description(Messages.getString("Loader.16"), Messages.getString("Loader.17"), Messages.getString("Loader.18"))); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		
 		Set<SellerProduct> sellerlist = new HashSet<SellerProduct>();
 		p1.setSellerProducts(sellerlist);
@@ -101,58 +110,75 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 			sp2.setWeight(1000);
 		sellerlist.add(sp1);
 		sellerlist.add(sp2);
-		
+			//Add product picture
+			ProductPic pp = new ProductPic();
+			pp.loadFile("/images/test/test.jpg");
+			pp.setProduct(p1);
+			pp.setSellerProduct(sp1);
+			pp.setDescription(new Description(Messages.getString("Loader.31"), Messages.getString("Loader.32"), Messages.getString("Loader.33")));
+		p1.getImages().add(pp);
 		productDao.save(p1);
 		Product p2 = new Product();
 		p2.setName(new Description(Messages.getString("Loader.22"), Messages.getString("Loader.23"), Messages.getString("Loader.24"))); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		p2.setDescription(new Description("","","")); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		p2.setDescription(new Description(Messages.getString("Loader.22"), Messages.getString("Loader.23"), Messages.getString("Loader.24"))); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		productDao.save(p2);
 		Product p3 = new Product();
 		p3.setName(new Description(Messages.getString("Loader.28"), Messages.getString("Loader.29"), Messages.getString("Loader.30"))); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		p3.setDescription(new Description("","","")); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		p3.setDescription(new Description(Messages.getString("Loader.28"), Messages.getString("Loader.29"), Messages.getString("Loader.30"))); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		productDao.save(p3);
 		
-//		List<Seller> sellerList = sellerDao.findAll();
-//		List<Principal> plist =  Principal.findAllPrincipals();
-//		System.out.println("xx"); //$NON-NLS-1$
-		
-		// ############# Create Product Picture ###############
-//		ProductPic pic1 = new ProductPic();
-//		pic1.setDescription(new Description(Messages.getString("Loader.31"), Messages.getString("Loader.32"), Messages.getString("Loader.33")));
-//		pic1.setProduct(p1);
-//		pic1.setSellerProduct(sp1);
-//			//Load image file
-//		try{
-//			File fnew=new File("/tmp/rose.jpg");
-//			BufferedImage originalImage=ImageIO.read(fnew);
-//			ByteArrayOutputStream baos=new ByteArrayOutputStream();
-//			ImageIO.write(originalImage, "jpg", baos );
-//			byte[] imageInByte=baos.toByteArray();
-//			pic1.setImage(imageInByte);
-//			pic1.setImageType("jpg");
-//		}
-//		catch(Exception E){
-//		}
-//		pic1.
+		// ########## Create Buyer ############
+		Buyer b1 = new Buyer();
+		b1.setName(new Description(Messages.getString("Loader.37"), Messages.getString("Loader.38"), Messages.getString("Loader.39")));
+		b1.setAddress(new Description(Messages.getString("Loader.40"), Messages.getString("Loader.41"), Messages.getString("Loader.42")));
+		b1.setTelephoneNo("+66876610103");
+			Principal b1p = new Principal();
+			b1p.setUser(b1);
+			b1p.setUserName("buyer1");
+			b1p.setPassword("1234");
+			b1p.setEnabled(true);
+		b1.setPrinciple(b1p);
+		b1.setDescription(new Description(Messages.getString("Loader.37"), Messages.getString("Loader.38"), Messages.getString("Loader.39")));
+		buyerDao.save(b1);
+		Buyer b2 = new Buyer();
+		b2.setName(new Description(Messages.getString("Loader.46"), Messages.getString("Loader.47"), Messages.getString("Loader.48")));
+		b2.setAddress(new Description(Messages.getString("Loader.43"), Messages.getString("Loader.44"), Messages.getString("Loader.45")));
+		b2.setTelephoneNo("18000000000");
+			Principal b2p = new Principal();
+			b2p.setUser(b2);
+			b2p.setUserName("buyer2");
+			b2p.setPassword("1234");
+			b2p.setEnabled(true);
+		b2.setPrinciple(b2p);
+		b2.setDescription(new Description(Messages.getString("Loader.46"), Messages.getString("Loader.47"), Messages.getString("Loader.48")));
+		buyerDao.save(b2);
 		
 		// ########## Create Authority and Authority Principle Assignment
 		Authority a1 = new Authority();
 		a1.setAuthority("ROLE_ADMIN");
-		a1.setRoleId("12345678");
-		AuthorityPrincipalAssignment apa1 = new AuthorityPrincipalAssignment();
-		apa1.setRoleId(a1);
-		apa1.setUsername(s1p);
+		a1.setRoleId("00000000");
 		authorityDao.save(a1);
-		authorityPrincipalAssignmentDao.save(apa1);
-		
 		Authority a2 = new Authority();
-		a2.setAuthority("ROLE_USER");
-		a2.setRoleId("12345679");
+		a2.setAuthority("ROLE_SELLER");
+		a2.setRoleId("00000001");
+		authorityDao.save(a2);
+		Authority a3 = new Authority();
+		a3.setAuthority("ROLE_BUYER");
+		a3.setRoleId("00000002");
+		authorityDao.save(a3);
+		
+		AuthorityPrincipalAssignment apa1 = new AuthorityPrincipalAssignment();
+		apa1.setRoleId(a2);
+		apa1.setUsername(s1p);
+		authorityPrincipalAssignmentDao.save(apa1);
 		AuthorityPrincipalAssignment apa2 = new AuthorityPrincipalAssignment();
 		apa2.setRoleId(a2);
 		apa2.setUsername(s2p);
-		authorityDao.save(a2);
 		authorityPrincipalAssignmentDao.save(apa2);
+		AuthorityPrincipalAssignment apa3 = new AuthorityPrincipalAssignment();
+		apa3.setRoleId(a3);
+		apa3.setUsername(b1p);
+		authorityPrincipalAssignmentDao.save(apa3);
 		
 //		// ########## Create Promotion ##########
 //		Promotion pro1 = new Promotion();
@@ -166,11 +192,13 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 //		date.setTime(1);
 //		pro1.setStopDate(date);
 //		promotionDao.save(pro1);
-		// Create test picture
-		ProductPic pp = new ProductPic();
-		pp.loadFile("/images/test/test.jpg");
-		productPicDao.save(pp);
-		// ########## Create Buyer ############
+		
+//		// Create test picture
+//		ProductPic pp = new ProductPic();
+//		pp.loadFile("/images/test/test.jpg");
+//		productPicDao.save(pp);
+		
+		
 	}
 }
 
