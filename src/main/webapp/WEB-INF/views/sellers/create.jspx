@@ -7,15 +7,14 @@
 	<jsp:directive.page contentType="text/html;charset=UTF-8" />
 	<jsp:output omit-xml-declaration="yes" />
 	<form:multi id="fc_edu_cmucdu_ecommerce_domain_user_Seller"
-		modelAttribute="seller" path="/sellers" render="${empty dependencies}"
-		>
+		modelAttribute="seller" path="/sellers" render="${empty dependencies}">
 		<field:select field="principle"
 			id="c_edu_cmucdu_ecommerce_domain_user_Seller_principle"
 			itemValue="id" items="${principals}" path="/principals"
 			z="bUweOcKBuooWyd4xu41qjSZGZWo=" />
 		<div id="_c_edu_cmucdu_ecommerce_domain_user_Seller_principle_id">
 			<label for="_principle_id">Username : </label> <input id="username"
-				name="username" type="text" />
+				name="username" type="text" value="${username }" />
 		</div>
 		<br />
 		<div id="_c_edu_cmucdu_ecommerce_domain_user_Seller_principle_id">
@@ -65,32 +64,41 @@
 			id="c_edu_cmucdu_ecommerce_domain_user_Seller_images"
 			messageCode="entity_reference_not_managed"
 			messageCodeAttribute="Product Pic" z="aLzn2kBSt7n9mi3daMC434hflDQ=" />
+
+		<tr>
+			<td width="35%"><strong>File to upload</strong></td>
+			<td width="65%"><input type="file" name="uploadImages" /></td>
+		</tr>
+		<tr>
+
+			<td>&#160;</td>
+			<td><input type="submit" name="action" value="Upload" /></td>
+		</tr>
+		<div id="_c_edu_cmucdu_ecommerce_domain_user_Seller_principle_id">
+			<label for="_principle_id">image desc cn : </label> <input
+				id="username" name="img_cn_desc" type="text" />
+		</div>
+		<br />
+		<div id="_c_edu_cmucdu_ecommerce_domain_user_Seller_principle_id">
+			<label for="_principle_id">image desc tha : </label> <input
+				id="username" name="img_thai_desc" type="text" />
+		</div>
+		<br />
+		<div id="_c_edu_cmucdu_ecommerce_domain_user_Seller_principle_id">
+			<label for="_principle_id">image desc eng : </label> <input
+				id="username" name="img_eng_desc" type="text" />
+		</div>
+		<br />
+		<spring:url value="sellers/image" var="imgholder" />
 		
-			<tr>
-				<td width="35%"><strong>File to upload</strong></td> 
-				<td width="65%"><input type="file" name="uploadImages" /></td> 
-			</tr>
-			<tr>
-				
-				<td>&#160;</td> 
-				<td><input type="submit" name="action" value="Upload" /></td> 
-			</tr>
-			<div id="_c_edu_cmucdu_ecommerce_domain_user_Seller_principle_id">
-				<label for="_principle_id">image desc cn : </label> <input
-					id="username" name="img_cn_desc" type="text" />
-			</div>
-			<br />
-			<div id="_c_edu_cmucdu_ecommerce_domain_user_Seller_principle_id">
-				<label for="_principle_id">image desc tha : </label> <input
-					id="username" name="img_thai_desc" type="text" />
-			</div>
-			<br />
-			<div id="_c_edu_cmucdu_ecommerce_domain_user_Seller_principle_id">
-				<label for="_principle_id">image desc eng : </label> <input
-					id="username" name="img_eng_desc" type="text" />
-			</div>
-			<br />
-	
+		<c:set var="i" value="0"/>
+		
+		<c:forEach var="pic" items="${picList}">
+				${pic.localDescription }<br />
+			<img align="right" alt="${pic.localDescription}" src="${imgholder}/${i}" width="100" height="100" />
+			<br/>
+			<c:set var="i" value="${i+1 }"/>
+		</c:forEach>
 	</form:multi>
 	<form:dependency dependencies="${dependencies}"
 		id="d_edu_cmucdu_ecommerce_domain_user_Seller"
