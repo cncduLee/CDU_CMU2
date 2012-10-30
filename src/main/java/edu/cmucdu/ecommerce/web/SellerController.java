@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
@@ -34,11 +35,36 @@ public class SellerController {
 	    SellerDao sellerDao;
 		@Autowired
 	    SellerProductDao sellerProductDao;
-	    
+	    @RequestMapping(method=RequestMethod.POST,produces = "text/html", value ="create",params="Upload")
+	    public String uploadPic(Model uiModel, HttpServletRequest httpServletRequest,
+
+	    				@RequestParam String username, @RequestParam String password,
+	    				// this part is for uploading picture
+	    				@RequestParam(value="action", required=false) String action,
+	    				@RequestParam(value="image", required=false) MultipartFile uploadImages,
+	    				@RequestParam(value="img_cn_desc", required=false) String imgCnDesc,
+	    				@RequestParam(value="img_thai_desc", required=false) String imgThDesc,
+	    				@RequestParam(value="img_eng_desc", required=false) String imgEnDesc){
+	    	System.out.println("uploading");
+	    	return "sellers/create";
+	    }
+		
 	    @RequestMapping(method = RequestMethod.POST, produces = "text/html")
 	    public String create(@Valid Seller seller, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest,
 
-	    				@RequestParam String username, @RequestParam String password) {
+	    				@RequestParam String username, @RequestParam String password,
+	    				// this part is for uploading picture
+	    				@RequestParam(value="action", required=false) String action,
+	    				@RequestParam(value="image", required=false) MultipartFile uploadImages,
+	    				@RequestParam(value="img_cn_desc", required=false) String imgCnDesc,
+	    				@RequestParam(value="img_thai_desc", required=false) String imgThDesc,
+	    				@RequestParam(value="img_eng_desc", required=false) String imgEnDesc) {
+	    	if (action != null && action.equals("Upload"))
+	    	{
+	    		
+	    		
+	    	}
+	    	
 	        if (bindingResult.hasErrors()) {
 	            return "sellers/create";
 	        }

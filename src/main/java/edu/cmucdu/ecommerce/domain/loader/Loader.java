@@ -19,6 +19,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import edu.cmucdu.ecommerce.dao.product.ProductDao;
+import edu.cmucdu.ecommerce.dao.product.ProductPicDao;
 import edu.cmucdu.ecommerce.dao.product.PromotionDao;
 import edu.cmucdu.ecommerce.dao.security.AuthorityDao;
 import edu.cmucdu.ecommerce.dao.security.AuthorityPrincipalAssignmentDao;
@@ -47,7 +48,8 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 	AuthorityPrincipalAssignmentDao authorityPrincipalAssignmentDao;
 //	@Autowired
 //	PromotionDao promotionDao;
-	
+	@Autowired
+	ProductPicDao productPicDao;
 	@Override
 	@Transactional
 	public void onApplicationEvent(ContextRefreshedEvent event) {
@@ -164,7 +166,10 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 //		date.setTime(1);
 //		pro1.setStopDate(date);
 //		promotionDao.save(pro1);
-		
+		// Create test picture
+		ProductPic pp = new ProductPic();
+		pp.loadFile("/images/test/test.jpg");
+		productPicDao.save(pp);
 		// ########## Create Buyer ############
 	}
 }

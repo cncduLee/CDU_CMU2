@@ -1,24 +1,21 @@
 package edu.cmucdu.ecommerce.domain.user;
 
-import java.util.Locale;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
-import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.entity.RooJpaEntity;
 import org.springframework.roo.addon.tostring.RooToString;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
-import org.springframework.web.servlet.support.RequestContextUtils;
 
+import edu.cmucdu.ecommerce.domain.product.ProductPic;
 import edu.cmucdu.ecommerce.domain.user.security.Principal;
 import edu.cmucdu.ecommerce.domain.util.Description;
 import edu.cmucdu.ecommerce.domain.util.LocaleEnum;
-import edu.cmucdu.ecommerce.web.util.WebUtil;
 
 @RooJavaBean
 @RooToString
@@ -32,7 +29,8 @@ public abstract class UserDetail {
 
 	@Transient
 	LocaleEnum locale = LocaleEnum.CHINESE;
-
+	 @OneToMany(cascade = CascadeType.ALL)
+	    private List<ProductPic> images = new ArrayList<ProductPic>();
 	@OneToOne(cascade = CascadeType.ALL)
 	Description name;
 	@OneToOne(cascade = CascadeType.ALL)

@@ -9,7 +9,6 @@
             <table:column id="c_edu_cmucdu_ecommerce_domain_user_Buyer_name" property="name" z="oIRhsdof29ILL2lziXPxIzsGuHU="/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_user_Buyer_description" property="description" z="NGp1IsP9FttoLtey0/7sEF9S9oU="/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_user_Buyer_telephoneNo" property="telephoneNo" z="iKsfkKpOvlqwU90J4hFuwOxYWsI="/>
-            <table:column id="c_edu_cmucdu_ecommerce_domain_user_Buyer_address" property="address" z="HNguQ39HgEXlCXNlR/gs/+WgF1E="/>
         </table:table>
     </page:list>
 </div>
