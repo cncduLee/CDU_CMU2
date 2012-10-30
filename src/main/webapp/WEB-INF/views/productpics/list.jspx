@@ -9,8 +9,7 @@
             <table:column id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_sellerProduct" property="sellerProduct.product.localName" z="user-managed"/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_imageType" property="imageType" z="POnxvUjCzLYZ+rNFLANjOUgwzPQ="/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_url" property="url" z="npe/yre/hQMlnetQIcey0ZlZVSw="/>
-            <table:column id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_description" property="localDescription" z="atF9O34hFtB7He8cADxwDvQayAs="/>
+            <table:column id="c_edu_cmucdu_ecommerce_domain_product_ProductPic_description" property="localDescription" z="user-managed"/>
         </table:table>
     </page:list>
 </div>
-

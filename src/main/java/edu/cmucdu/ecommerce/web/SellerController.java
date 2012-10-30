@@ -121,7 +121,7 @@ public class SellerController {
 		principal.setPassword(password);
 		principal.setEnabled(true);
 		principal.setUser(seller);
-		Authority a = Authority.findAuthoritysByAuthorityLike("ROLE_USER")
+		Authority a = Authority.findAuthoritysByAuthorityLike("ROLE_SELLER")
 				.getResultList().get(0);
 		AuthorityPrincipalAssignment as = new AuthorityPrincipalAssignment();
 		as.setRoleId(a);
