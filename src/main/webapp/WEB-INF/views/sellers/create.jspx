@@ -56,10 +56,16 @@
 		<field:input field="telephoneNo"
 			id="c_edu_cmucdu_ecommerce_domain_user_Seller_telephoneNo"
 			z="ymhrQvpHQQAofiumt4LA9SnGEHQ=" />
+			
+		<!-- Seller Address -->
+        <field:textarea field="address.thaiDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address_thaiDesc"/>
+        <field:textarea field="address.chineseDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address_chineseDesc"/>
+        <field:textarea field="address.englishDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address_englishDesc"/>		
+			
 		<field:select field="address"
 			id="c_edu_cmucdu_ecommerce_domain_user_Seller_address" itemValue="id"
 			items="${descriptions}" path="/descriptions"
-			z="n3iBwOenNmCJXQ4hIn5Jsb5XbJ0=" />
+			z="n3iBwOenNmCJXQ4hIn5Jsb5XbJ0=" render="false"/>
 		<field:simple field="images"
 			id="c_edu_cmucdu_ecommerce_domain_user_Seller_images"
 			messageCode="entity_reference_not_managed"
