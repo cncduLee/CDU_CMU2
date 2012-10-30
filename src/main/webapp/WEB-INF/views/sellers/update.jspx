@@ -22,5 +22,6 @@
         <field:select field="description" id="c_edu_cmucdu_ecommerce_domain_user_Seller_description" itemValue="id" items="${descriptions}" path="/descriptions" render="false"/>
         <field:input field="telephoneNo" id="c_edu_cmucdu_ecommerce_domain_user_Seller_telephoneNo" z="ymhrQvpHQQAofiumt4LA9SnGEHQ="/>
         <field:select field="address" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address" itemValue="id" items="${descriptions}" path="/descriptions" z="n3iBwOenNmCJXQ4hIn5Jsb5XbJ0="/>
+        <field:simple field="images" id="c_edu_cmucdu_ecommerce_domain_user_Seller_images" messageCode="entity_reference_not_managed" messageCodeAttribute="Product Pic" z="aLzn2kBSt7n9mi3daMC434hflDQ="/>
     </form:update>
 </div>
