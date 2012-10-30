@@ -4,11 +4,11 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_edu_cmucdu_ecommerce_domain_product_SellerProduct" items="${sellerproducts}" z="vrZrD0G841kelG/2H3xlOd3uOx4=">
         <table:table data="${sellerproducts}" id="l_edu_cmucdu_ecommerce_domain_product_SellerProduct" path="/sellerproducts" z="qJAsC+g1Ul1E86IQ5q3uQ3aFgS8=">
-            <table:column id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_seller" property="seller" z="esEZw9UiOpqAk/gppC5atw/psPQ="/>
+            <table:column id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_seller" property="seller.localDescription" z="esEZw9UiOpqAk/gppC5atw/psPQ="/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_price" property="price" z="IsmmtC03mRh+WNKmLl4b3BDOUZE="/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_weight" property="weight" z="k2wRxzFwr+xfSJJhI4J54JVZVFA="/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_promotion" property="promotion" z="n9MKLtdcnw1k8WEst8O6ZU2/2/4="/>
-            <table:column id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_product" property="product" z="2wS6723BPrxjWOsgnXZ//hmi0vg="/>
+            <table:column id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_product" property="product.localDescription" z="2wS6723BPrxjWOsgnXZ//hmi0vg="/>
         </table:table>
     </page:list>
 </div>

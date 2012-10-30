@@ -56,7 +56,7 @@ public abstract class UserDetail {
 	@OneToOne(cascade = CascadeType.ALL)
 	Description address;
 	
-	public String getLocalAddres()
+	public String getLocalAddress()
 	{
 		return address.getLocalDescription();
 	}

@@ -8,6 +8,6 @@
         <field:display field="localName" id="s_edu_cmucdu_ecommerce_domain_user_Seller_name" object="${seller}"/>
         <field:display field="localDescription" id="s_edu_cmucdu_ecommerce_domain_user_Seller_description" object="${seller}"/>
         <field:display field="telephoneNo" id="s_edu_cmucdu_ecommerce_domain_user_Seller_telephoneNo" object="${seller}" z="dJCYkTuAFKtX0xX3tVwrqx5f6qA="/>
-        <field:display field="address" id="s_edu_cmucdu_ecommerce_domain_user_Seller_address" object="${seller}" z="Vp3VictsCMJoazjT4eS4HNhJ/iI="/>
+        <field:display field="localAddress" id="s_edu_cmucdu_ecommerce_domain_user_Seller_address" object="${seller}" z="user-managed"/>
     </page:show>
 </div>
