@@ -10,11 +10,11 @@
         <field:textarea field="description.chineseDesc" id="c_edu_cmucdu_ecommerce_domain_product_Product_description_chineseDesc"/>
         <field:textarea field="description.englishDesc" id="c_edu_cmucdu_ecommerce_domain_product_Product_description_englishDesc"/>
         
-        <field:select field="images" id="c_edu_cmucdu_ecommerce_domain_product_Product_images" itemValue="id" items="${descriptions}" path="/descriptions"/>
-        <field:select field="name" id="c_edu_cmucdu_ecommerce_domain_product_Product_name" itemValue="id" items="${descriptions}" path="/descriptions" z="umIu3SNKDYJ7HaxSFCoKczuYjTI="/>
-        <field:select field="description" id="c_edu_cmucdu_ecommerce_domain_product_Product_description" itemValue="id" items="${descriptions}" path="/descriptions" z="ANmLPceYjYfHtGACICyj1awDOBE="/>
+        <field:select field="images" id="c_edu_cmucdu_ecommerce_domain_product_Product_images" itemValue="id" items="${descriptions}" path="/descriptions" render="false"/>
+        <field:select field="name" id="c_edu_cmucdu_ecommerce_domain_product_Product_name" itemValue="id" items="${descriptions}" path="/descriptions" z="umIu3SNKDYJ7HaxSFCoKczuYjTI=" render="false"/>
+        <field:select field="description" id="c_edu_cmucdu_ecommerce_domain_product_Product_description" itemValue="id" items="${descriptions}" path="/descriptions" z="ANmLPceYjYfHtGACICyj1awDOBE=" render="false"/>
         <field:simple field="sellerProducts" id="c_edu_cmucdu_ecommerce_domain_product_Product_sellerProducts" messageCode="entity_reference_not_managed" messageCodeAttribute="Seller Product" z="Y1zikx3jLKupAibbS1RGnl9oFEo="/>
-        <field:input field="locale" id="c_edu_cmucdu_ecommerce_domain_product_Product_locale" z="0vpj7VdgftMtsydkNBfQJz6fi8k="/>
+        <field:input field="locale" id="c_edu_cmucdu_ecommerce_domain_product_Product_locale" z="0vpj7VdgftMtsydkNBfQJz6fi8k=" render="false"/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_edu_cmucdu_ecommerce_domain_product_Product" render="${not empty dependencies}" z="OLKSQJz8IOsmx8uJ+oLg7K3ySz4="/>
 </div>

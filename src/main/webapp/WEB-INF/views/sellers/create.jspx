@@ -6,6 +6,18 @@
 	xmlns:spring="http://www.springframework.org/tags" version="2.0">
 	<jsp:directive.page contentType="text/html;charset=UTF-8" />
 	<jsp:output omit-xml-declaration="yes" />
+	
+	<script language="javascript"> 
+		function validatePass(p1, p2) 
+		{
+		    if (p1.value != p2.value || p1.value == '' || p2.value == '') {
+		        p2.setCustomValidity('Passwords are not match!');
+		    } else {
+		        p2.setCustomValidity('');
+		    }
+		}
+	</script>
+	
 	<form:multi id="fc_edu_cmucdu_ecommerce_domain_user_Seller"
 		modelAttribute="seller" path="/sellers" render="${empty dependencies}">
 		<field:select field="principle"
@@ -17,15 +29,17 @@
 				name="username" type="text" value="${username }" />
 		</div>
 		<br />
-		<div id="_c_edu_cmucdu_ecommerce_domain_user_Seller_principle_id">
+		<div id="_c_edu_cmucdu_ecommerce_domain_user_Buyer_principle_id">
 			<label for="_principle_id">Password : </label> <input id="password"
 				name="password" type="password" />
 		</div>
 		<br />
-		<div id="_c_edu_cmucdu_ecommerce_domain_user_Seller_principle_id">
+		<div id="_c_edu_cmucdu_ecommerce_domain_user_Buyer_principle_id">
 			<label for="_principle_id">Confirm password : </label> <input
-				id="password2" name="password2" type="password" />
-		</div>
+				id="password2" name="password2" type="password"
+				onfocus="validatePass(document.getElementById('password'), this);" 
+				oninput="validatePass(document.getElementById('password'), this);"/>
+        </div>
 		<br />
 		<field:input field="locale"
 			id="c_edu_cmucdu_ecommerce_domain_user_Seller_locale" render="false"

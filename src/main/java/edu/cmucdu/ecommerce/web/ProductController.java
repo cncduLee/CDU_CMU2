@@ -31,6 +31,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.support.RequestContextUtils;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
@@ -42,6 +43,7 @@ import edu.cmucdu.ecommerce.web.util.WebUtil;
 @RequestMapping("/products")
 @Controller
 @RooWebScaffold(path = "products", formBackingObject = Product.class)
+@SessionAttributes("picList")
 public class ProductController {
 
 	@Autowired
