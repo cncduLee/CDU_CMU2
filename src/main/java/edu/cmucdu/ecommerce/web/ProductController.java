@@ -1,11 +1,15 @@
 package edu.cmucdu.ecommerce.web;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.Locale;
 import java.util.Set;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import edu.cmucdu.ecommerce.dao.product.ProductDao;
@@ -15,6 +19,7 @@ import edu.cmucdu.ecommerce.domain.product.Product;
 import edu.cmucdu.ecommerce.domain.product.ProductPic;
 import edu.cmucdu.ecommerce.domain.util.LocaleEnum;
 
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.filefilter.FalseFileFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -53,7 +58,13 @@ public class ProductController {
 			HttpServletRequest httpRequest) {
 		Product p = productDao.findOne(id);
 		p.setLocale(WebUtil.getLocaleEnum(httpRequest));
-		uiModel.addAttribute("product", productDao.findOne(id));
+		
+		List<ProductPic> pics = p.getImages();
+    	for(ProductPic pic:pics){
+    		pic.setUrl(httpRequest.getContextPath()+"/productpics/showpic/"+pic.getId());
+    	}
+    	
+		uiModel.addAttribute("product", p);
 		uiModel.addAttribute("itemId", id);
 		return "products/show";
 	}
@@ -172,5 +183,25 @@ public class ProductController {
 		}
 		return pathSegment;
 	}
+
+//	@RequestMapping(value = "/showpic/{id}", method = RequestMethod.GET)
+//	public String showdoc(@PathVariable("id") Long id,
+//			HttpServletResponse response, Model model) {
+//		ProductPic pic = productPicDao.findOne(id);
+//		try {
+//			response.setHeader("Content-Disposition", "inline;filename=\""
+//					+ pic.getUrl() + "\"");
+//			OutputStream out = response.getOutputStream();
+//			response.setContentType(pic.getImageType());
+//
+//			IOUtils.copy(new ByteArrayInputStream(pic.getImage()), out);
+//			out.flush();
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		return null;
+//	}
 
 }
