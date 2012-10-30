@@ -38,7 +38,10 @@
             </spring:escapeBody>
           </c:when>
           <c:otherwise>
-            <spring:eval expression="object[field]" />
+            <!--<spring:eval expression="object[field]" />
+            	change it for showing the informatoin inside the object-->
+            	<spring:eval expression="object.${field}"  />
+            
           </c:otherwise>
         </c:choose>
       </div>
