@@ -5,10 +5,10 @@
     <page:list id="pl_edu_cmucdu_ecommerce_domain_user_Seller" items="${sellers}" z="pHWowKXbBCb4zS45j5e7z3QkQrg=">
         <table:table data="${sellers}" id="l_edu_cmucdu_ecommerce_domain_user_Seller" path="/sellers" z="Qye5EmrfJFv9U+NbA5MR270yBZs=">
             <table:column id="c_edu_cmucdu_ecommerce_domain_user_Seller_principle" property="principle.username" z="user-managed"/>
-            <table:column id="c_edu_cmucdu_ecommerce_domain_user_Seller_locale" property="locale" z="uoD/emilEHfP9YXkvjUcdMriEFE="/>
+            <table:column id="c_edu_cmucdu_ecommerce_domain_user_Seller_locale" property="locale" z="user-managed" render="false"/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_user_Seller_name" property="localName"/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_user_Seller_description" property="localDescription"/>
-            <table:column id="c_edu_cmucdu_ecommerce_domain_user_Seller_telephoneNo" property="telephoneNo" z="TKBpTJjcpq8QA8qSppNHw2HZ74c="/>
+            <table:column id="c_edu_cmucdu_ecommerce_domain_user_Seller_telephoneNo" property="telephoneNo" z="user-managed"/>
         </table:table>
     </page:list>
 </div>

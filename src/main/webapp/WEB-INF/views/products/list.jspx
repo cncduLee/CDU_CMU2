@@ -6,7 +6,7 @@
         <table:table data="${products}" id="l_edu_cmucdu_ecommerce_domain_product_Product" path="/products" z="dv8t5TiUN0MDBNG1Z2B/EbCDtKI=">
             <table:column id="c_edu_cmucdu_ecommerce_domain_product_Product_name" property="localName" z="user-managed"/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_product_Product_description" property="localDescription" z="user-managed"/>
-            <table:column id="c_edu_cmucdu_ecommerce_domain_product_Product_locale" property="locale" z="dxPE+Ai84FvxhYe6uUplqOV9T6Y="/>
+            <table:column id="c_edu_cmucdu_ecommerce_domain_product_Product_locale" property="locale" z="user-managed" render="false"/>
         </table:table>
     </page:list>
 </div>

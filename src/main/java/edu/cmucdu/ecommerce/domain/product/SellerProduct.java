@@ -52,4 +52,11 @@ public class SellerProduct {
 	public void setLocale(LocaleEnum locale){
 		this.locale = locale;
 	}
+
+	public void setImages(List<ProductPic> images) {
+        this.images = images;
+        for (ProductPic productPic : images) {
+			productPic.setSellerProduct(this);
+		}
+    }
 }

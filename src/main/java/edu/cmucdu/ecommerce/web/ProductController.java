@@ -186,9 +186,9 @@ public class ProductController {
 		((ModelMap) uiModel).clear();
 		status.setComplete();
 		
-		List<ProductPic> all = productPicDao.findAll();
+//		List<ProductPic> all = productPicDao.findAll();
 		Product product = new Product();
-		product.setImages(all);
+//		product.setImages(all);
 		
 		populateEditForm(uiModel,product);
 		return "products/create";

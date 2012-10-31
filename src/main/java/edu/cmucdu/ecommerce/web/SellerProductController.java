@@ -130,10 +130,12 @@ public class SellerProductController {
 			populateEditForm(uiModel, sellerProduct);
 			return "sellerproducts/create";
 		}
-		uiModel.asMap().clear();
 		
-		//sellerProduct.setImages((picList));
+		System.out.println(picList.size());
+		sellerProduct.setImages((picList));
+//		productPicDao.save(picList);
 		sellerProductDao.save(sellerProduct);
+		uiModel.asMap().clear();
 		return "redirect:/sellerproducts/"
 				+ encodeUrlPathSegment(sellerProduct.getId().toString(),
 						httpServletRequest);
@@ -157,6 +159,8 @@ public class SellerProductController {
 		
 		SellerProduct sellerProduct = sellerProductDao.findOne(id);
 		sellerProduct.setLocale(WebUtil.getLocaleEnum(httpServletRequest));
+		
+		
 		
 		uiModel.addAttribute("sellerproduct", sellerProductDao.findOne(id));
 		uiModel.addAttribute("itemId", id);

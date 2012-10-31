@@ -13,7 +13,7 @@
         <field:select field="promotion" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_promotion" itemValue="id" items="${promotions}" path="/promotions" z="AqEBxhzZwAlr9cNzGpBQuz9QjOc=" render="false"/>
         <field:select field="product" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_product" itemLabel="localName" itemValue="id" items="${products}" path="/products" z="user-managed"/>
         <field:datetime dateTimePattern="${sellerProduct_readydate_date_format}" field="readyDate" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_readyDate" z="rdAIg+WHw6f5KKMxYPzqvvdszAg="/>
-        <field:simple field="images" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_seller" messageCode="entity_reference_not_managed" messageCodeAttribute="Product Pic" z="aLzn2kBSt7n9mi3daMC434hflDQ="/>
+        <field:simple field="images" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_seller" messageCode="entity_reference_not_managed" messageCodeAttribute="Product Pic" z="user-managed" render="false"/>
         <tr>
             <td width="35%">
                 <strong>File to upload</strong>

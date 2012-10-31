@@ -3,8 +3,8 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_edu_cmucdu_ecommerce_domain_user_security_AuthorityPrincipalAssignment" modelAttribute="authorityPrincipalAssignment" path="/authorityprincipalassignments" render="${empty dependencies}" z="zb6paguOjBl3duzdSKyATMZRXzY=">
-        <field:select field="username" id="c_edu_cmucdu_ecommerce_domain_user_security_AuthorityPrincipalAssignment_username" itemValue="id" items="${principals}" path="/principals" z="sYT4+5CIn37UMjGrJi2OpPv7Vds="/>
-        <field:select field="roleId" id="c_edu_cmucdu_ecommerce_domain_user_security_AuthorityPrincipalAssignment_roleId" itemValue="id" items="${authoritys}" path="/authoritys" z="1B7e2pmKkFWaPL+Ye88d+HlEsyw="/>
+        <field:select field="username" id="c_edu_cmucdu_ecommerce_domain_user_security_AuthorityPrincipalAssignment_username" itemLabel="username.username" itemValue="id" items="${principals}" path="/principals" z="sYT4+5CIn37UMjGrJi2OpPv7Vds="/>
+        <field:select field="roleId" id="c_edu_cmucdu_ecommerce_domain_user_security_AuthorityPrincipalAssignment_roleId" itemValue="roleId" items="${authoritys}" path="/authoritys" z="1B7e2pmKkFWaPL+Ye88d+HlEsyw="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_edu_cmucdu_ecommerce_domain_user_security_AuthorityPrincipalAssignment" render="${not empty dependencies}" z="lisFx3PmA2c6KwnWb7uww5fPaaw="/>
 </div>

@@ -24,7 +24,7 @@
 		<field:select field="principle"
 			id="c_edu_cmucdu_ecommerce_domain_user_Buyer_principle"
 			itemValue="id" items="${principals}" path="/principals"
-			z="user-managed" />
+			z="user-managed" render="false"/>
 		<div id="_c_edu_cmucdu_ecommerce_domain_user_Buyer_principle_id">
 			<label for="_principle_id">Username : </label> <input id="username"
 				name="username" type="text" />
@@ -63,7 +63,7 @@
         <field:textarea field="address.chineseDesc" id="c_edu_cmucdu_ecommerce_domain_user_Buyer_address_chineseDesc"/>
         <field:textarea field="address.englishDesc" id="c_edu_cmucdu_ecommerce_domain_user_Buyer_address_englishDesc"/>
         <field:select field="address" id="c_edu_cmucdu_ecommerce_domain_user_Buyer_address" itemValue="id" items="${descriptions}" path="/descriptions" render="false" z="user-managed"/>
-        <field:simple field="images" id="c_edu_cmucdu_ecommerce_domain_user_Buyer_images" messageCode="entity_reference_not_managed" messageCodeAttribute="Product Pic" z="UNojGjmA9BiBVl9kfCdU7j++jIY="/>
+        <field:simple field="images" id="c_edu_cmucdu_ecommerce_domain_user_Buyer_images" messageCode="entity_reference_not_managed" messageCodeAttribute="Product Pic" z="UNojGjmA9BiBVl9kfCdU7j++jIY=" render="false"/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_edu_cmucdu_ecommerce_domain_user_Buyer" render="${not empty dependencies}" z="SIGxJR8Y4YzHLSMWiJS0acteQKE="/>
 </div>

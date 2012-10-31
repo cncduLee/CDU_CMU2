@@ -13,7 +13,7 @@
 		}
 	</script>
     <form:multi id="fc_edu_cmucdu_ecommerce_domain_user_Seller" modelAttribute="seller" path="/sellers" render="${empty dependencies}">
-        <field:select field="principle" id="c_edu_cmucdu_ecommerce_domain_user_Seller_principle" itemValue="id" items="${principals}" path="/principals" z="bUweOcKBuooWyd4xu41qjSZGZWo="/>
+        <field:select field="principle" id="c_edu_cmucdu_ecommerce_domain_user_Seller_principle" itemValue="id" items="${principals}" path="/principals" z="bUweOcKBuooWyd4xu41qjSZGZWo=" render="false"/>
         <div id="_c_edu_cmucdu_ecommerce_domain_user_Seller_principle_id">
             <label for="_principle_id">Username : </label>
             <input id="username" name="username" type="text"/>
@@ -45,7 +45,7 @@
         <field:textarea field="address.chineseDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address_chineseDesc"/>
         <field:textarea field="address.englishDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address_englishDesc"/>
         <field:select field="address" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address" itemValue="id" items="${descriptions}" path="/descriptions" render="false" z="user-managed"/>
-        <field:simple field="images" id="c_edu_cmucdu_ecommerce_domain_user_Seller_images" messageCode="entity_reference_not_managed" messageCodeAttribute="Product Pic" z="aLzn2kBSt7n9mi3daMC434hflDQ="/>
+        <field:simple field="images" id="c_edu_cmucdu_ecommerce_domain_user_Seller_images" messageCode="entity_reference_not_managed" messageCodeAttribute="Product Pic" z="aLzn2kBSt7n9mi3daMC434hflDQ=" render="false"/>
         <tr>
             <td width="35%">
                 <strong>File to upload</strong>

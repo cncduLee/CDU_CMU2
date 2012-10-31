@@ -51,5 +51,10 @@ public class Product {
 		return description.getLocalDescription();
 	}
 	
-
+	public void setImages(List<ProductPic> images) {
+		this.images = images;
+        for (ProductPic productPic : images) {
+			productPic.setProduct(this);
+		}
+    }
 }

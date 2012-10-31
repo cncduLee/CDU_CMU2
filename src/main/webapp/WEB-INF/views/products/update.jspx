@@ -9,10 +9,10 @@
         <field:textarea field="description.thaiDesc" id="c_edu_cmucdu_ecommerce_domain_product_Product_description_thaiDesc" z="ANmLPceYjYfHtGACICyj1awDOBE="/>
         <field:textarea field="description.chineseDesc" id="c_edu_cmucdu_ecommerce_domain_product_Product_description_chineseDesc" z="ANmLPceYjYfHtGACICyj1awDOBE="/>
         <field:textarea field="description.englishDesc" id="c_edu_cmucdu_ecommerce_domain_product_Product_description_englishDesc" z="ANmLPceYjYfHtGACICyj1awDOBE="/>
-        <field:simple field="images" id="c_edu_cmucdu_ecommerce_domain_product_Product_images" messageCode="entity_reference_not_managed" messageCodeAttribute="Product Pic" z="BkQRn2UjwQCCuOJ1MtlILnCoAmg="/>
-        <field:select field="name" id="c_edu_cmucdu_ecommerce_domain_product_Product_name" itemValue="id" items="${descriptions}" path="/descriptions" z="umIu3SNKDYJ7HaxSFCoKczuYjTI="/>
-        <field:select field="description" id="c_edu_cmucdu_ecommerce_domain_product_Product_description" itemValue="id" items="${descriptions}" path="/descriptions" z="ANmLPceYjYfHtGACICyj1awDOBE="/>
-        <field:input field="locale" id="c_edu_cmucdu_ecommerce_domain_product_Product_locale" z="0vpj7VdgftMtsydkNBfQJz6fi8k="/>
-        <field:simple field="sellerProducts" id="c_edu_cmucdu_ecommerce_domain_product_Product_sellerProducts" messageCode="entity_reference_not_managed" messageCodeAttribute="Seller Product" z="Y1zikx3jLKupAibbS1RGnl9oFEo="/>
+        <field:simple field="images" id="c_edu_cmucdu_ecommerce_domain_product_Product_images" messageCode="entity_reference_not_managed" messageCodeAttribute="Product Pic" z="BkQRn2UjwQCCuOJ1MtlILnCoAmg=" render="false"/>
+        <field:select field="name" id="c_edu_cmucdu_ecommerce_domain_product_Product_name" itemValue="id" items="${descriptions}" path="/descriptions" z="umIu3SNKDYJ7HaxSFCoKczuYjTI=" render="false"/>
+        <field:select field="description" id="c_edu_cmucdu_ecommerce_domain_product_Product_description" itemValue="id" items="${descriptions}" path="/descriptions" z="ANmLPceYjYfHtGACICyj1awDOBE=" render="false"/>
+        <field:input field="locale" id="c_edu_cmucdu_ecommerce_domain_product_Product_locale" z="0vpj7VdgftMtsydkNBfQJz6fi8k=" render="false"/>
+        <field:simple field="sellerProducts" id="c_edu_cmucdu_ecommerce_domain_product_Product_sellerProducts" messageCode="entity_reference_not_managed" messageCodeAttribute="Seller Product" z="Y1zikx3jLKupAibbS1RGnl9oFEo=" render="false"/>
     </form:update>
 </div>
