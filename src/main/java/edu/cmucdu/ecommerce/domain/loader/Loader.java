@@ -77,7 +77,7 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 			//Set principle
 			Principal s2p = new Principal();
 			s2p.setUser(s2);
-			s2p.setEnabled(false);
+			s2p.setEnabled(true);
 			s2p.setUsername("seller2"); //$NON-NLS-1$
 			s2p.setPassword("1234"); //$NON-NLS-1$
 		s2.setPrinciple(s2p);

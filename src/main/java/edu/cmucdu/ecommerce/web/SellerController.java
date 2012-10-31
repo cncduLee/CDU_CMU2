@@ -110,10 +110,12 @@ public class SellerController {
 				picList.add(pp);
 				uiModel.addAttribute("picList", picList);
 			}
+			populateEditForm(uiModel, seller);
 			return "sellers/create";
 		}
 
 		if (bindingResult.hasErrors()) {
+			populateEditForm(uiModel, seller);
 			return "sellers/create";
 		}
 		Principal principal = new Principal();

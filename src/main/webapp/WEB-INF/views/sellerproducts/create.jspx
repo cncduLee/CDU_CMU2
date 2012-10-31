@@ -2,13 +2,57 @@
 <div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <form:create id="fc_edu_cmucdu_ecommerce_domain_product_SellerProduct" modelAttribute="sellerProduct" path="/sellerproducts" render="${empty dependencies}" z="StzYG+/UT8eqbjOAA+uewSde5EU=">
-        <field:simple field="images" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_images" messageCode="entity_reference_not_managed" messageCodeAttribute="Product Pic" z="2fdE/aj6XQkHmmR4VzclPtwNyNg="/>
-        <field:select field="seller" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_seller" itemLabel="localName" itemValue="id" items="${sellers}" path="/sellers" z="user-managed"/>
+    <form:multi id="fc_edu_cmucdu_ecommerce_domain_product_SellerProduct" modelAttribute="sellerProduct" path="/sellerproducts" render="${empty dependencies}" z="user-managed" >
+    	<c:forEach items="${sellers}" var="seller">
+    		<input type="hidden" name="seller" value="${seller.id}"></input>
+   		</c:forEach>
+        <field:simple field="images" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_images" messageCode="entity_reference_not_managed" messageCodeAttribute="Product Pic" z="2fdE/aj6XQkHmmR4VzclPtwNyNg=" render="false"/>
+        <field:select render="false" field="seller" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_seller" itemLabel="localName" itemValue="id" items="${sellers}" path="/sellers" z="user-managed"/>
         <field:input field="price" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_price" z="zADCO17bGYBZuZ6qQ8szvk0qtKE="/>
         <field:input field="weight" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_weight" z="FEs8qrO9SzhjyEcfmh4sp+9VUQk="/>
-        <field:select field="promotion" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_promotion" itemValue="id" items="${promotions}" path="/promotions" z="AqEBxhzZwAlr9cNzGpBQuz9QjOc="/>
+        <field:select field="promotion" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_promotion" itemValue="id" items="${promotions}" path="/promotions" z="AqEBxhzZwAlr9cNzGpBQuz9QjOc=" render="false"/>
         <field:select field="product" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_product" itemLabel="localName" itemValue="id" items="${products}" path="/products" z="user-managed"/>
-    </form:create>
+        <field:datetime dateTimePattern="${sellerProduct_readydate_date_format}" field="readyDate" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_readyDate" z="rdAIg+WHw6f5KKMxYPzqvvdszAg="/>
+        <field:simple field="images" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_seller" messageCode="entity_reference_not_managed" messageCodeAttribute="Product Pic" z="aLzn2kBSt7n9mi3daMC434hflDQ="/>
+        <tr>
+            <td width="35%">
+                <strong>File to upload</strong>
+            </td>
+            <td width="65%">
+                <input name="uploadImages" type="file"/>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input name="action" type="submit" value="Upload"/>
+            </td>
+        </tr>
+        <br/>
+        <br/>
+        <div id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_seller">
+            <label for="_principle_id">image desc cn : </label>
+            <input id="username" name="img_cn_desc" type="text"/>
+        </div>
+        <br/>
+        <div id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_seller">
+            <label for="_principle_id">image desc tha : </label>
+            <input id="username" name="img_thai_desc" type="text"/>
+        </div>
+        <br/>
+        <div id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_seller">
+            <label for="_principle_id">image desc eng : </label>
+            <input id="username" name="img_eng_desc" type="text"/>
+        </div>
+        <br/>
+        <spring:url value="sellerproducts/image" var="imgholder"/>
+        <c:set value="0" var="i"/>
+        <c:forEach items="${picList}" var="pic">
+				${pic.localDescription }<br/>
+            <img align="right" alt="${pic.localDescription}" height="100" src="${imgholder}/${i}" width="100"/>
+            <br/>
+            <c:set value="${i+1 }" var="i"/>
+        </c:forEach>
+    </form:multi>
     <form:dependency dependencies="${dependencies}" id="d_edu_cmucdu_ecommerce_domain_product_SellerProduct" render="${not empty dependencies}" z="Uws9/zzxmpX+XM4ba+pjXO6vdbo="/>
 </div>

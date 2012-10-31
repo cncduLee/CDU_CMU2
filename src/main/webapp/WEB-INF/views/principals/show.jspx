@@ -6,8 +6,8 @@
         <field:display field="password" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_password" object="${principal}" z="U9+RmQA5F8D5qo8hxFsyVrtLtHg="/>
         <field:display field="enabled" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_enabled" object="${principal}" z="/UAfsf6kYgQ9I+JThZcMYNK52Ik="/>
         <field:display field="user" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_user" object="${principal}" z="bRagRVthoyxqKteAIYxFPs5EeD8="/>
-        <field:display field="username" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_username" object="${principal}" z="dkuDilbcUqcftaA7KOyXqBBCtck="/>
         <field:display field="authorities" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_authorities" object="${principal}" z="2Iy5+KwmpRICmOzIlcPpUWX+cG0="/>
+        <field:display field="username" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_username" object="${principal}" z="dkuDilbcUqcftaA7KOyXqBBCtck="/>
         <field:display field="isAccountNonExpired" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_isAccountNonExpired" object="${principal}" z="5yOuPeGKMwAqYApahdfYVU+mVoY="/>
         <field:display field="isAccountNonLocked" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_isAccountNonLocked" object="${principal}" z="qXia8BElDdsDCp3qZLY558M+aDI="/>
         <field:display field="isCredentialsNonExpired" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_isCredentialsNonExpired" object="${principal}" z="l4m3Wj6oWI2tYO/wgYgCN/xudCU="/>

@@ -171,6 +171,7 @@ public class ProductController {
 			return "products/create";
 		}
 		uiModel.asMap().clear();
+		product.setImages(picList);
 		productDao.save(product);
 		return "redirect:/products/"
 				+ encodeUrlPathSegment(product.getId().toString(),
