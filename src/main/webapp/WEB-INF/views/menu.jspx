@@ -15,9 +15,6 @@
             <menu:item id="i_authorityprincipalassignment_new" messageCode="global_menu_new" url="/security/assignments?form" z="aS8SQaOLVMFADzUKt/vBn1nw3aI="/>
             <menu:item id="i_authorityprincipalassignment_list" messageCode="global_menu_list" url="/security/assignments?page=1&amp;size=${empty param.size ? 10 : param.size}" z="phqoEU9/Sjen2SjxV5//Ozel1iQ="/>
         </menu:category>
-        <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
-            <menu:item id="i_controller__productindex_id" messageCode="global_generic" url="/product/index" z="tM4aYXS1zcP2S0/wp3l9m3l1PVE="/>
-        </menu:category>
         <menu:category id="c_seller" z="WlsOMc1O7s/g2W1aWsDxWyIlXs4=">
             <menu:item id="i_seller_new" messageCode="global_menu_new" url="/sellers?form" z="P5b2bMOsiz3w1RhqEWW5MdlEqwA="/>
             <menu:item id="i_seller_list" messageCode="global_menu_list" url="/sellers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="57f7mMa6rXXGgX7UBUaUGHmBSqg="/>
@@ -33,9 +30,6 @@
         <menu:category id="c_buyer" z="kIEE3hLmmDLgMTPxq2eBlp7R1ic=">
             <menu:item id="i_buyer_new" messageCode="global_menu_new" url="/buyers?form" z="WKxu17ik/+xlNBRQuGRN36PA2co="/>
             <menu:item id="i_buyer_list" messageCode="global_menu_list" url="/buyers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="nitmKiX+WSbesR2U/upt2PATDX0="/>
-        </menu:category>
-        <menu:category id="c_description" z="s7vOl24zr/ofpwK14cu3ShgS1Hg=">
-            <menu:item id="i_description_new" messageCode="global_menu_new" url="/descriptions?form" z="+c/Tpm1OItzEAa4EN9kACH94LKg="/>
         </menu:category>
         <menu:category id="c_sellerproduct" z="EgPESFNhdFfBkQxeJa56QZnWqQg=">
             <menu:item id="i_sellerproduct_new" messageCode="global_menu_new" url="/sellerproducts?form" z="QpVSj7TIXvnpGn9VYQU0bhaUrcU="/>
