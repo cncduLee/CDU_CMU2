@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:sform="http://www.springframework.org/tags/form" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_edu_cmucdu_ecommerce_domain_user_security_Principal" modelAttribute="principal" path="/security/users" render="${empty dependencies}" z="mVnWRNQsyzya9iM2C7W740+QwIs=">
-        <field:textarea field="username" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_userName" required="true" z="CiRTvofHemT1S987RJcihKYL/XM="/>
-        <field:textarea field="password" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_password" required="true" z="0RF68bojrycWF4zXLDLp+5nfpiE="/>
-        <field:checkbox field="enabled" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_enabled" z="tvmOwEcrhTDPiIDTRAXdYcPX3Ow="/>
-        <field:select field="user" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_user" itemLabel="localName" itemValue="id" items="${userdetails}" path="/userdetails" z="user-managed"/>
-        <!-- <sform:select path="user" id="_user_id">
-			<sform:options items="${userdetails}" itemValue="id"
-			/>
-		</sform:select> -->
-        <field:textarea field="username" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_username" required="true" z="lVkdOFeCYHGCe4r53/B3RXVtcuQ="/>
         <field:input field="authorities" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_authorities" z="Lft3yc+a+kQk1fJrgIOkhTwfNuQ="/>
+        <field:textarea field="password" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_password" required="true" z="0RF68bojrycWF4zXLDLp+5nfpiE="/>
+        <field:textarea field="username" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_username" required="true" z="lVkdOFeCYHGCe4r53/B3RXVtcuQ="/>
+        <field:checkbox field="checkEnabled" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_checkEnabled" z="tzaxY6V6nAB2Lbre+kipGXtCIT8="/>
+        <field:select field="user" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_user" itemValue="id" items="${userdetails}" path="/userdetails" z="kXCLutt6vrVpvoB6ytSkOXyBa5A="/>
         <field:checkbox field="isAccountNonExpired" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_isAccountNonExpired" z="faHlTJXgAoVEyZtajOp3awgJKmc="/>
         <field:checkbox field="isAccountNonLocked" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_isAccountNonLocked" z="74tfbWDILxoy1O3SVSGWV/VouSg="/>
         <field:checkbox field="isCredentialsNonExpired" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_isCredentialsNonExpired" z="kQeBPJyFGuYDR6sLUGKLnMBdyNI="/>

@@ -7,8 +7,6 @@
 <definition extends="default" name="products/show">
         <put-attribute name="body" value="/WEB-INF/views/products/show.jspx"/>
     </definition>
-
-
 <definition extends="default" name="products/create">
         <put-attribute name="body" value="/WEB-INF/views/products/create.jspx"/>
     </definition>

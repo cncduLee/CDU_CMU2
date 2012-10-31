@@ -5,23 +5,11 @@
     <form:update id="fu_edu_cmucdu_ecommerce_domain_user_Seller" modelAttribute="seller" path="/sellers" versionField="Version" z="xYT5xak+aGq3Tg7wGtRCilyulCo=">
         <field:select field="principle" id="c_edu_cmucdu_ecommerce_domain_user_Seller_principle" itemValue="id" items="${principals}" path="/principals" z="bUweOcKBuooWyd4xu41qjSZGZWo="/>
         <field:input field="locale" id="c_edu_cmucdu_ecommerce_domain_user_Seller_locale" z="YDnfb4X+fe+wH+VGqBNYWteNfm8="/>
-        <field:simple field="products" id="c_edu_cmucdu_ecommerce_domain_user_Seller_products" messageCode="entity_reference_not_managed" messageCodeAttribute="Seller Product" z="XcFhhoX7FdM9RBwZHXFrGS5wsS0="/>
-        <field:input field="name.thaiDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_name_thaiDesc"/>
-        <field:input field="name.chineseDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_name_chineseDesc"/>
-        <field:input field="name.englishDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_name_englishDesc"/>
-        <field:textarea field="description.thaiDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_description_thaiDesc"/>
-        <field:textarea field="description.chineseDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_description_chineseDesc"/>
-        <field:textarea field="description.englishDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_description_englishDesc"/>
-        <!-- 
+        <field:simple field="images" id="c_edu_cmucdu_ecommerce_domain_user_Seller_images" messageCode="entity_reference_not_managed" messageCodeAttribute="Product Pic" z="aLzn2kBSt7n9mi3daMC434hflDQ="/>
         <field:select field="name" id="c_edu_cmucdu_ecommerce_domain_user_Seller_name" itemValue="id" items="${descriptions}" path="/descriptions" z="fWlgUe3wq5tz6Mou2/IQ+5zqGdg="/>
         <field:select field="description" id="c_edu_cmucdu_ecommerce_domain_user_Seller_description" itemValue="id" items="${descriptions}" path="/descriptions" z="An3vK93yeiluYQiwkBMSp2nN7VU="/>
-        <field:select field="name" id="c_edu_cmucdu_ecommerce_domain_user_Seller_name" itemValue="id" items="${descriptions}" path="/descriptions" z="fWlgUe3wq5tz6Mou2/IQ+5zqGdg="/>
-        <field:select field="description" id="c_edu_cmucdu_ecommerce_domain_user_Seller_description" itemValue="id" items="${descriptions}" path="/descriptions" z="An3vK93yeiluYQiwkBMSp2nN7VU="/>
-        -->
-        <field:select field="name" id="c_edu_cmucdu_ecommerce_domain_user_Seller_name" itemValue="id" items="${descriptions}" path="/descriptions" render="false"/>
-        <field:select field="description" id="c_edu_cmucdu_ecommerce_domain_user_Seller_description" itemValue="id" items="${descriptions}" path="/descriptions" render="false"/>
         <field:input field="telephoneNo" id="c_edu_cmucdu_ecommerce_domain_user_Seller_telephoneNo" z="ymhrQvpHQQAofiumt4LA9SnGEHQ="/>
         <field:select field="address" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address" itemValue="id" items="${descriptions}" path="/descriptions" z="n3iBwOenNmCJXQ4hIn5Jsb5XbJ0="/>
-        <field:simple field="images" id="c_edu_cmucdu_ecommerce_domain_user_Seller_images" messageCode="entity_reference_not_managed" messageCodeAttribute="Product Pic" z="aLzn2kBSt7n9mi3daMC434hflDQ="/>
+        <field:simple field="products" id="c_edu_cmucdu_ecommerce_domain_user_Seller_products" messageCode="entity_reference_not_managed" messageCodeAttribute="Seller Product" z="XcFhhoX7FdM9RBwZHXFrGS5wsS0="/>
     </form:update>
 </div>

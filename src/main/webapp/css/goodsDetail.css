@@ -1,0 +1,168 @@
+@CHARSET "UTF-8";
+
+#sidebarr, .one_third { width: 540px }
+#contentt, .two-third { width: 360px }
+
+.post .post_image1 { 
+	width: 360px; 
+	position: relative; 
+	padding: 4px; 
+	border: 1px solid #a6a28d; 
+	margin-bottom: 3px;
+}
+
+.post .post_image1 .date { 
+	position: absolute; 
+	width: 114px; 
+	height: 40px; 
+	top: 10px; 
+	left: -7px; 
+	background: url(../images/date.png) no-repeat left; 
+	font-size: 11px; 
+	line-height: 32px; 
+	color: #fff; 
+	font-weight: 700; 
+	text-align: center; 
+}
+/******************************/
+
+.jqzoom{
+	border:1px solid #BBB;
+	float:left;
+	position:relative;
+	padding:0px;
+	cursor:pointer;
+}
+
+
+ .fs {
+	width:300px;
+	height:300px; 
+}
+
+ span { 
+	display:block;
+	text-align:center;
+	padding-top:10px;
+	padding-bottom:10px;
+	width:310px;
+	clear:both; 
+}
+ span a:hover{ 
+	text-decoration:none;
+}
+ ul.imgList{
+	height: 80px;
+}
+ ul.imgList li { 
+	float:left;
+	margin-right:10px;  
+}
+ ul.imgList li img { 
+	width:60px; 
+	height:60px; 
+	padding:1px;
+	background:#EEE;
+	cursor:pointer; 
+}
+ ul.imgList li img:hover { 
+	padding:1px; 
+	background:#999; 
+}
+
+/******************************/
+
+.cdu_list { 
+	color:#000000; 
+	margin: 0px 10px 18px 0px; 
+	padding: 0 0px 0 6px; 
+	background:none;
+	list-style: none;
+	
+}
+
+.cdu_list li{ 
+	color:#000000; 
+	margin: 0px 0px  10px; 
+	padding: 0 0px 0 6px; 
+	background:none;
+	list-style: none;
+	font-family:微软雅黑;
+	font-size:14px;
+	letter-spacing:0.5px;
+}
+
+#cdu-spec-list{
+	background-color: #FFFFFF;
+	border-radius: 0 0 5px 5px;
+	width:370px;
+	height: 60px;
+	padding-top: 1px;
+	position: relative;
+	
+}
+
+.cdu-spec-items{
+    margin: 0 auto;
+	overflow: hidden;
+}
+
+.cdu-spec-items ul {
+	height: 62px;
+	overflow: hidden;
+}
+
+.cdu-spec-items ul li {
+	
+	float: left;
+	height: 50px;
+	width: 70px;
+
+}
+
+.cdu-spec-items ul li a {
+	border: 1px solid #CCCCCC;
+	display: block;
+	height: 40px;
+	overflow: hidden;
+	width: 60px;
+}
+	
+#fruits_detailbig{
+	margin-top:-50px;
+	float:right;
+	width:700px;
+	overflow:visible;
+	
+}
+#fruits_detailsmall{
+	width:700px;
+	height:30px;
+	background-color:#ff6600;
+}
+
+.form{
+	
+	
+}
+
+.form ul{
+	width:300px;
+	
+}
+
+.form ul li{
+	marign-top:2px;
+	font-size:14px;
+	color:#ffffff;
+	width:150px;
+	float:right;
+	list-style: none;
+	
+}
+
+.zi{
+	font-size:12px;
+	color:#000000;
+	font-family:微软雅黑；
+}

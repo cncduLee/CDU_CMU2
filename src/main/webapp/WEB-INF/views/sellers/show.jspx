@@ -5,9 +5,9 @@
     <page:show id="ps_edu_cmucdu_ecommerce_domain_user_Seller" object="${seller}" path="/sellers" z="d6VUDKvHYkMuylYe5ys+rP8ZYbo=">
         <field:display field="principle" id="s_edu_cmucdu_ecommerce_domain_user_Seller_principle" object="${seller}" z="Vcw7neE0tyuElmQwZU8sZjrdaFI="/>
         <field:display field="locale" id="s_edu_cmucdu_ecommerce_domain_user_Seller_locale" object="${seller}" z="qKvJeze8a5jI8DeFtMTBLcIbNRI="/>
-        <field:display field="localName" id="s_edu_cmucdu_ecommerce_domain_user_Seller_name" object="${seller}"/>
-        <field:display field="localDescription" id="s_edu_cmucdu_ecommerce_domain_user_Seller_description" object="${seller}"/>
+        <field:display field="name" id="s_edu_cmucdu_ecommerce_domain_user_Seller_name" object="${seller}" z="T9qxsnrjsXq+gfUcxqzS/fDTiPI="/>
+        <field:display field="description" id="s_edu_cmucdu_ecommerce_domain_user_Seller_description" object="${seller}" z="jXJELeo3iw5d5ZkMfE+JXiuJQ0Y="/>
         <field:display field="telephoneNo" id="s_edu_cmucdu_ecommerce_domain_user_Seller_telephoneNo" object="${seller}" z="dJCYkTuAFKtX0xX3tVwrqx5f6qA="/>
-        <field:display field="localAddress" id="s_edu_cmucdu_ecommerce_domain_user_Seller_address" object="${seller}" z="user-managed"/>
+        <field:display field="address" id="s_edu_cmucdu_ecommerce_domain_user_Seller_address" object="${seller}" z="Vp3VictsCMJoazjT4eS4HNhJ/iI="/>
     </page:show>
 </div>
