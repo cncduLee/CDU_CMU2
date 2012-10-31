@@ -30,7 +30,7 @@ public class Principal  implements UserDetails{
     @Size(min = 3, max = 50)
     private String password;
 
-    private Boolean enabled;
+    private Boolean checkEnabled;
     @OneToOne(cascade=CascadeType.ALL)
     private UserDetail user;
     @Transient
@@ -50,7 +50,7 @@ public class Principal  implements UserDetails{
 		super();
 		this.username = username;
 		this.password = password;
-		this.enabled = enabled;
+		this.checkEnabled = enabled;
 		this.authorities = authorities;
 		this.isAccountNonExpired = isAccountNonExpired;
 		this.isAccountNonLocked = isAccountNonLocked;
@@ -86,9 +86,11 @@ public class Principal  implements UserDetails{
 	}
 	@Override
 	public boolean isEnabled() {
-		return enabled;
+		return checkEnabled;
 	}
 
-    
+    public void setEnabled(boolean enabled){
+    	checkEnabled = enabled;
+    }
     
 }

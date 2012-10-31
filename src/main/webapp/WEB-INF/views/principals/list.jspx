@@ -5,11 +5,11 @@
     <page:list id="pl_edu_cmucdu_ecommerce_domain_user_security_Principal" items="${principals}" z="eDOaoqxof/7QEf7eJAifDNQQ/W8=">
         <table:table data="${principals}" id="l_edu_cmucdu_ecommerce_domain_user_security_Principal" path="/principals" z="mS2hWXuLdW/qDbTQ2PaCaHIb7pE=">
             <table:column id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_password" property="password" z="UdACzfZx8keJKLsleOrzUIUhnVk="/>
-            <table:column id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_enabled" property="enabled" z="dlDg5BTKztGDVT5Lgbm64RFnGgE="/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_user" property="enabled" z="user-managed"/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_username" property="username" z="7DP5Az/X8kcGiHv3O5QLdX6rXgc="/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_authorities" property="authorities" z="PxfbepII8zO+9E7+lYId8fVb8t0="/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_isAccountNonExpired" property="isAccountNonExpired" z="9nSlO1dWbrehW8Z75QoMcBVzYlk="/>
+            <table:column id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_checkEnabled" property="checkEnabled" z="yM4CqOt2myxQSfAkOj4vO/FXOy4="/>
         </table:table>
     </page:list>
 </div>

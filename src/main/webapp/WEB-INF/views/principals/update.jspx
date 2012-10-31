@@ -4,12 +4,12 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_edu_cmucdu_ecommerce_domain_user_security_Principal" modelAttribute="principal" path="/principals" versionField="Version" z="MvvdAb+UT9EXyCZNR4nl4hnHVKQ=">
         <field:textarea field="password" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_password" required="true" z="0RF68bojrycWF4zXLDLp+5nfpiE="/>
-        <field:checkbox field="enabled" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_enabled" z="tvmOwEcrhTDPiIDTRAXdYcPX3Ow="/>
         <field:select field="user" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_user" itemValue="id" items="${userdetails}" path="/userdetails" z="kXCLutt6vrVpvoB6ytSkOXyBa5A="/>
         <field:textarea field="username" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_username" required="true" z="lVkdOFeCYHGCe4r53/B3RXVtcuQ="/>
         <field:input field="authorities" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_authorities" z="Lft3yc+a+kQk1fJrgIOkhTwfNuQ="/>
         <field:checkbox field="isAccountNonExpired" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_isAccountNonExpired" z="faHlTJXgAoVEyZtajOp3awgJKmc="/>
         <field:checkbox field="isAccountNonLocked" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_isAccountNonLocked" z="74tfbWDILxoy1O3SVSGWV/VouSg="/>
         <field:checkbox field="isCredentialsNonExpired" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_isCredentialsNonExpired" z="kQeBPJyFGuYDR6sLUGKLnMBdyNI="/>
+        <field:checkbox field="checkEnabled" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_checkEnabled" z="tzaxY6V6nAB2Lbre+kipGXtCIT8="/>
     </form:update>
 </div>
