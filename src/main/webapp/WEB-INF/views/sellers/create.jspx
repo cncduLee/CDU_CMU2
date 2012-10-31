@@ -3,6 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <script language="javascript"> 
+    ![]
 		function validatePass(p1, p2) 
 		{
 		    if (p1.value != p2.value || p1.value == '' || p2.value == '') {
@@ -13,7 +14,7 @@
 		}
 	</script>
     <form:multi id="fc_edu_cmucdu_ecommerce_domain_user_Seller" modelAttribute="seller" path="/sellers" render="${empty dependencies}">
-        <field:select field="principle" id="c_edu_cmucdu_ecommerce_domain_user_Seller_principle" itemValue="id" items="${principals}" path="/principals" z="bUweOcKBuooWyd4xu41qjSZGZWo=" render="false"/>
+        <field:select field="principle" id="c_edu_cmucdu_ecommerce_domain_user_Seller_principle" itemValue="id" items="${principals}" path="/principals" render="false" z="user-managed"/>
         <div id="_c_edu_cmucdu_ecommerce_domain_user_Seller_principle_id">
             <label for="_principle_id">Username : </label>
             <input id="username" name="username" type="text"/>
@@ -45,7 +46,7 @@
         <field:textarea field="address.chineseDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address_chineseDesc"/>
         <field:textarea field="address.englishDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address_englishDesc"/>
         <field:select field="address" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address" itemValue="id" items="${descriptions}" path="/descriptions" render="false" z="user-managed"/>
-        <field:simple field="images" id="c_edu_cmucdu_ecommerce_domain_user_Seller_images" messageCode="entity_reference_not_managed" messageCodeAttribute="Product Pic" z="aLzn2kBSt7n9mi3daMC434hflDQ=" render="false"/>
+        <field:simple field="images" id="c_edu_cmucdu_ecommerce_domain_user_Seller_images" messageCode="entity_reference_not_managed" messageCodeAttribute="Product Pic" render="false" z="user-managed"/>
         <tr>
             <td width="35%">
                 <strong>File to upload</strong>
@@ -55,12 +56,13 @@
             </td>
         </tr>
         <tr>
-            <td></td>
+            <td/>
             <td>
                 <input name="action" type="submit" value="Upload"/>
             </td>
         </tr>
-        <br /><br />
+        <br/>
+        <br/>
         <div id="_c_edu_cmucdu_ecommerce_domain_user_Seller_principle_id">
             <label for="_principle_id">image desc cn : </label>
             <input id="username" name="img_cn_desc" type="text"/>

@@ -11,6 +11,11 @@
 			<sform:options items="${userdetails}" itemValue="id"
 			/>
 		</sform:select> -->
+        <field:input field="authorities" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_authorities" z="Lft3yc+a+kQk1fJrgIOkhTwfNuQ="/>
+        <field:textarea field="username" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_username" required="true" z="lVkdOFeCYHGCe4r53/B3RXVtcuQ="/>
+        <field:checkbox field="isAccountNonExpired" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_isAccountNonExpired" z="faHlTJXgAoVEyZtajOp3awgJKmc="/>
+        <field:checkbox field="isAccountNonLocked" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_isAccountNonLocked" z="74tfbWDILxoy1O3SVSGWV/VouSg="/>
+        <field:checkbox field="isCredentialsNonExpired" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_isCredentialsNonExpired" z="kQeBPJyFGuYDR6sLUGKLnMBdyNI="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_edu_cmucdu_ecommerce_domain_user_security_Principal" render="${not empty dependencies}" z="Vm3ZuYtZuV4BxKxOrEaBmyQ+bq0="/>
 </div>

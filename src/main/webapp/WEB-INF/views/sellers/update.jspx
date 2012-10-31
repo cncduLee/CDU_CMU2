@@ -3,9 +3,9 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_edu_cmucdu_ecommerce_domain_user_Seller" modelAttribute="seller" path="/sellers" versionField="Version" z="xYT5xak+aGq3Tg7wGtRCilyulCo=">
-        <field:select field="principle" id="c_edu_cmucdu_ecommerce_domain_user_Seller_principle" itemValue="id" items="${principals}" path="/principals" z="bUweOcKBuooWyd4xu41qjSZGZWo=" render="false"/>
-        <field:input field="locale" id="c_edu_cmucdu_ecommerce_domain_user_Seller_locale" z="YDnfb4X+fe+wH+VGqBNYWteNfm8=" render="false"/>
-        <field:simple field="products" id="c_edu_cmucdu_ecommerce_domain_user_Seller_products" messageCode="entity_reference_not_managed" messageCodeAttribute="Seller Product" z="XcFhhoX7FdM9RBwZHXFrGS5wsS0=" render="false"/>
+        <field:select field="principle" id="c_edu_cmucdu_ecommerce_domain_user_Seller_principle" itemValue="id" items="${principals}" path="/principals" render="false" z="user-managed"/>
+        <field:input field="locale" id="c_edu_cmucdu_ecommerce_domain_user_Seller_locale" render="false" z="user-managed"/>
+        <field:simple field="products" id="c_edu_cmucdu_ecommerce_domain_user_Seller_products" messageCode="entity_reference_not_managed" messageCodeAttribute="Seller Product" render="false" z="user-managed"/>
         <field:input field="name.thaiDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_name_thaiDesc"/>
         <field:input field="name.chineseDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_name_chineseDesc"/>
         <field:input field="name.englishDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_name_englishDesc"/>
@@ -21,12 +21,10 @@
         <field:select field="name" id="c_edu_cmucdu_ecommerce_domain_user_Seller_name" itemValue="id" items="${descriptions}" path="/descriptions" render="false"/>
         <field:select field="description" id="c_edu_cmucdu_ecommerce_domain_user_Seller_description" itemValue="id" items="${descriptions}" path="/descriptions" render="false"/>
         <field:input field="telephoneNo" id="c_edu_cmucdu_ecommerce_domain_user_Seller_telephoneNo" z="ymhrQvpHQQAofiumt4LA9SnGEHQ="/>
-        <field:select field="address" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address" itemValue="id" items="${descriptions}" path="/descriptions" z="n3iBwOenNmCJXQ4hIn5Jsb5XbJ0=" render="false"/>
-        <field:simple field="images" id="c_edu_cmucdu_ecommerce_domain_user_Seller_images" messageCode="entity_reference_not_managed" messageCodeAttribute="Product Pic" z="aLzn2kBSt7n9mi3daMC434hflDQ=" render="false"/>
-        
+        <field:select field="address" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address" itemValue="id" items="${descriptions}" path="/descriptions" render="false" z="user-managed"/>
+        <field:simple field="images" id="c_edu_cmucdu_ecommerce_domain_user_Seller_images" messageCode="entity_reference_not_managed" messageCodeAttribute="Product Pic" render="false" z="user-managed"/>
         <field:textarea field="address.thaiDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address_thaiDesc"/>
         <field:textarea field="address.chineseDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address_chineseDesc"/>
         <field:textarea field="address.englishDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address_englishDesc"/>
-        
     </form:update>
 </div>
