@@ -32,26 +32,27 @@
         <br/>
         <br/>
         <div id="c_edu_cmucdu_ecommerce_domain_product_Product_name">
-            <label for="_principle_id">image desc cn : </label>
-            <input id="username" name="img_cn_desc" type="text"/>
-        </div>
-        <br/>
-        <div id="c_edu_cmucdu_ecommerce_domain_product_Product_name">
-            <label for="_principle_id">image desc tha : </label>
+            <label for="_principle_id">Thai image description : </label>
             <input id="username" name="img_thai_desc" type="text"/>
         </div>
         <br/>
         <div id="c_edu_cmucdu_ecommerce_domain_product_Product_name">
-            <label for="_principle_id">image desc eng : </label>
+            <label for="_principle_id">Chinese image description : </label>
+            <input id="username" name="img_cn_desc" type="text"/>
+        </div>
+        <br/>
+        <div id="c_edu_cmucdu_ecommerce_domain_product_Product_name">
+            <label for="_principle_id">English image description : </label>
             <input id="username" name="img_eng_desc" type="text"/>
         </div>
         <br/>
+        <c:out value="Your uploaded image(s)"/><br />
         <spring:url value="products/image" var="imgholder"/>
         <c:set value="0" var="i"/>
         <c:forEach items="${picList}" var="pic">
 				${pic.localDescription }<br/>
-            <img align="right" alt="${pic.localDescription}" height="100" src="${imgholder}/${i}" width="100"/>
-            <br/>
+            <img align="left" alt="${pic.localDescription}" height="100" src="${imgholder}/${i}" width="100"/>
+            <br/><br/><br/><br/><br/><br/><br/><br/>
             <c:set value="${i+1 }" var="i"/>
         </c:forEach>
     </form:multi>

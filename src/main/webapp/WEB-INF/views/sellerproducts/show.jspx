@@ -9,11 +9,15 @@
         <field:display field="promotion" id="s_edu_cmucdu_ecommerce_domain_product_SellerProduct_promotion" object="${sellerproduct}" render="false" z="user-managed"/>
         <field:display field="product.localName" id="s_edu_cmucdu_ecommerce_domain_product_SellerProduct_product" object="${sellerproduct}" z="user-managed"/>
         <field:display date="true" dateTimePattern="${sellerProduct_readydate_date_format}" field="readyDate" id="s_edu_cmucdu_ecommerce_domain_product_SellerProduct_readyDate" object="${sellerproduct}" z="BFsEeZv4EERJGM7mQtJdU+3VgX8="/>
+        <br/>
         <spring:url value="/productpics/showpic" var="imgPlaceHolder"/>
         <c:forEach items="${sellerproduct.images}" var="img">
-            <img alt="${img.localDescription}" src="${imgPlaceHolder}/${img.id}"/>
+            <div style="height:350px; width:500px;">
+            	<img alt="${img.localDescription}" src="${imgPlaceHolder}/${img.id}" style="height:100%;width:100%;"/>
+            	${img.localDescription }
+            </div>
             <br/>
         </c:forEach>
-        <field:display field="locale" id="s_edu_cmucdu_ecommerce_domain_product_SellerProduct_locale" object="${sellerproduct}" z="t89TbmqA+xdUDPxtfujMtTUkODk="/>
+        <field:display field="locale" id="s_edu_cmucdu_ecommerce_domain_product_SellerProduct_locale" object="${sellerproduct}" z="t89TbmqA+xdUDPxtfujMtTUkODk=" render="false"/>
     </page:show>
 </div>

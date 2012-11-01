@@ -56,8 +56,9 @@
 			</form>
 		</div>
 	</sec:authorize>
-	<div style="margin-left: 700px; margin-top: 10px;">
+	<div style="margin-left: 630px; margin-top: 10px;">
 		<sec:authorize access="isAuthenticated()">
+			<c:out value="Welcome back, " />
 			<sec:authentication property="principal.user.localName" />
 			<c:out value=" | " />
 			<span> <spring:url value="/resources/j_spring_security_logout"

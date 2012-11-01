@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" 
+xmlns:jsp="http://java.sun.com/JSP/Page" 
+xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" 
+xmlns:c="http://java.sun.com/jsp/jstl/core" 
+xmlns:spring="http://www.springframework.org/tags" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_edu_cmucdu_ecommerce_domain_user_Seller" object="${seller}" path="/sellers" z="d6VUDKvHYkMuylYe5ys+rP8ZYbo=">
@@ -9,5 +13,13 @@
         <field:display field="localDescription" id="s_edu_cmucdu_ecommerce_domain_user_Seller_description" object="${seller}"/>
         <field:display field="telephoneNo" id="s_edu_cmucdu_ecommerce_domain_user_Seller_telephoneNo" object="${seller}" z="dJCYkTuAFKtX0xX3tVwrqx5f6qA="/>
         <field:display field="localAddress" id="s_edu_cmucdu_ecommerce_domain_user_Seller_address" object="${seller}" z="user-managed"/>
+    	<spring:url value="/productpics/showpic" var="imgPlaceHolder"/>
+        <c:forEach items="${seller.images}" var="img">
+        	<div style="height:350px; width:500px;">
+            	<img alt="${img.localDescription}" src="${imgPlaceHolder}/${img.id}" style="height:100%;width:100%;"/>
+            	${img.localDescription }
+            </div>
+            <br/>
+        </c:forEach>
     </page:show>
 </div>
