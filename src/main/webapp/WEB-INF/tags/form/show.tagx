@@ -49,6 +49,7 @@ xmlns:spring="http://www.springframework.org/tags" version="2.0">
         <c:when test="${not empty object}">
           <jsp:doBody />
           <div class="quicklinks">
+          	<sec:authorize ifAnyGranted="ROLE_ADMIN, ROLE_SELLER">
             <span>
               <c:if test="${delete}">
                 <spring:url value="${path}/${itemId}" var="delete_form_url" />
@@ -64,6 +65,7 @@ xmlns:spring="http://www.springframework.org/tags" version="2.0">
                 </form:form>
               </c:if>
             </span>
+            </sec:authorize>
             <sec:authorize ifAnyGranted="ROLE_ADMIN, ROLE_SELLER">
             <span>
               <c:if test="${update}">

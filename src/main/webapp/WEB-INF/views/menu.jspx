@@ -18,7 +18,7 @@
             </menu:category>
         </sec:authorize>
         <menu:category id="c_seller" z="WlsOMc1O7s/g2W1aWsDxWyIlXs4=">
-            <sec:authorize ifAnyGranted="ROLE_SELLER, ROLE_ANONYMOUS, ROLE_ADMIN">
+            <sec:authorize ifAnyGranted="ROLE_ANONYMOUS, ROLE_ADMIN">
                 <menu:item id="i_seller_new" messageCode="global_menu_new" url="/sellers?form" z="P5b2bMOsiz3w1RhqEWW5MdlEqwA="/>
             </sec:authorize>
             <sec:authorize ifAnyGranted="ROLE_SELLER, ROLE_BUYER, ROLE_ADMIN">
