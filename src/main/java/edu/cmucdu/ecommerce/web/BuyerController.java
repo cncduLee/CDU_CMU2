@@ -46,7 +46,7 @@ public class BuyerController
         Principal principal = new Principal();
         principal.setUsername(username);
         principal.setPassword(password);
-        principal.setEnabled(true);
+        principal.setCheckEnabled(true);
         principal.setUser(buyer);
         Authority a = Authority.findAuthoritysByAuthorityLike("ROLE_BUYER").getResultList().get(0);
         AuthorityPrincipalAssignment as = new AuthorityPrincipalAssignment();

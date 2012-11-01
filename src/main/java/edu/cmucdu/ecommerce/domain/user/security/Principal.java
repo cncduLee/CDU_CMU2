@@ -9,6 +9,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
@@ -30,9 +32,10 @@ public class Principal  implements UserDetails{
     @Size(min = 3, max = 50)
     private String password;
 
-    private Boolean enabled;
+    private Boolean checkEnabled;
     @OneToOne(cascade=CascadeType.ALL)
     private UserDetail user;
+    
     @Transient
     Collection< GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 	@Override
@@ -50,7 +53,7 @@ public class Principal  implements UserDetails{
 		super();
 		this.username = username;
 		this.password = password;
-		this.enabled = enabled;
+		this.checkEnabled = enabled;
 		this.authorities = authorities;
 		this.isAccountNonExpired = isAccountNonExpired;
 		this.isAccountNonLocked = isAccountNonLocked;
@@ -86,9 +89,8 @@ public class Principal  implements UserDetails{
 	}
 	@Override
 	public boolean isEnabled() {
-		return enabled;
+		return checkEnabled;
 	}
+	
 
-    
-    
 }

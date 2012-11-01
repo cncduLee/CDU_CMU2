@@ -24,7 +24,7 @@
             </td>
         </tr>
         <tr>
-            <td>Ê</td>
+            <td></td>
             <td>
                 <input name="action" type="submit" value="Upload"/>
             </td>

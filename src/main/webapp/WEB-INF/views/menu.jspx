@@ -63,11 +63,11 @@
 	        </menu:category>
         </sec:authorize>
         -->
-        <menu:category id="c_promotion" z="N0OacQb6uAS3kqi0gUsvItxEk+Q=" render="false">
+        <menu:category id="c_promotion" render="false" z="user-managed">
             <menu:item id="i_promotion_new" messageCode="global_menu_new" url="/promotions?form" z="vIRg6/c1jXWNdovKhtkTejeI8iY="/>
             <menu:item id="i_promotion_list" messageCode="global_menu_list" url="/promotions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Rs8bZOs+/nedQSeGNfEpHsJadIM="/>
         </menu:category>
-        <menu:category id="c_productpic" z="HJOD10TdTXpQwEhMBtJBO52CXgo=" render="false">
+        <menu:category id="c_productpic" render="false" z="user-managed">
             <menu:item id="i_productpic_new" messageCode="global_menu_new" url="/productpics?form" z="jA3nT043I6UvrtxmUQnPfftJofg="/>
             <menu:item id="i_productpic_list" messageCode="global_menu_list" url="/productpics?page=1&amp;size=${empty param.size ? 10 : param.size}" z="MrJgS6Fwo1kaigQxynylPLbfGcM="/>
         </menu:category>

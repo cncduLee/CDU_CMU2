@@ -63,7 +63,7 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 			//Set principle
 			Principal s1p = new Principal();
 			s1p.setUser(s1);
-			s1p.setEnabled(true);
+			s1p.setCheckEnabled(true);
 			s1p.setUsername("seller1"); //$NON-NLS-1$
 			s1p.setPassword(("1234")); //$NON-NLS-1$
 		s1.setPrinciple(s1p);
@@ -77,7 +77,7 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 			//Set principle
 			Principal s2p = new Principal();
 			s2p.setUser(s2);
-			s2p.setEnabled(true);
+			s2p.setCheckEnabled(true);
 			s2p.setUsername("seller2"); //$NON-NLS-1$
 			s2p.setPassword("1234"); //$NON-NLS-1$
 		s2.setPrinciple(s2p);
@@ -150,7 +150,7 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 			b1p.setUser(b1);
 			b1p.setUsername("buyer1");
 			b1p.setPassword(("1234"));
-			b1p.setEnabled(true);
+			b1p.setCheckEnabled(true);
 		b1.setPrinciple(b1p);
 		b1.setDescription(new Description(Messages.getString("Loader.37"), Messages.getString("Loader.38"), Messages.getString("Loader.39")));
 		buyerDao.save(b1);
@@ -162,7 +162,7 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 			b2p.setUser(b2);
 			b2p.setUsername("buyer2");
 			b2p.setPassword(("1234"));
-			b2p.setEnabled(true);
+			b2p.setCheckEnabled(true);
 		b2.setPrinciple(b2p);
 		b2.setDescription(new Description(Messages.getString("Loader.46"), Messages.getString("Loader.47"), Messages.getString("Loader.48")));
 		buyerDao.save(b2);
@@ -198,7 +198,7 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 
 		b2p1.setUsername("admin");
 		b2p1.setPassword(("admin"));
-		b2p1.setEnabled(true);
+		b2p1.setCheckEnabled(true);
 		AuthorityPrincipalAssignment apa4 = new AuthorityPrincipalAssignment();
 		apa4.setRoleId(a1);
 		apa4.setUsername(b2p1);

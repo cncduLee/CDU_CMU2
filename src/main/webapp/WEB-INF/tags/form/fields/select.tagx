@@ -62,7 +62,7 @@
                             <spring:eval expression="item" />
                           </c:when>
                           <c:otherwise>
-                            <spring:eval expression="item.sec_itemLabel"/>
+                            <spring:eval expression="item[sec_itemLabel]"/>
                           </c:otherwise>
                         </c:choose>
                         </option>
@@ -78,7 +78,7 @@
                             <spring:eval expression="item" />
                           </c:when>
                           <c:otherwise>
-                            <spring:eval expression="item.sec_itemLabel"/>
+                            <spring:eval expression="item[sec_itemLabel]"/>
                           </c:otherwise>
                         </c:choose>
                         </option>
@@ -128,7 +128,7 @@
                                 <spring:eval expression="item" />
                               </c:when>
                               <c:otherwise>
-                                <spring:eval expression="item.sec_itemLabel"/>
+                                <spring:eval expression="item[sec_itemLabel]"/>
                               </c:otherwise>
                             </c:choose>
                           </option>
@@ -144,7 +144,7 @@
                                 <spring:eval expression="item" />
                               </c:when>
                               <c:otherwise>
-                                <spring:eval expression="item.sec_itemLabel"/>
+                                <spring:eval expression="item[sec_itemLabel]"/>
                               </c:otherwise>
                             </c:choose>
                           </option>
