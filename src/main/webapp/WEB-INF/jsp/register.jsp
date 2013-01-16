@@ -1,5 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:spring="http://www.springframework.org/tags">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Fresh Zone Theme - Free CSS Template-www.mianfeimoban.com</title>
@@ -19,36 +21,35 @@
 
 	<!-- regist info begain -->	
 	<div class="Rmain">
-		<form id="registform"  action="registInfo" method="post" name="registform">
+		<form:form  modelAttribute="registform" target="_self" >
 			<h2 class="f24red">Register</h2>
 				<ul id="tab1" class="Rm_input">
-					
-					<li><label>Username</label>
-					<input id="username" class="Rtext w300" type="text" name="Username"/>
+						<li><label>Username</label>
+					<form:input id="username" class="Rtext w300" type="text" path="Username"/>
 					</li>
 					
 					<li><label>Password</label> 
-					<input id="password" class="Rtext w300" type="password" name="Password"/>
+					<form:input id="password" class="Rtext w300" type="password" path="Password"/>
 					</li>
 					
 					<li><label>Confirm</label> 
-					<input id="confirm" class="Rtext w300" type="password" name="Confirm"/>
+					<form:input id="confirm" class="Rtext w300" type="password" path="Confirm"/>
 					</li>
 					
 					<li><label>Type</label>
-					<select id="type" class="Rtext w300" name="Type">
+					<form:select id="type" class="Rtext w300" path="Type">
 						<option>Seller</option>
 						<option>Customer</option>
-					</select>
+					</form:select>
 					</li>
 					
 					<li><label>E-Mail</label>
-					<input id="email" class="Rtext w300" type="text" name="email"/>
+					<form:input id="email" class="Rtext w300" type="text" path="email"/>
 					<span id="emailtip"></span>
 					</li>
 					
 					<li><label>Full name</label> 
-					<input id="fullname" class="Rtext w300" type="text" name="Full name"/>
+					<form:input id="fullname" class="Rtext w300" type="text" path="FullName"/>
 					</li>
 					
 					<li><label>Address</label> 
@@ -56,11 +57,11 @@
 					</li>
 					
 					<li><label>Telephone</label> 
-					<input id="telephone" class="Rtext w300" type="text" name="Telephone"/>
+					<form:input id="telephone" class="Rtext w300" type="text" path="Telephone"/>
 					</li>
 					
 					<li><label>Verification code</label> 
-					<input id="verifycode" class="Rtext w300" type="text" name="Verification code"/>
+					<form:input id="verifycode" class="Rtext w300" type="text" path="VerificationCode"/>
 					<span class="yzm"></span>
 					</li>
 				</ul>
@@ -69,7 +70,7 @@
 					<p>
 						<input id="sz" class="pact_check" type="checkbox" checked="checked" value=""/>
 						I have read and agree 
-						<a class="red" target="_blank">《Service agreements》</a> 
+						<a class="red" target="_blank">(Service agreements)</a> 
 						<span id="ch"></span>
 					</p>
 					<div id="Service_agreements" style="display: none;">
@@ -81,9 +82,14 @@
 					</div>
 					<input class="Rms_btn" type="submit" value="Register Now"/>
 				</div>
-		</form>
+		</form:form>
 	</div>
-	<!--end regist info begain -->
+	<!--end regist info begain 
+	<c:forEach var="item" items="${all}">  
+				    <tr><td><c:out value="${item.name}"/></td>  
+				        <td><c:out value="${item.description}"/></td></tr>  
+				   </c:forEach> 
+	-->
 
 
 	<!-- Include footer in folder common -->
