@@ -12,7 +12,6 @@
         <field:input field="weight" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_weight" z="FEs8qrO9SzhjyEcfmh4sp+9VUQk="/>
         <field:select field="promotion" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_promotion" itemValue="id" items="${promotions}" path="/promotions" render="false" z="user-managed"/>
         <field:select field="product" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_product" itemLabel="localName" itemValue="id" items="${products}" path="/products" z="user-managed"/>
-        <field:datetime dateTimePattern="${sellerProduct_readydate_date_format}" field="readyDate" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_readyDate" z="rdAIg+WHw6f5KKMxYPzqvvdszAg="/>
         <field:simple field="images" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_seller" messageCode="entity_reference_not_managed" messageCodeAttribute="Product Pic" render="false" z="user-managed"/>
         <tr>
             <td width="35%">
@@ -45,16 +44,25 @@
             <input id="username" name="img_eng_desc" type="text"/>
         </div>
         <br/>
-        <c:out value="Your uploaded image(s)"/><br />
+        <c:out value="Your uploaded image(s)"/>
+        <br/>
         <spring:url value="sellerproducts/image" var="imgholder"/>
         <c:set value="0" var="i"/>
         <c:forEach items="${picList}" var="pic">
 				${pic.localDescription }<br/>
             <img align="left" alt="${pic.localDescription}" height="100" src="${imgholder}/${i}" width="100"/>
-            <br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <c:set value="${i+1 }" var="i"/>
         </c:forEach>
-        <field:input field="locale" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_locale" z="vi2ksal1ompvZVOC6Xxh25Gmrbw=" render="false"/>
+        <field:input field="locale" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_locale" render="false" z="user-managed"/>
+        <field:datetime dateTimePattern="${sellerProduct_readydate_date_format}" field="readyDate" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_readyDate" z="rdAIg+WHw6f5KKMxYPzqvvdszAg="/>
     </form:multi>
     <form:dependency dependencies="${dependencies}" id="d_edu_cmucdu_ecommerce_domain_product_SellerProduct" render="${not empty dependencies}" z="Uws9/zzxmpX+XM4ba+pjXO6vdbo="/>
 </div>

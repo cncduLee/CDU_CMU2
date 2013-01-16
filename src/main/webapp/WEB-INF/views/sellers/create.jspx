@@ -78,15 +78,24 @@
             <input id="username" name="img_eng_desc" type="text"/>
         </div>
         <br/>
-        <c:out value="Your uploaded image(s)"/><br />
+        <c:out value="Your uploaded image(s)"/>
+        <br/>
         <spring:url value="sellers/image" var="imgholder"/>
         <c:set value="0" var="i"/>
         <c:forEach items="${picList}" var="pic">
 				${pic.localDescription }<br/>
             <img align="left" alt="${pic.localDescription}" height="100" src="${imgholder}/${i}" width="100"/>
-            <br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <c:set value="${i+1 }" var="i"/>
         </c:forEach>
+        <field:input field="email" id="c_edu_cmucdu_ecommerce_domain_user_Seller_email" validationMessageCode="field_invalid_email" z="to0qnJe8o3QDyuH0CwXcRGN8PyQ="/>
     </form:multi>
     <form:dependency dependencies="${dependencies}" id="d_edu_cmucdu_ecommerce_domain_user_Seller" render="${not empty dependencies}" z="9YLfJvf9jSUmo3xX07nzIqg14xY="/>
 </div>
