@@ -56,4 +56,6 @@ public abstract class UserDetail {
 		else
 			return address.getLocalDescription();
 	}
+	
+	public String email;
 }
