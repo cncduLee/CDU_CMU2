@@ -1,0 +1,154 @@
+@charset "utf-8";
+/* CSS Document */
+.Lm_register {
+	border-top: 1px solid #dedede;
+	padding-top: 10px;
+}
+
+.Lm_register a {
+	height: 36px;
+	line-height: 36px;
+	font-size: 16px;
+	color: #e10000;
+	width: 166px;
+	margin: 0px auto 15px;
+	display: block;
+	text-align: center;
+	background-position: 0px -82px;
+	border: 1px solid #dedede;
+	font-weight: 500;
+}
+
+.Lm_register a:hover {
+	background-position: 0px -119px;
+}
+
+.Lm_register b {
+	display: block;
+	text-align: center;
+	font-size: 12px;
+	font-weight: normal
+}
+/*注册*/
+.Rmain {
+	width: 598px;
+	border: 1px solid #dedede;
+	overflow: hidden;
+	margin: 70px auto 45px;
+}
+
+.Rmain h2.f24red {
+	padding: 20px 20px 50px;
+}
+
+.Rm_tab {
+	width: 628px;
+	overflow: hidden;
+	padding: 0px 0px 10px 170px;
+}
+
+.Rm_tab label {
+	margin-right: 60px;
+	background-repeat: no-repeat;
+	float: left;
+	padding-left: 25px;
+	line-height: 30px;
+	font-size: 14px;
+	background-position: 0px -16px;
+}
+
+.Rm_tab label.hver {
+	background-position: 0px 8px;
+}
+
+ul.Rm_input {
+	font-size: 14px;
+}
+
+ul.Rm_input li {
+	width: 598px;
+	line-height: 35px;
+	padding: 10px 0px;
+	overflow: hidden;
+}
+
+ul.Rm_input li label {
+	width: 160px;
+	float: left;
+	padding-right: 10px;
+	text-align: right;
+	font-weight: 600
+}
+
+ul.Rm_input li span {
+	float: left;
+	padding-left: 10px;
+	font-size: 12px;
+	color: #666;
+}
+
+ul.Rm_input li span.red {
+	color: #e10000
+}
+
+ul.Rm_input li span.yzm {
+	line-height: 35px
+}
+
+ul.Rm_input li span.yzm img {
+	float: left;
+	margin: 2px 8px 0px 0px
+}
+
+.w300 {
+	width: 300px
+}
+
+.w150 {
+	width: 150px;
+}
+
+.Rtext {
+	height: 33px;
+	border: 1px solid #ccc;
+	box-shadow: 2px 2px 1px 0px #f3f3f3 inset;
+	padding-left: 7px;
+	line-height: 33px;
+	float: left;
+	font-family: Verdana;
+	font-size: 12px;
+	line-height: 1.4em; 
+}
+
+.Rm_submit {
+	text-align: center;
+	padding: 10px 0px 50px;
+}
+
+.Rm_submit p {
+	padding: 30px 0px 5px;
+	font-size: 14px;
+}
+
+.Rm_submit p a:hover {
+	text-decoration: underline;
+}
+
+.Rms_btn {
+	margin: 10px auto;
+	background-color: #ea1e1d;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	font-weight: 700px;
+	cursor: pointer;
+	border: 1px solid #cb1919;
+	color: #fff;
+	padding: 0px 30px;
+	border-radius: 2px;
+	font-family: Verdana;
+}
+
+.Rms_btn:hover {
+	background-position: 0px -41px;
+}

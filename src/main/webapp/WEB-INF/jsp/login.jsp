@@ -37,7 +37,7 @@
 					</tr>
 					<tr>
 						<td>Username:</td>
-						<td><input type="text" name="user" value="e-mail"
+						<td><input type="text" name="user" value=""
 							class="button"></input></td>
 					</tr>
 					<tr>
