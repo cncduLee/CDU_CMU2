@@ -1,19 +1,101 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:spring="http://www.springframework.org/tags">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Fresh Zone Theme - Free CSS Template-www.mianfeimoban.com</title>
 <meta name="keywords" content="fresh zone, free theme, free templates, templatemo, dualSlider, CSS, HTML" />
 <meta name="description" content="Fresh Zone Theme, free CSS template provided by templatemo.com" />
+<link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
 
-<!-- Include Script in folder common -->
- <jsp:include page="./common/script.jsp" />
- 
+<link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/ddsmoothmenu.js">
+
+
+</script>
+
+<script type="text/javascript">
+
+ddsmoothmenu.init({
+	mainmenuid: "templatemo_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+</script>
+
+<link rel="stylesheet" type="text/css" media="all" href="css/jquery.dualSlider.0.2.css" />
+
+<script src="js/jquery-1.3.2.min.js" type="text/javascript"></script>
+<script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
+<script src="js/jquery.timers-1.2.js" type="text/javascript"></script>
+<script src="js/jquery.dualSlider.0.3.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    
+    $(document).ready(function() {
+        
+        $("#carousel").dualSlider({
+            auto:true,
+            autoDelay: 6000,
+            easingCarousel: "swing",
+            easingDetails: "easeOutBack",
+            durationCarousel: 1000,
+            durationDetails: 600
+        });
+        
+    });
+     
+</script>
+
 </head>
 <body>
-	<!-- Include header in folder common -->
-	<jsp:include page="./common/header.jsp" />
+
+<div id="templatemo_header_wrapper">
+    
+	<div id="templatemo_header">
+	<div  id="templatemo_login">
+	<select style="width: 80px" size="1"
+						name="selectManufacturer">
+							<option value="0">English</option>
+							<option value="20">Chinese</option>
+							<option value="21">Thai</option>
+					</select>
+    <a href="CT_Login.html">Login</a> | <a href="CT_Register.html" target="_parent">Register</a></div>
+    	<div id="site_title"><a href="http://www.cdu.edu.cn">CDMU</a></div>
+    	<div id="templatemo_seach">
+        <input type="text" value="serach fruits" size="20" maxlength="20" class="text"></input>
+           <input type="submit" value="Go" class="sub"></input>
+        </div>
+        <div id="templatemo_menu" class="ddsmoothmenu">
+            <ul>
+                <li><a href="index.html" class="selected">Home</a></li>
+                <li><a href="about.html">About</a>
+                    <ul>
+                        <li><a href="http://www.cdu.edu.cn">Sub menu 1</a></li>
+                        <li><a href="http://www.cdu.edu.cn">Sub menu 2</a></li>
+                        <li><a href="http://www.cdu.edu.cn">Sub menu 3</a></li>
+					</ul>
+                </li>
+                <li><a href="portfolio.html">Gallery</a>
+                    <ul>
+						<li><a href="http://www.cdu.edu.cn">Sub menu 1</a></li>
+						<li><a href="http://www.cdu.edu.cn">Sub menu 2</a></li>
+						<li><a href="http://www.cdu.edu.cn">Sub menu 3</a></li>
+						<li><a href="http://www.cdu.edu.cn">Sub menu 4</a></li>
+						<li><a href="http://www.cdu.edu.cn">Sub menu 5</a></li>
+					</ul>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <br style="clear: left" />
+        </div> <!-- end of templatemo_menu -->
+    </div> <!-- END of templatemo_header -->
+</div> <!-- END of templatemo_header_wrapper -->
 
 <div id="templatemo_slider_wrapper">
 	<div id="templatemo_slider">
@@ -24,19 +106,23 @@
 					
 					<div class="details">
 					
-						<!-- <div class="detail">
-							<h2><a href="#">${product.localName }</a></h2>
-                            <p>${product.localDescription}</p>
-							<a href="#" title="Read more" class="more">Read more</a>
-						</div> --><!-- /detail -->
-					
-						<c:forEach items="${products}" var="productx"> 
 						<div class="detail">
-							<h2><a href="#">${productx.localName }</a></h2>
-                            <p>${productx.localDescription}</p>
+							<h2><a href="#">Dolor sit amet</a></h2>
+                            <p>Pellentesque quis velit augue, sit amet ultrices dui. Aenean eget nisi quis est pulvinar sagittis. Fusce congue dignissim libero sed vulputate. Donec in massa ac lacus laoreet gravida non quis velit ac scelerisque.</p>
 							<a href="#" title="Read more" class="more">Read more</a>
 						</div><!-- /detail -->
-					</c:forEach>
+						
+						<div class="detail">
+							<h2><a href="#">Sed malesuada luctus</a></h2>
+                            <p>Duis dignissim tincidunt turpis eget pellentesque. Nulla consectetur accumsan facilisis. Sed vel interdum sapien. roin ac consequat ante. Pellentesque consectetur blandit magna, at ornare urna iaculis sit amet.</p>
+							<a href="#" title="Read more" class="more">Read more</a>
+						</div><!-- /detail -->
+						
+						<div class="detail">
+							<h2><a href="#">Aenean massa cum sociis</a></h2>
+                            <p>Sed vel interdum sapien. Aliquam consequat, diam sit amet iaculis ultrices, diam erat faucibus dolor, quis auctor metus libero vel mi. Nunc odio dolor, eleifend non fringilla nec, dapibus eu nibh. Proin id condimentum purus.</p>
+							<a href="#" title="Read more" class="more">Read more</a>
+						</div><!-- /detail -->
 					
 					</div><!-- /details -->
 					
@@ -55,21 +141,18 @@
 			
             <div id="slider-image-frame">
                 <div class="backgrounds">
-                    <c:set var="i" value="1"></c:set>
-                    <c:forEach items="${pics}" var="pic">
                     
-                    <div class="item item_${i}">
-                        <img src="./productpics/showpic/${pic.id}" alt="${pic.localDescription}" /> 
+                    <div class="item item_1">
+                        <img src="images/slider/02.jpg" alt="Image 01" />
                     </div><!-- /item -->
-                    <c:set var="i" value="${i+1}"></c:set>
-                    </c:forEach>
-                    <!-- <div class="item item_2">
-                        <img src="images/slider/03.jpg" alt="Image 02" />
-                    </div>  --><!-- /item -->
                     
-                    <!-- <div class="item item_3">
+                    <div class="item item_2">
+                        <img src="images/slider/03.jpg" alt="Image 02" />
+                    </div><!-- /item -->
+                    
+                    <div class="item item_3">
                         <img src="images/slider/01.jpg" alt="Image 03" />
-                    </div> --><!-- /item -->
+                    </div><!-- /item -->
                     
                 </div><!-- /backgrounds -->
 			</div>
@@ -189,8 +272,11 @@
     </div> <!-- END of templatemo_main_wrapper -->
 </div> <!-- END of templatemo_main -->
 
-	<!-- Include footer in folder common -->
-	<jsp:include page="./common/footer.jsp" />
+<div id="templatemo_footer_wrapper">
+	<div id="templatemo_footer">
+    	Copyright © 2048 <a href="#">CDU CMU</a> | <a href="http://www.cdu.edu.cn" target="_parent">Fresh Fruits</a>
+    </div> <!-- END of templatemo_footer -->
+</div> <!-- END of templatemo_footer_wrapper -->
 
 </body>
 </html>

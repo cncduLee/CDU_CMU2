@@ -139,6 +139,23 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 		Product p3 = new Product();
 		p3.setName(new Description(Messages.getString("Loader.28"), Messages.getString("Loader.29"), Messages.getString("Loader.30"))); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		p3.setDescription(new Description(Messages.getString("Loader.28"), Messages.getString("Loader.29"), Messages.getString("Loader.30"))); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		Set<SellerProduct> sellerlist3 = new HashSet<SellerProduct>();
+		p3.setSellerProducts(sellerlist3);
+			//Create Seller Product
+			SellerProduct sp4 = new SellerProduct();
+			sp4.setSeller(s2);
+			sp4.setProduct(p3);
+			sp4.setPrice(10);
+			sp4.setWeight(10);
+			sellerlist3.add(sp4);
+			//Add product picture
+			ProductPic pp3 = new ProductPic();
+			pp3.loadFile("/images/fruits/mangosteen.jpg");
+			pp3.setProduct(p3);
+			pp3.setSellerProduct(sp4);
+			pp3.setDescription(new Description(Messages.getString("Loader.52"), Messages.getString("Loader.53"), Messages.getString("Loader.54")));
+			productPicDao.save(pp3);
+		p3.getImages().add(pp3);
 		productDao.save(p3);
 		
 		// ########## Create Buyer ############
