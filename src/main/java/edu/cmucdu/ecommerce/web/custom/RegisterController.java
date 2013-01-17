@@ -18,7 +18,10 @@ import edu.cmucdu.ecommerce.dao.user.BuyerDao;
 import edu.cmucdu.ecommerce.dao.user.SellerDao;
 import edu.cmucdu.ecommerce.domain.user.Buyer;
 import edu.cmucdu.ecommerce.domain.user.Seller;
+import edu.cmucdu.ecommerce.domain.user.security.Authority;
+import edu.cmucdu.ecommerce.domain.user.security.AuthorityPrincipalAssignment;
 import edu.cmucdu.ecommerce.domain.user.security.Principal;
+import edu.cmucdu.ecommerce.domain.util.Description;
 
 @Controller
 public class RegisterController {
@@ -27,36 +30,69 @@ public class RegisterController {
 	@Autowired
 	BuyerDao buyerDao;
 	
-	@RequestMapping("/register")
-	public ModelAndView goTpRegisterPage(Model uiModel, HttpServletRequest httpServletRequest){
-		System.out.println("--------");
-		List<Seller> sellers = sellerDao.findAll();
-		uiModel.addAttribute("all", sellers);
-		return new ModelAndView("register", "registForm", new RegisterForm());//redirect to the regist page
-	}
+	@RequestMapping("/toRegister")
+	public ModelAndView toRegisterPage(){
+		return new ModelAndView("register", "command", new RegisterForm());
+	} 
 	
-	@RequestMapping(value="/regist", method = RequestMethod.POST)  
-	public String register(@ModelAttribute("registForm") RegisterForm registForm, BindingResult result){
-//		int type = Integer.parseInt(registForm.getType());
-//		if(type==1){
-//			//seller
-//			Seller seller = new Seller();
-//			//TODO add some buyer’s info
-//			principle.setUser(seller);	
-//			seller.setPrinciple(principle);
-//			sellerDao.save(seller);
-//		}
-//		else{
-//			//buyer
-//			Buyer buyer = new Buyer();
-//			//TODO add some buyer’s info
-//			principle.setUser(buyer);
-//			buyer.setPrinciple(principle);
-//			buyerDao.save(buyer);
-//		}
-		System.out.println("---------"+registForm.getAddress());
-		return "redirect:login";
+	@RequestMapping(value="registInfo", method=RequestMethod.POST)
+	public String register(@ModelAttribute("register")RegisterForm registgerForm,
+			BindingResult resulth){
+		int type = Integer.parseInt(registgerForm.getType().trim());
+		if(type == 1){
+			//register seller
+			Seller seller = new Seller();
+			seller.setTelephoneNo(registgerForm.getTelephone());
+//			seller.setEmail(registgerForm.getEmail());
+			
+			
+			
+			Principal principal = new Principal();
+			principal.setUsername(registgerForm.getUsername());
+			principal.setPassword(registgerForm.getPassword());
+			principal.setEnabled(true);
+			principal.setUser(seller);
+			//Authority
+			Authority a = Authority.findAuthoritysByAuthorityLike("ROLE_SELLER")
+					.getResultList().get(0);
+			AuthorityPrincipalAssignment as = new AuthorityPrincipalAssignment();
+			as.setRoleId(a);
+			as.setUsername(principal);
+			//principal
+			principal.persist();
+			//save to db
+			sellerDao.save(seller);
+		}
+		if(type == 2){
+			//register buyer
+			Buyer buyer = new Buyer();
+			
+			Description description = new Description();
+			description.setEnglishDesc(registgerForm.getAddress());
+			buyer.setAddress(description);
+			description.setEnglishDesc(registgerForm.getFullName());
+			buyer.setName(description);
+			
+//			buyer.setEmail(registgerForm.getEmail());
+			
+			 Principal principal = new Principal();
+		        principal.setUsername(registgerForm.getUsername());
+		        principal.setPassword(registgerForm.getPassword());
+		        principal.setEnabled(true);
+		        principal.setUser(buyer);
+		        
+		        Authority a = Authority.findAuthoritysByAuthorityLike("ROLE_BUYER").getResultList().get(0);
+		        AuthorityPrincipalAssignment as = new AuthorityPrincipalAssignment();
+		        as.setRoleId(a);
+		        as.setUsername(principal);
+		        buyer.setPrinciple(principal);
+		        principal.persist();
+		        as.persist();
+		        
+		        buyerDao.save(buyer);
+			
+		}
+		return "redirect:/";
 	}
-	
 	
 }
