@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -67,7 +67,7 @@ ddsmoothmenu.init({
     <a href="CT_Login.html">Login</a> | <a href="CT_Register.html" target="_parent">Register</a></div>
     	<div id="site_title"><a href="http://www.cdu.edu.cn">CDMU</a></div>
     	<div id="templatemo_seach">
-        <input type="text" value="serach fruits" size="20" maxlength="20" class="text"></input>
+        <input type="text" placeholder="search fruits" size="20" maxlength="20" class="text" />
            <input type="submit" value="Go" class="sub"></input>
         </div>
         <div id="templatemo_menu" class="ddsmoothmenu">

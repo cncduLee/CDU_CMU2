@@ -15,16 +15,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import edu.cmucdu.ecommerce.dao.product.ProductDao;
 import edu.cmucdu.ecommerce.domain.product.Product;
 import edu.cmucdu.ecommerce.domain.product.ProductPic;
+import edu.cmucdu.ecommerce.service.product.ProductService;
 
 @Controller
 public class IndexController {
 	@Autowired
 	ProductDao productDao;
+	@Autowired
+	ProductService productService;
 	
 	@Transactional
 	@RequestMapping("/")
 	public String index(Model uiModel,HttpServletRequest httpServletRequest){
-		List<Product> products = productDao.findAll();
+//		List<Product> products = productDao.findAll();
+		List<Product> products = productService.getProductRandomly(3);
 		List<IndexProductEntity> idp = new ArrayList<IndexProductEntity>();
 		for (Product product : products) {
 			idp.add(new IndexProductEntity(product.getLocalName(), product.getLocalDescription()));
