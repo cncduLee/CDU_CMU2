@@ -21,11 +21,11 @@
 
 	<!-- regist info begain -->	
 	<div class="Rmain">
-		<form:form  modelAttribute="registform" target="_self" >
+		<form:form  action="registInfo" method="post" modelAttribute="registForm">
 			<h2 class="f24red">Register</h2>
 				<ul id="tab1" class="Rm_input">
-						<li><label>Username</label>
-					<form:input id="username" class="Rtext w300" type="text" path="Username"/>
+					<li><label>Username</label>
+					<form:input path="Username" cssClass="Rtext w300" type="text"/>
 					</li>
 					
 					<li><label>Password</label> 
@@ -37,7 +37,7 @@
 					</li>
 					
 					<li><label>Type</label>
-					<form:select id="type" class="Rtext w300" path="Type">
+					<form:select id="type" class="Rtext w300" path="registForm.Type">
 						<option>Seller</option>
 						<option>Customer</option>
 					</form:select>

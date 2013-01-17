@@ -1,72 +1,89 @@
 package edu.cmucdu.ecommerce.web.custom;
 
 public class RegisterForm {
-	private String Username;
-	private String Password;
-	private String Confirm;
-	private String Type;
+	private String username;
+	private String password;
+	private String confirm;
+	private String type;
 	private String email;
-	private String FullName;
-	private String Address;
-	private String Telephone;
-	private String VerificationCode;
+	private String fullName;
+	private String address;
+	private String telephone;
+	private String verificationCode;
 	
 	public RegisterForm(){}
-	
+
 	public String getUsername() {
-		return Username;
+		return username;
 	}
+
 	public void setUsername(String username) {
-		Username = username;
+		this.username = username;
 	}
+
 	public String getPassword() {
-		return Password;
+		return password;
 	}
+
 	public void setPassword(String password) {
-		Password = password;
+		this.password = password;
 	}
+
 	public String getConfirm() {
-		return Confirm;
+		return confirm;
 	}
+
 	public void setConfirm(String confirm) {
-		Confirm = confirm;
+		this.confirm = confirm;
 	}
+
 	public String getType() {
-		return Type;
+		return type;
 	}
+
 	public void setType(String type) {
-		Type = type;
+		this.type = type;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public String getFullName() {
-		return FullName;
+		return fullName;
 	}
+
 	public void setFullName(String fullName) {
-		FullName = fullName;
+		this.fullName = fullName;
 	}
+
 	public String getAddress() {
-		return Address;
+		return address;
 	}
+
 	public void setAddress(String address) {
-		Address = address;
+		this.address = address;
 	}
+
 	public String getTelephone() {
-		return Telephone;
+		return telephone;
 	}
+
 	public void setTelephone(String telephone) {
-		Telephone = telephone;
+		this.telephone = telephone;
 	}
+
 	public String getVerificationCode() {
-		return VerificationCode;
+		return verificationCode;
 	}
+
 	public void setVerificationCode(String verificationCode) {
-		VerificationCode = verificationCode;
+		this.verificationCode = verificationCode;
 	}
 	
-	
+
 }

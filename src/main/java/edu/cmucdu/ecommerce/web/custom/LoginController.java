@@ -17,12 +17,12 @@ public class LoginController {
 	@Autowired
 	BuyerDao buyerDao;
 	
-	@RequestMapping("/login")
-	public String LoginPage(){
+	@RequestMapping("/toLoginPage")
+	public String goToLoginPage(){
 		return "login";//redirect login page
 	}
 	
-	@RequestMapping("/loginInfo")
+	@RequestMapping("/login")
 	public String Login(
 			@RequestParam String username,
 			@RequestParam String password,
