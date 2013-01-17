@@ -21,25 +21,25 @@
 
 	<!-- regist info begain -->	
 	<div class="Rmain">
-		<form:form  action="registInfo" method="post" modelAttribute="registForm">
+		<form:form  action="registInfo" method="post" >
 			<h2 class="f24red">Register</h2>
 				<ul id="tab1" class="Rm_input">
 					<li><label>Username</label>
-					<form:input path="Username" cssClass="Rtext w300" type="text"/>
+					<form:input path="username" cssClass="Rtext w300" type="text"/>
 					</li>
-					
+	
 					<li><label>Password</label> 
-					<form:input id="password" class="Rtext w300" type="password" path="Password"/>
+					<form:input id="password" class="Rtext w300" type="password" path="password"/>
 					</li>
 					
 					<li><label>Confirm</label> 
-					<form:input id="confirm" class="Rtext w300" type="password" path="Confirm"/>
+					<form:input id="confirm" class="Rtext w300" type="password" path="confirm"/>
 					</li>
 					
 					<li><label>Type</label>
-					<form:select id="type" class="Rtext w300" path="registForm.Type">
-						<option>Seller</option>
-						<option>Customer</option>
+					<form:select id="type" class="Rtext w300" path="type">
+						<option value="1">Seller</option>
+						<option value="2">Customer</option>
 					</form:select>
 					</li>
 					
@@ -49,19 +49,19 @@
 					</li>
 					
 					<li><label>Full name</label> 
-					<form:input id="fullname" class="Rtext w300" type="text" path="FullName"/>
+					<form:input id="fullname" class="Rtext w300" type="text" path="fullName"/>
 					</li>
 					
 					<li><label>Address</label> 
-					<input id="address" class="Rtext w300" type="text" name="Address"/>
+					<input id="address" class="Rtext w300" type="text" name="address"/>
 					</li>
 					
 					<li><label>Telephone</label> 
-					<form:input id="telephone" class="Rtext w300" type="text" path="Telephone"/>
+					<form:input id="telephone" class="Rtext w300" type="text" path="telephone"/>
 					</li>
 					
 					<li><label>Verification code</label> 
-					<form:input id="verifycode" class="Rtext w300" type="text" path="VerificationCode"/>
+					<form:input id="verifycode" class="Rtext w300" type="text" path="verificationCode"/>
 					<span class="yzm"></span>
 					</li>
 				</ul>
