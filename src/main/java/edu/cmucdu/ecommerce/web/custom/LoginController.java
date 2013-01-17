@@ -10,7 +10,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
 
 import edu.cmucdu.ecommerce.dao.user.BuyerDao;
 import edu.cmucdu.ecommerce.dao.user.SellerDao;
@@ -41,10 +40,11 @@ public class LoginController {
 		int type = Integer.parseInt(typeName.trim());
 		UserDetail user = null;
 		
+//		System.out.println(username+"==="+password);
+		
 		if (type == 1) {
 			// seller login
 			user = sellerDao.findByPrincipleUsernameAndPrinciplePassword(username,password);
-
 		}
 		if (type == 2) {
 			// buyer login
@@ -55,12 +55,13 @@ public class LoginController {
 			//login success
 			//add login user to session
 			session.setAttribute("logined_user", user);
+		
 			//redirect
 			return "redirect:/";//redirect homepage
 		}else{
 			//error
 			errorMap.addAttribute("error", "can't find the user");
-			return "redirect:login";
+			return "login";
 		}
 		
 	}

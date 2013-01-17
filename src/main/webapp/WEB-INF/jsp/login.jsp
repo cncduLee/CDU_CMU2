@@ -12,7 +12,7 @@
 	
 <!-- Include Script in folder common -->
  <jsp:include page="./common/script.jsp" />
- <c:if test="error">show error ${error }</c:if>
+
 </head>
 <body>
 	<!-- Include header in folder common -->
@@ -32,7 +32,7 @@
 					</tr>
 					<tr>
 						<td class="title">Login</td>
-						<td></td>
+						<td style="color: red"> ${error }</td>
 					</tr>
 					<tr class="clear">
 						<td>&nbsp;</td>
@@ -52,7 +52,10 @@
 					</tr>
 					<tr>
 						<td>Verification code:</td>
-						<td><input type="text" name="chechcode" class="code"></input></td>
+						<td>
+							<input type="text" name="chechcode" class="code"></input>
+							<img src="./image.jsp" alt="chechcode" border="1"/>
+						</td>
 					</tr>
 					<tr>
 
