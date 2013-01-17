@@ -9,5 +9,8 @@
 </head>
 <body>
 	<h1>Hello!!!! Naja  555+55</h1>
+	<c:forEach items="${products}" var="product" varStatus="status">
+		${status.count } : ${product.name.localDescription } <br/>
+	</c:forEach>
 </body>
 </html>

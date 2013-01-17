@@ -1,5 +1,8 @@
 package edu.cmucdu.ecommerce.service.product;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -16,22 +19,21 @@ public class ProductServiceImpl implements ProductService {
 	ProductDao productDao;
 	
 	@Override
-	@SuppressWarnings("null")
 	public List<Product> getProductRandomly(int amount) {
 		
 		List<Product> productList = productDao.findAll();
-		List<Product> randomProductList = null;
+		List<Product> randomList = new ArrayList<Product>();
 		
-		Random random = new Random();
-		int randomNum;
+		Random rd = new Random();
 		
 		for(int i = 0; i < 3; i++)
 		{
-			randomNum = random.nextInt(amount);
-			randomProductList.add(productList.get(randomNum));
+			int index = (int) (rd.nextDouble() * productList.size());
+            randomList.add(productList.get(index));
+            productList.remove(index);
 		}
 		
-		return randomProductList;
+		return randomList;
 	}
 
 }
