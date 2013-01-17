@@ -7,10 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import edu.cmucdu.ecommerce.dao.user.BuyerDao;
 import edu.cmucdu.ecommerce.dao.user.SellerDao;
@@ -26,14 +28,15 @@ public class RegisterController {
 	BuyerDao buyerDao;
 	
 	@RequestMapping("/register")
-	public String regist(Model uiModel, HttpServletRequest httpServletRequest){
+	public ModelAndView goTpRegisterPage(Model uiModel, HttpServletRequest httpServletRequest){
+		System.out.println("--------");
 		List<Seller> sellers = sellerDao.findAll();
 		uiModel.addAttribute("all", sellers);
-		return "register";//redirect to the regist page
+		return new ModelAndView("register", "registForm", new RegisterForm());//redirect to the regist page
 	}
 	
-	@RequestMapping(value="/registInfo", method = RequestMethod.POST)  
-	public String register(@ModelAttribute("registForm") RegisterForm registForm){
+	@RequestMapping(value="/regist", method = RequestMethod.POST)  
+	public String register(@ModelAttribute("registForm") RegisterForm registForm, BindingResult result){
 //		int type = Integer.parseInt(registForm.getType());
 //		if(type==1){
 //			//seller
