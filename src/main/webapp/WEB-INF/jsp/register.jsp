@@ -11,7 +11,8 @@
 	content="Fresh Zone Theme, free CSS template provided by templatemo.com" />
 
 <!-- Include Script in folder common -->
- <jsp:include page="./common/script.jsp" />
+<jsp:include page="./common/script.jsp" />
+
 
  
 </head>
@@ -22,46 +23,49 @@
 	<!-- regist info begain -->	
 	<div class="Rmain">
 		<form:form  action="registInfo" method="post" >
-			<h2 class="f24red">Register</h2>
+			<h3 class="f24red">Register</h3> &nbsp;&nbsp;&nbsp;&nbsp;<div style="color: red"> ${notNull_error }</div>
 				<ul id="tab1" class="Rm_input">
-					<li><label>Username</label>
-					<form:input path="username" cssClass="Rtext w300" type="text"/>
+					<li><label>Username:</label>
+					<form:input path="username" cssClass="Rtext w300" type="text"/> 
+					<div style="color: red">* ${username_error }</div>
 					</li>
 	
-					<li><label>Password</label> 
+					<li><label>Password:</label> 
 					<form:input id="password" class="Rtext w300" type="password" path="password"/>
+					<div style="color: red">* ${password_error }</div>
 					</li>
 					
-					<li><label>Confirm</label> 
+					<li><label>Confirm:</label> 
 					<form:input id="confirm" class="Rtext w300" type="password" path="confirm"/>
+					<div style="color: red">* ${confirm_error }</div>
 					</li>
 					
-					<li><label>Type</label>
+					<li><label>Type:</label>
 					<form:select id="type" class="Rtext w300" path="type">
 						<option value="1">Seller</option>
 						<option value="2">Customer</option>
 					</form:select>
 					</li>
 					
-					<li><label>E-Mail</label>
-					<form:input id="email" class="Rtext w300" type="text" path="email"/>
-					<span id="emailtip"></span>
-					</li>
 					
 					<li><label>Full name</label> 
 					<form:input id="fullname" class="Rtext w300" type="text" path="fullName"/>
+					<div style="color: red"> ${fullName_error }</div>
 					</li>
 					
 					<li><label>Address</label> 
 					<input id="address" class="Rtext w300" type="text" name="address"/>
+					<div style="color: red"> ${address_error }</div>
 					</li>
 					
 					<li><label>Telephone</label> 
 					<form:input id="telephone" class="Rtext w300" type="text" path="telephone"/>
+					<div style="color: red"> ${telphone_error }</div>
 					</li>
 					
 					<li><label>Verification code</label> 
 					<form:input id="verifycode" class="Rtext w300" type="text" path="verificationCode"/>
+					<div style="color: red"> ${username_error }</div>
 					<span class="yzm"></span>
 					</li>
 				</ul>

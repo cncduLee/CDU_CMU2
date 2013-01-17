@@ -1,3 +1,4 @@
+<%@page import="edu.cmucdu.ecommerce.domain.user.UserDetail"%>
 <div id="templatemo_header_wrapper">
     
 	<div id="templatemo_header">
@@ -8,7 +9,17 @@
 							<option value="20">Chinese</option>
 							<option value="21">Thai</option>
 					</select>
-    <a href="toLoginPage">Login</a> | <a href="toRegister" target="_parent">Register</a></div>
+				<%
+				UserDetail user = (UserDetail)session.getAttribute("logined_user");
+				if(user != null){
+					%>
+					<%=user.getLocalName() %>|
+					<%
+					}
+				%>
+								
+				<a href="toLoginPage">Login</a>| <a href="toRegister" target="_parent">Register</a></div>
+				
     	<div id="site_title"><a href=".">CDMU</a></div>
     	<div id="templatemo_seach">
         <input type="text" placeholder="search fruits" size="20" maxlength="20" class="text"></input>
