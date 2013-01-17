@@ -10,7 +10,7 @@
 <body>
 	<h1>Hello!!!!</h1>
 	<c:forEach items="${products}" var="product">
-		${product.name.localDescription } <br />
+		${product.name.localDescription} <br />
 	</c:forEach>
 </body>
 </html>
