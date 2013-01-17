@@ -32,7 +32,8 @@ public class ProductServiceImpl implements ProductService {
             randomList.add(productList.get(index));
             productList.remove(index);
 		}
-		
+		System.out.println(amount);
+		System.out.println(productList.size());
 		return randomList;
 	}
 
