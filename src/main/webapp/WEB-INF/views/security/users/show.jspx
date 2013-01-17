@@ -3,7 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_edu_cmucdu_ecommerce_domain_user_security_Principal" object="${principal}" path="/security/users" z="Y0/gIzpJlh+YrFyxVELDvMr/cwg=">
-        <field:display render="false"  field="password" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_password" object="${principal}" z="U9+RmQA5F8D5qo8hxFsyVrtLtHg="/>
+        <field:display field="password" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_password" object="${principal}" render="false" z="user-managed"/>
         <!-- <field:display field="user" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_user" object="${principal}" z="bRagRVthoyxqKteAIYxFPs5EeD8="/>
 		-->
         <label for="_user_id">User
@@ -11,12 +11,12 @@
       </label>
         <div class="box" id="_s_edu_cmucdu_ecommerce_domain_user_security_Principal_user_user_id">${principal.user.localName}</div>
         <br/>
-        <field:display  field="user.localName" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_user" object="${principal}" render="false"/>
-        <field:display render="false" field="authorities" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_authorities" object="${principal}" z="2Iy5+KwmpRICmOzIlcPpUWX+cG0="/>
-        <field:display render="true" field="username" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_username" object="${principal}" z="dkuDilbcUqcftaA7KOyXqBBCtck="/>
-        <field:display render="false" field="isAccountNonExpired" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_isAccountNonExpired" object="${principal}"  z="user-managed"/>
-        <field:display render="false" field="isAccountNonLocked" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_isAccountNonLocked" object="${principal}"  z="user-managed"/>
-        <field:display render="false" field="isCredentialsNonExpired" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_isCredentialsNonExpired" object="${principal}"  z="user-managed"/>
-        <field:display render="true" field="checkEnabled" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_checkEnabled" object="${principal}" z="XS/vpEZKg0wAxpHGmGZJFd0SVyk="/>
+        <field:display field="user.localName" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_user" object="${principal}" render="false"/>
+        <field:display field="authorities" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_authorities" object="${principal}" render="false" z="user-managed"/>
+        <field:display field="username" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_username" object="${principal}" render="true" z="user-managed"/>
+        <field:display field="isAccountNonExpired" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_isAccountNonExpired" object="${principal}" render="false" z="user-managed"/>
+        <field:display field="isAccountNonLocked" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_isAccountNonLocked" object="${principal}" render="false" z="user-managed"/>
+        <field:display field="isCredentialsNonExpired" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_isCredentialsNonExpired" object="${principal}" render="false" z="user-managed"/>
+        <field:display field="checkEnabled" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_checkEnabled" object="${principal}" render="true" z="user-managed"/>
     </page:show>
 </div>

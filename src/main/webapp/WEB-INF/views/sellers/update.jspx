@@ -26,6 +26,5 @@
         <field:textarea field="address.thaiDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address_thaiDesc"/>
         <field:textarea field="address.chineseDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address_chineseDesc"/>
         <field:textarea field="address.englishDesc" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address_englishDesc"/>
-        <field:input field="email" id="c_edu_cmucdu_ecommerce_domain_user_Seller_email" validationMessageCode="field_invalid_email" z="to0qnJe8o3QDyuH0CwXcRGN8PyQ="/>
     </form:update>
 </div>

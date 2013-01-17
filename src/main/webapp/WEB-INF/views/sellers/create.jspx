@@ -95,7 +95,6 @@
             <br/>
             <c:set value="${i+1 }" var="i"/>
         </c:forEach>
-        <field:input field="email" id="c_edu_cmucdu_ecommerce_domain_user_Seller_email" validationMessageCode="field_invalid_email" z="to0qnJe8o3QDyuH0CwXcRGN8PyQ="/>
     </form:multi>
     <form:dependency dependencies="${dependencies}" id="d_edu_cmucdu_ecommerce_domain_user_Seller" render="${not empty dependencies}" z="9YLfJvf9jSUmo3xX07nzIqg14xY="/>
 </div>

@@ -17,6 +17,5 @@
             </div>
             <br/>
         </c:forEach>
-        <field:display field="email" id="s_edu_cmucdu_ecommerce_domain_user_Seller_email" object="${seller}" z="/YSnJrHmXTEKRM6a/YRyyhn6Ac0="/>
     </page:show>
 </div>
