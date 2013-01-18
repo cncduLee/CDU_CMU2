@@ -21,6 +21,7 @@ public class TestController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String test(ModelMap map)
 	{
+		//set amount of products to show in the front page randomly
 		List<Product> products = productService.getProductRandomly(3);
 		map.addAttribute("products", products);
 		return "test";

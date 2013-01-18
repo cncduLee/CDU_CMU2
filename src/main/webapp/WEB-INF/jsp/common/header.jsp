@@ -11,7 +11,7 @@
     <a href="login">Login</a> | <a href="register" target="_parent">Register</a></div>
     	<div id="site_title"><a href=".">CDMU</a></div>
     	<div id="templatemo_seach">
-        <input type="text" value="serach fruits" size="20" maxlength="20" class="text"></input>
+        <input type="text" placeholder="search fruits" size="20" maxlength="20" class="text"></input>
            <input type="submit" value="Go" class="sub"></input>
         </div>
         <div id="templatemo_menu" class="ddsmoothmenu">

@@ -1,8 +1,6 @@
 package edu.cmucdu.ecommerce.service.product;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -26,14 +24,13 @@ public class ProductServiceImpl implements ProductService {
 		
 		Random rd = new Random();
 		
-		for(int i = 0; i < 3; i++)
+		for(int i = 0; i < amount; i++)
 		{
 			int index = (int) (rd.nextDouble() * productList.size());
             randomList.add(productList.get(index));
             productList.remove(index);
 		}
-		System.out.println(amount);
-		System.out.println(productList.size());
+		
 		return randomList;
 	}
 
