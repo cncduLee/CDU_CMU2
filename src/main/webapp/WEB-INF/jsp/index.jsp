@@ -177,6 +177,7 @@
 		</div>
 		<!-- end food gallery -->
 		  
+
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_main_wrapper -->
 </div> <!-- END of templatemo_main -->

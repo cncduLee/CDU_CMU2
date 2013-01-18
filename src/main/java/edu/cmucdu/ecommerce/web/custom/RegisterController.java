@@ -50,8 +50,6 @@ public class RegisterController {
 		
 		
 		if(type == 1){
-			//register 
-
 			Seller seller = new Seller();
 			seller.setTelephoneNo(registgerForm.getTelephone()+"  ");
 			Description description = new Description();
