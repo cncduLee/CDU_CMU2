@@ -9,6 +9,9 @@
         <field:input field="price" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_price" z="zADCO17bGYBZuZ6qQ8szvk0qtKE="/>
         <field:input field="weight" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_weight" z="FEs8qrO9SzhjyEcfmh4sp+9VUQk="/>
         <field:select field="promotion" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_promotion" itemValue="id" items="${promotions}" path="/promotions" z="AqEBxhzZwAlr9cNzGpBQuz9QjOc="/>
+        <field:datetime dateTimePattern="${sellerProduct_durationoffruit_date_format}" field="durationOfFruit" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_durationOfFruit" z="eNzZIbDxTdFnVTRSkZwmzXj9A54="/>
+        <field:datetime dateTimePattern="${sellerProduct_readytime_date_format}" field="readyTime" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_readyTime" z="U2yZb593jqMuNvPv+U3HtVbPsoo="/>
+        <field:select field="brandName" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_brandName" itemValue="id" items="${descriptions}" path="/descriptions" z="zjrGYGb71pbYlX6o+u3DLcbVmz0="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_edu_cmucdu_ecommerce_domain_product_SellerProduct" render="${not empty dependencies}" z="Uws9/zzxmpX+XM4ba+pjXO6vdbo="/>
 </div>
