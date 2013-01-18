@@ -143,6 +143,8 @@
         
         <div class="cleaner h40"></div>
         
+        
+        <!-- start food gallery -->
         <div id="food-gallery">
             <h2>Food Gallery</h2>
             <div class="col one_fourth">
@@ -173,7 +175,8 @@
                 <p>Sed laoreet  lorem, in porta massa varius eu varius lacus eget ligula facilisis rutrum.</p>
             </div>
 		</div>
-                
+		<!-- end food gallery -->
+		  
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_main_wrapper -->
 </div> <!-- END of templatemo_main -->
