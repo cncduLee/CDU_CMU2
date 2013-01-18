@@ -3,9 +3,7 @@
 <html xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:spring="http://www.springframework.org/tags">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Fresh Zone Theme - Free CSS Template-www.mianfeimoban.com</title>
-<meta name="keywords" content="fresh zone, free theme, free templates, templatemo, dualSlider, CSS, HTML" />
-<meta name="description" content="Fresh Zone Theme, free CSS template provided by templatemo.com" />
+<title>CMU_CDU</title>
 
 <!-- Include Script in folder common -->
  <jsp:include page="./common/script.jsp" />

@@ -55,8 +55,10 @@ cite span {
 }
 
 .imgage-with-frame { 
+	width:200px;
+	height: 112px;
 	padding: 4px; 
-	border: 1px solid #a6a28d; 
+	border: 1px solid #a6a28d;
 }
 
 .image_fl { 

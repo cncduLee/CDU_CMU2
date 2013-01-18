@@ -3,12 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Fresh Zone Theme - Free CSS Template-www.mianfeimoban.com</title>
-<meta name="keywords"
-	content="fresh zone, free theme, free templates, templatemo, dualSlider, CSS, HTML" />
-<meta name="description"
-	content="Fresh Zone Theme, free CSS template provided by templatemo.com" />
-	
+<title>CMU_CDU</title>
+
 	
 <!-- Include Script in folder common -->
  <jsp:include page="./common/script.jsp" />

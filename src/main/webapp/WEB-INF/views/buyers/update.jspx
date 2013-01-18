@@ -10,5 +10,6 @@
         <field:select field="description" id="c_edu_cmucdu_ecommerce_domain_user_Buyer_description" itemValue="id" items="${descriptions}" path="/descriptions" z="X4dyAsUZ3DFgI8IeXH+ZRLxYHPA="/>
         <field:input field="telephoneNo" id="c_edu_cmucdu_ecommerce_domain_user_Buyer_telephoneNo" z="FhrECn4oYxFZ+IxOMf+YmsQX1oI="/>
         <field:select field="address" id="c_edu_cmucdu_ecommerce_domain_user_Buyer_address" itemValue="id" items="${descriptions}" path="/descriptions" z="pdu0SuhATcr5XZJmt8fCxe87jP8="/>
+        <field:simple field="buyerRequests" id="c_edu_cmucdu_ecommerce_domain_user_Buyer_buyerRequests" messageCode="entity_reference_not_managed" messageCodeAttribute="Buyer Request" z="e2h7mfDJDNAWpuFqAOpgKyGQEw0="/>
     </form:update>
 </div>
