@@ -27,30 +27,11 @@
         </div>
         <div id="templatemo_menu" class="ddsmoothmenu">
             <ul>
-                <li><a href="." class="selected">Home</a></li>
-                <li><a href="about">About</a>
-                    <ul>
-                        <li><a href="http://www.cdu.edu.cn">Cheng Du University</a></li>
-                        <li><a href="http://www.cdu.edu.cn">Chiang Mai University</a></li>
-                        <li><a href="http://www.cdu.edu.cn">This Project</a></li>
-					</ul>
-                </li>
-                <li><a href="productList">Products</a>
-                    <ul>
-						<li><a href="http://www.cdu.edu.cn">Recently Product</a></li>
-						<li><a href="http://www.cdu.edu.cn">Popular Product</a></li>
-						<li><a href="http://www.cdu.edu.cn">On Sale Product</a></li>
-					</ul>
-                </li>
-                <li><a href="blog">Informations</a>
-                	<ul>
-						<li><a href="http://www.cdu.edu.cn">How to Register</a></li>
-						<li><a href="http://www.cdu.edu.cn">How to buy products</a></li>
-						<li><a href="http://www.cdu.edu.cn">How to sell products</a></li>
-						<li><a href="http://www.cdu.edu.cn">Rules And Regulations</a></li>
-					</ul>
-                </li>
-                <li><a href="contact">Contact</a></li>
+                <li><a href=".">Home</a></li>
+                <li><a href="productList">Products</a></li>
+                <li><a href="rulesPage">Regulations</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
             </ul>
             <br style="clear: left" />
         </div> <!-- end of templatemo_menu -->

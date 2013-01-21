@@ -34,35 +34,41 @@ public class LoginController {
 	public String Login(@RequestParam String username,
 			@RequestParam String password, 
 			@RequestParam String typeName,
-			@RequestParam String chechcode,
+			@RequestParam String ccode,
 			ModelMap errorMap) {
 		// get the data from page
 		int type = Integer.parseInt(typeName.trim());
 		UserDetail user = null;
 		
 //		System.out.println(username+"==="+password);
-		
-		if (type == 1) {
-			// seller login
-			user = sellerDao.findByPrincipleUsernameAndPrinciplePassword(username,password);
-		}
-		if (type == 2) {
-			// buyer login
-			user = buyerDao.findByPrincipleUsernameAndPrinciplePassword(username, password);
-		}
-		
-		if(user != null){
-			//login success
-			//add login user to session
-			session.setAttribute("logined_user", user);
-		
-			//redirect
-			return "redirect:/";//redirect homepage
+		String checkCode = (String) session.getAttribute("checkcode");
+		if(ccode != null && ccode.trim().equals(checkCode)){
+			//ccode is right
+			if (type == 1) {
+				// seller login
+				user = sellerDao.findByPrincipleUsernameAndPrinciplePassword(username,password);
+			}
+			if (type == 2) {
+				// buyer login
+				user = buyerDao.findByPrincipleUsernameAndPrinciplePassword(username, password);
+			}
+			if(user != null){
+				//login success
+				//add login user to session
+				session.setAttribute("logined_user", user);
+				//redirect
+				return "redirect:/";//redirect homepage
+			}else{
+				//error
+				errorMap.addAttribute("error", "can't find the user!");
+				return "login";
+			}
 		}else{
-			//error
-			errorMap.addAttribute("error", "can't find the user");
+			errorMap.addAttribute("error", "checkCode is wrong!");
 			return "login";
 		}
+		
+		
 		
 	}
 	

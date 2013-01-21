@@ -49,8 +49,8 @@
 					<tr>
 						<td>Verification code:</td>
 						<td>
-							<input type="text" name="chechcode" class="code"></input>
-							<img src="./image.jsp" alt="chechcode" border="1"/>
+							<input type="text" name="ccode" class="code"></input>
+							<a href=""> <img src="image.jsp" alt="checkCode" border="1"/></a>
 						</td>
 					</tr>
 					<tr>
