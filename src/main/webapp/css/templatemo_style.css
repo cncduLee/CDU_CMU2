@@ -165,7 +165,7 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; }
 #templatemo_main {
 	width: 960px;
 	padding: 60px 10px;
-	margin: 0 20px;
+	margin: 0 auto;
 }
 
 #templatemo_footer_wrapper {
@@ -295,7 +295,7 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; }
 }
 
 .post .post_image { 
-	width: 600px; 
+	width: 470px; 
 	position: relative; 
 	padding: 4px; 
 	border: 1px solid #a6a28d; 
@@ -418,7 +418,7 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; }
 	padding:5px;
 	width: 380px;
 	font-size: 12px;
-	font-family: Tahoma, Geneva, sans-serif;
+	font-family: Verdana;
 	margin-top: 5px;
 }
 
@@ -503,7 +503,7 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; }
 	background: #fff; 
 	border: 1px solid #ded6c6; 
 	font-size: 12px;
-	font-family: Tahoma, Geneva, sans-serif;
+	font-family: Verdana;
 	margin-top: 5px;
 }
 
@@ -524,8 +524,8 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; }
 
 .col { float: left; margin: 0 20px 20px 0 }
 .half { width: 460px }
-#sidebar, .one_third { width: 300px }
-#content, .two-third { width: 620px }
+#sidebar, .one_third { width: 450px }
+#content, .two-third { width: 960px }
 .padding_right { padding-right: 20px }
 .one_fourth { width: 220px }
 .no_margin_right { margin-right: 0 }

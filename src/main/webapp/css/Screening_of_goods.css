@@ -1,0 +1,51 @@
+.button_add {
+	font-family: Verdana;
+	height: 25px;
+	list-style: none;
+	border-bottom: 2px solid #38362D;
+	margin-bottom: 8px;
+}
+
+.button_radio_all {
+	width: 100px;
+	float: left;
+	padding-right: 40px;
+	font-size: 15px;
+	list-style: none;
+}
+
+.button_radio {
+	width: 100px;
+	float: left;
+	padding-left: 40px;
+	font-size: 15px;
+	list-style: none;
+}
+
+.button_submit {
+	float: right;
+	padding-right: 50px;
+	list-style: none;
+}
+
+.submit {
+	width: 80px;
+	height: 25px;
+	font-family: Verdana;
+}
+
+/*gallery_box*/
+.gallery_box ul li {
+	list-style: none;
+	margin: 0 0 10px;
+	padding: 0;
+	text-align: left;
+}
+
+.bold {
+	font-size: 12px;
+	font-weight: 700;
+	margin-bottom: 0;
+	color: #333;
+	font-family: Verdana;
+}
