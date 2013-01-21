@@ -9,8 +9,11 @@
 </head>
 <body>
 	<h1>Hello!!!!</h1>
-	<c:forEach items="${products}" var="product">
-		${product.name.localDescription} <br />
-	</c:forEach>
+	Product id: ${product.id} <br />
+	Product name: ${product.name.localDescription} <br />
+	Description: ${product.description.localDescription} <br />
+	Weight: ${sellerProduct.weight} Kg <br />
+	Price: ${sellerProduct.price} Baht<br />
+	Seller Name: ${seller.name.localDescription} <br />
 </body>
 </html>
