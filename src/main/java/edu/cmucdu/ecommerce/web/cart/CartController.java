@@ -2,6 +2,7 @@ package edu.cmucdu.ecommerce.web.cart;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.xml.ws.ServiceMode;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,37 +22,45 @@ import edu.cmucdu.ecommerce.dao.product.SellerProductDao;
 import edu.cmucdu.ecommerce.domain.product.shoppingcart.Cart;
 import edu.cmucdu.ecommerce.domain.product.shoppingcart.CartTransaction;
 import edu.cmucdu.ecommerce.domain.user.Buyer;
+import edu.cmucdu.ecommerce.domain.user.UserDetail;
 import edu.cmucdu.ecommerce.domain.user.security.Principal;
 
 
 @Controller
 @SessionAttributes("myCart")
-
 public class CartController {
 	@Autowired
 	SellerProductDao sellerProductDao;
-    
+	@Autowired  
+	private HttpSession session; 
+
 	
+	/**
+	 * get current  user's cart??
+	 * 
+	 * TODO LPM
+	 * 
+	 * @return
+	 */
 	@ModelAttribute("myCart")
 	public Cart getCart(){
-		System.out.println("---");
 		Cart c = new Cart();
 //		Principal principal = (Principal) SecurityContextHolder.getContext()
 //				.getAuthentication().getPrincipal();
 //		c.setBuyer((Buyer) principal.getUser());
-		System.out.println("--@@--");
+		UserDetail user = (UserDetail) session.getAttribute("logined_user");
+		c.setBuyer((Buyer) user);
 		return c;
 	}
 	
-//	@RequestMapping(method = RequestMethod.POST, value = "{id}")
-//	public void post(@PathVariable Long id, ModelMap modelMap,
-//			HttpServletRequest request, HttpServletResponse response) {
-//		System.out.println("======get");
-//	}
+	@RequestMapping(method = RequestMethod.POST, value = "{id}")
+	public void post(@PathVariable Long id, ModelMap modelMap,
+			HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("======post");
+	}
 
 	@RequestMapping(value="cartPage")
 	public String index() {
-		System.out.println("======index");
 		return "cart/index";
 	}
 
@@ -67,6 +76,7 @@ public class CartController {
 		ct.setAmount(amount);
 		ct.setSellerProduct(sellerProductDao.findOne(id));
 		//wait for show all the product list
+		
 		return "redirect:../cartPage";
 	}
 	
