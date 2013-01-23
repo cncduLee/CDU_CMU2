@@ -23,26 +23,29 @@ public class IndexController {
 	ProductDao productDao;
 	@Autowired
 	ProductService productService;
-	
+
 	@Transactional
 	@RequestMapping("/")
-	public String index(Model uiModel,HttpServletRequest httpServletRequest){
-//		List<Product> products = productDao.findAll();
+	public String index(Model uiModel, HttpServletRequest httpServletRequest) {
+		// List<Product> products = productDao.findAll();
 		List<Product> products = productService.getProductRandomly(3);
 		List<IndexProductEntity> idp = new ArrayList<IndexProductEntity>();
-		for (Product product : products) {
-			idp.add(new IndexProductEntity(product.getLocalName(), product.getLocalDescription()));
-		}
-//		Long picID = products.get(0).getImages().get(0).getId();
-		uiModel.addAttribute("products",products);
 		List<ProductPic> pics = new ArrayList<ProductPic>();
+
+		for (Product product : products) {
+			idp.add(new IndexProductEntity(product.getLocalName(), product
+					.getLocalDescription(), product.getId()));
+		}
+		// Long picID = products.get(0).getImages().get(0).getId();
 		for (Product product2 : products) {
 			pics.add(product2.getImages().get(0));
 		}
-		uiModel.addAttribute("pics",pics);
-//		uiModel.addAttribute("img",products.get(0).getImages().get(0));
-//		uiModel.addAttribute("product", products.get(0));
+
+		uiModel.addAttribute("products", products);
+		uiModel.addAttribute("pics", pics);
+		// uiModel.addAttribute("img",products.get(0).getImages().get(0));
+		// uiModel.addAttribute("product", products.get(0));
 		return "index";
 	}
-	
+
 }

@@ -1,7 +1,10 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:spring="http://www.springframework.org/tags">
+<html xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:spring="http://www.springframework.org/tags">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>CMU_CDU</title>
@@ -10,13 +13,12 @@
 <jsp:include page="./common/script.jsp" />
 
 
- 
 </head>
 <body>
 	<!-- Include header in folder common -->
 	<jsp:include page="./common/header.jsp" />
 
-	<!-- regist info begain -->	
+	<!-- regist info begain -->
 	<div class="Rmain">
 		<form:form  action="registInfo" method="post" >
 			<h3 class="f24red">Register</h3> &nbsp;&nbsp;&nbsp;&nbsp;<div style="color: red"> ${notNull_error }</div>
@@ -40,6 +42,7 @@
 					<form:select id="type" class="Rtext w300" path="type">
 						<option value="1">Seller</option>
 						<option value="2">Customer</option>
+
 					</form:select>
 					</li>
 					
@@ -79,9 +82,9 @@
 							===================
 							===================
 						</pre>
-					</div>
-					<input class="Rms_btn" type="submit" value="Register Now"/>
 				</div>
+				<input class="Rms_btn" type="submit" value="Register Now" />
+			</div>
 		</form:form>
 	</div>
 	<!--end regist info begain 
