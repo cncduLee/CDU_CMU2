@@ -34,4 +34,29 @@ public class ProductServiceImpl implements ProductService {
 		return randomList;
 	}
 
+	@Override
+	public List<Product> getProductsByType(int type) {
+		
+		List<Product> all = new ArrayList<Product>();
+		
+		switch (type) {
+		case 1:
+			//get the all products
+			all = productDao.findAll();
+			break;
+		case 2:
+			//get the promotion(Hot sell) products
+			
+			break;
+		case 3:
+			//up coming(新品，即将上市)
+			
+			break;
+
+		default:
+			break;
+		}
+		return all;
+	}
+
 }

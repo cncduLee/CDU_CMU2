@@ -6,11 +6,11 @@
 	xmlns:spring="http://www.springframework.org/tags">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Fresh Zone Theme - Free CSS Template-www.mianfeimoban.com</title>
+<title>CMU_CDU</title>
 <meta name="keywords"
-	content="fresh zone, free theme, free templates, templatemo, dualSlider, CSS, HTML" />
+	content="fresh zone, fresh, fresh fruit, CMU, CDU, " />
 <meta name="description"
-	content="Fresh Zone Theme, free CSS template provided by templatemo.com" />
+	content="We sell fresh fruit directly from farmer to your hand. [supported by CDU&CMU University]" />
 
 <!-- Include Script in folder common -->
 <jsp:include page="./common/script.jsp" />
@@ -221,7 +221,69 @@
 
 			<div class="cleaner"></div>
 		</div>
-		<!-- END of templatemo_main_wrapper -->
+
+		<div class="col half float_r">
+			<h2>Regulations</h2>
+			<p>
+				<em>If you do not very clearly about relative rules or
+					regulations,please click there and read it.</em>
+			</p>
+			<p>All the users must obey the rules and relative regulations no
+				matter who you are and what you do .In order to make a very friendly
+				shopping atmosphere,we suggust users should read the rules first and
+				only you accept the rules and go through the test that you can be
+				allown as a VIP.</p>
+		</div>
+
+		<div class="cleaner h40"></div>
+
+
+		<!-- start food gallery -->
+		<div id="food-gallery">
+			<h2>Food Gallery</h2>
+			<div class="col one_fourth">
+				<a href="goodsDetail.html"> <img
+					src="images/templatemo_image_02.jpg" alt="Image 02"
+					class="imgage-with-frame" border="0" />
+				</a>
+				<h5>Web Design</h5>
+				<p>Donec sit amet sem in urna posuere interdum ac in arcu. Nulla
+					porttitor pharetra, et metus venenatis.</p>
+
+			</div>
+
+			<div class="col one_fourth fp_rw">
+				<a href="goodsDetail.html"> <img
+					src="images/templatemo_image_02.jpg" alt="Image 02"
+					class="imgage-with-frame" border="0" />
+				</a>
+				<h5>Ecommerce Solution</h5>
+				<p>Proin consectetur porttitor tincidunt. Ut fermentum arcu eget
+					lacus placerat molestie.</p>
+			</div>
+
+			<div class="col one_fourth fp_rw">
+				<img src="images/templatemo_image_04.jpg" alt="Image 04"
+					class="imgage-with-frame" />
+				<h5>Gallery Player</h5>
+				<p>Donec arcu orci, dictum id commodo eget, volutpat eu lorem
+					nec arcu in ulla ut erat arcu.</p>
+			</div>
+
+			<div class="col one_fourth fp_rw no_margin_right">
+				<img src="images/templatemo_image_05.jpg" alt="Image 05"
+					class="imgage-with-frame" />
+				<h5>Customer Support</h5>
+				<p>Sed laoreet lorem, in porta massa varius eu varius lacus eget
+					ligula facilisis rutrum.</p>
+			</div>
+		</div>
+		<!-- end food gallery -->
+
+
+		<div class="cleaner"></div>
+	</div>
+	<!-- END of templatemo_main_wrapper -->
 	</div>
 	<!-- END of templatemo_main -->
 
