@@ -35,37 +35,31 @@ public class ProductsController {
 		
 		final int totle = productDao.findAll().size();
 		
-		if (page != null || size != null) {
-			int sizeNo = size == null ? 1 : size.intValue();//12 products every page
-			final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
-			List<Product> all = productDao.findAll(
-					new org.springframework.data.domain.PageRequest(firstResult
-							/ sizeNo, sizeNo)).getContent();
-			
-			for (Product product : all) {
-				product.setLocale(WebUtil.getLocaleEnum(httpServletRequest));
-			}
-			
-			uiModel.addAttribute("products", all);
-			uiModel.addAttribute("currentPage",page);
-			uiModel.addAttribute("totle",totle);
-			
-			float nrOfPages = (float) productDao.count() / sizeNo;
-			uiModel.addAttribute(
-					"maxPages",
-					(int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1
-							: nrOfPages));
-		} else {
-			List<Product> all = productDao.findAll();
-			for (Product product : all) {
-				product.setLocale(WebUtil.getLocaleEnum(httpServletRequest));
-			}
-			uiModel.addAttribute("products", all);
-			page = 1;
-			uiModel.addAttribute("currentPage",page);
-			uiModel.addAttribute("totle",totle);
+		if (page == null || size == null) {
+			page=1;
+			size=12;
 		}
-		System.out.println(page+"=========="+totle);
+		int sizeNo = size == null ? 1 : size.intValue();//12 products every page
+		final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
+		List<Product> all = productDao.findAll(
+				new org.springframework.data.domain.PageRequest(firstResult
+						/ sizeNo, sizeNo)).getContent();
+		
+		for (Product product : all) {
+			product.setLocale(WebUtil.getLocaleEnum(httpServletRequest));
+		}
+		
+		uiModel.addAttribute("products", all);
+		uiModel.addAttribute("currentPage",page);
+		uiModel.addAttribute("totle",totle);
+		
+		float nrOfPages = (float) productDao.count() / sizeNo;
+		uiModel.addAttribute(
+				"maxPages",
+				(int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1
+						: nrOfPages));
+		
+		
 		return "products";
 	}
 }

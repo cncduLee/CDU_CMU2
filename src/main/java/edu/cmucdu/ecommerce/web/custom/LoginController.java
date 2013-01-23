@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.cmucdu.ecommerce.dao.user.BuyerDao;
 import edu.cmucdu.ecommerce.dao.user.SellerDao;
+import edu.cmucdu.ecommerce.domain.product.shoppingcart.Cart;
+import edu.cmucdu.ecommerce.domain.user.Buyer;
 import edu.cmucdu.ecommerce.domain.user.UserDetail;
 
 @Controller
@@ -56,6 +58,11 @@ public class LoginController {
 				//login success
 				//add login user to session
 				session.setAttribute("logined_user", user);
+				if(type==2){
+					Cart c = new Cart();
+					c.setBuyer((Buyer)user);
+					session.setAttribute("myCart", c);
+				}
 				//redirect
 				return "redirect:/";//redirect homepage
 			}else{
