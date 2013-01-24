@@ -41,8 +41,6 @@ public class Product {
 	public void setLocale(LocaleEnum locale){
 		this.locale = locale;
 	}
-
-
 	
 	public String getLocalName(){
 		return name.getLocalDescription();
