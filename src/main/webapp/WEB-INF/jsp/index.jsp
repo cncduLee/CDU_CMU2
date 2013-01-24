@@ -204,8 +204,6 @@
 		</div>
 
 	<!-- END of templatemo_main_wrapper -->
-	</div>
-	<!-- END of templatemo_main -->
 
 	<!-- Include footer in folder common -->
 	<jsp:include page="./common/footer.jsp" />

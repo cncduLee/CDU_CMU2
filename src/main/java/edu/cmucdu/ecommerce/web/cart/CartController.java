@@ -53,6 +53,7 @@ public class CartController {
 		return "cart/index";
 	}
 
+	
 	@RequestMapping(value = "cartAdd/productId={id}&amount={amount}", method = RequestMethod.GET)
 	public String addProduct(
 			@PathVariable("id") long id,

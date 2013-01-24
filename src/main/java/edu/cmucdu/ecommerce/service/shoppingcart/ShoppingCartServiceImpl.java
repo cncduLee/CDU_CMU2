@@ -31,12 +31,13 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 	
 	@Override
 	public boolean addToCart(CartTransaction cartTransaction) {
-		try {
-			cartTransactionDao.save(cartTransaction);
-			return true;
-		} catch (Exception e) {
-			return false;
-		}
+		return false;
+//		try {
+//			cartTransactionDao.save(cartTransaction);
+//			return true;
+//		} catch (Exception e) {
+//			return false;
+//		}
 		
 	}
 
@@ -44,8 +45,8 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 	public boolean removeProducts(Long productId) {
 //		SellerProduct product = sellerProductDao.findOne(productId);
 //		CartTransaction cartTransaction = cartTransactionDao.findCartTransactionBySellerProduct(product);
-		CartTransaction cartTransaction = cartTransactionDao.findCartTransactionBySellerProductProduct(productId);
-		cartTransactionDao.delete(cartTransaction);
+//		CartTransaction cartTransaction = cartTransactionDao.findCartTransactionBySellerProductProduct(productId);
+//		cartTransactionDao.delete(cartTransaction);
 		return false;
 	}
 

@@ -8,4 +8,5 @@ import org.springframework.roo.addon.layers.repository.jpa.RooJpaRepository;
 public interface SellerProductDao {
 	public SellerProduct findByProductId(Long id);
 	public SellerProduct findByProduct(Product p);
+	public SellerProduct getSellerProductByProductId(Long id);
 }

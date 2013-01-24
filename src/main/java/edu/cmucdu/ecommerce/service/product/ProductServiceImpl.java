@@ -8,11 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.cmucdu.ecommerce.dao.product.ProductDao;
+import edu.cmucdu.ecommerce.dao.product.ProductPicDao;
 import edu.cmucdu.ecommerce.dao.product.PromotionDao;
 import edu.cmucdu.ecommerce.dao.product.SellerProductDao;
 import edu.cmucdu.ecommerce.domain.product.Product;
+import edu.cmucdu.ecommerce.domain.product.ProductPic;
 import edu.cmucdu.ecommerce.domain.product.Promotion;
 import edu.cmucdu.ecommerce.domain.product.SellerProduct;
+
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -23,6 +26,11 @@ public class ProductServiceImpl implements ProductService {
 	SellerProductDao sellerProductDao;
 	@Autowired
 	PromotionDao promotionDao;
+
+	
+	@Autowired
+	ProductPicDao productPicDao;
+
 	
 	@Override
 	public List<Product> getProductRandomly(int amount) {
@@ -41,6 +49,25 @@ public class ProductServiceImpl implements ProductService {
 		
 		return randomList;
 	}
+	
+	@Override
+	public List<ProductPic> getPictureFromID(long id) {
+		List<ProductPic> pics = productPicDao.findAll();
+		List<ProductPic> picsFromID = new ArrayList<ProductPic>();
+		for(ProductPic pic:pics)
+		{
+			if(pic.getId() == id)
+			{
+				picsFromID.add(pic);
+			}
+		}
+		return picsFromID;
+	}
+	
+	@Override
+	public Product getProductFromID(long id) {
+		return productDao.findOne(id);
+	}
 
 	@Override
 	public List<Product> getProductsByType(int type) {
@@ -54,13 +81,10 @@ public class ProductServiceImpl implements ProductService {
 			break;
 		case 2:
 			//get the promotion(Hot sell) products
-			
 			break;
 		case 3:
 			//up coming(新品，即将上市)
-			
 			break;
-
 		default:
 			break;
 		}
