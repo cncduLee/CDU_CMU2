@@ -28,31 +28,17 @@
 					<div class="details_wrapper">
 
 						<div class="details">
-
-							<!-- <div class="detail">
-							<h2><a href="#">${product.localName }</a></h2>
-                            <p>${product.localDescription}</p>
-							<a href="#" title="Read more" class="more">Read more</a>
-							</div> -->
-							<!-- /detail -->
-
 							<c:forEach items="${products}" var="productx">
 								<div class="detail">
 									<h2>
-										<a href="#">${productx.localName }</a>
+										<a href="#">${productx.name }</a>
 									</h2>
-									<p>${productx.localDescription}</p>
+									<p>${productx.description}</p>
 									<a href="#" title="Read more" class="more">Read more</a>
 								</div>
-								<!-- /detail -->
 							</c:forEach>
-
 						</div>
-						<!-- /details -->
-
 					</div>
-					<!-- /details_wrapper -->
-
 					<div class="paging">
 						<div id="numbers"></div>
 						<a href="javascript:void(0);" class="previous" title="Previous">Previous</a>
@@ -70,20 +56,15 @@
 				<div id="slider-image-frame">
 					<div class="backgrounds">
 						<c:set var="i" value="1"></c:set>
-						<c:forEach items="${pics}" var="pic">
+					
+						 <c:forEach items="${picAndSellers}" var="item">
 							<div class="item item_${i}">
-								<a href="./goodsDetail?productId=${pic.product.id}"> <img
-									src="./productpics/showpic/${pic.id}"
-									alt="${pic.localDescription}" />
+								<a href="./goodsDetail?productId=${item['pic'].id }&sellerId=${item['seller'] }">
+									<img src="./productpics/showpic/${item['pic'].id }" alt="${item['pic'].localDescription }" />
 								</a>
 							</div>
-							<!-- /item -->
 							<c:set var="i" value="${i+1}"></c:set>
-						</c:forEach>
-						<!-- <div class="item item_2">
-                        <img src="images/slider/03.jpg" alt="Image 02" />
-                    </div>  -->
-						<!-- /item -->
+						</c:forEach>					
 
 						<!-- <div class="item item_3">
                         <img src="images/slider/01.jpg" alt="Image 03" />
@@ -222,70 +203,7 @@
 			<div class="cleaner"></div>
 		</div>
 
-		<div class="col half float_r">
-			<h2>Regulations</h2>
-			<p>
-				<em>If you do not very clearly about relative rules or
-					regulations,please click there and read it.</em>
-			</p>
-			<p>All the users must obey the rules and relative regulations no
-				matter who you are and what you do .In order to make a very friendly
-				shopping atmosphere,we suggust users should read the rules first and
-				only you accept the rules and go through the test that you can be
-				allown as a VIP.</p>
-		</div>
-
-		<div class="cleaner h40"></div>
-
-
-		<!-- start food gallery -->
-		<div id="food-gallery">
-			<h2>Food Gallery</h2>
-			<div class="col one_fourth">
-				<a href="goodsDetail.html"> <img
-					src="images/templatemo_image_02.jpg" alt="Image 02"
-					class="imgage-with-frame" border="0" />
-				</a>
-				<h5>Web Design</h5>
-				<p>Donec sit amet sem in urna posuere interdum ac in arcu. Nulla
-					porttitor pharetra, et metus venenatis.</p>
-
-			</div>
-
-			<div class="col one_fourth fp_rw">
-				<a href="goodsDetail.html"> <img
-					src="images/templatemo_image_02.jpg" alt="Image 02"
-					class="imgage-with-frame" border="0" />
-				</a>
-				<h5>Ecommerce Solution</h5>
-				<p>Proin consectetur porttitor tincidunt. Ut fermentum arcu eget
-					lacus placerat molestie.</p>
-			</div>
-
-			<div class="col one_fourth fp_rw">
-				<img src="images/templatemo_image_04.jpg" alt="Image 04"
-					class="imgage-with-frame" />
-				<h5>Gallery Player</h5>
-				<p>Donec arcu orci, dictum id commodo eget, volutpat eu lorem
-					nec arcu in ulla ut erat arcu.</p>
-			</div>
-
-			<div class="col one_fourth fp_rw no_margin_right">
-				<img src="images/templatemo_image_05.jpg" alt="Image 05"
-					class="imgage-with-frame" />
-				<h5>Customer Support</h5>
-				<p>Sed laoreet lorem, in porta massa varius eu varius lacus eget
-					ligula facilisis rutrum.</p>
-			</div>
-		</div>
-		<!-- end food gallery -->
-
-
-		<div class="cleaner"></div>
-	</div>
 	<!-- END of templatemo_main_wrapper -->
-	</div>
-	<!-- END of templatemo_main -->
 
 	<!-- Include footer in folder common -->
 	<jsp:include page="./common/footer.jsp" />

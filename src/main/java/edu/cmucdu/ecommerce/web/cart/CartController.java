@@ -1,5 +1,7 @@
 package edu.cmucdu.ecommerce.web.cart;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -19,68 +21,120 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.cmucdu.ecommerce.dao.product.SellerProductDao;
+import edu.cmucdu.ecommerce.dao.product.shoppingcart.CartDao;
+import edu.cmucdu.ecommerce.dao.product.shoppingcart.CartTransactionDao;
 import edu.cmucdu.ecommerce.domain.product.shoppingcart.Cart;
 import edu.cmucdu.ecommerce.domain.product.shoppingcart.CartTransaction;
 import edu.cmucdu.ecommerce.domain.user.Buyer;
 import edu.cmucdu.ecommerce.domain.user.UserDetail;
 import edu.cmucdu.ecommerce.domain.user.security.Principal;
+import edu.cmucdu.ecommerce.service.shoppingcart.ShoppingCartService;
 
 
 @Controller
-@SessionAttributes("myCart")
 public class CartController {
 	@Autowired
 	SellerProductDao sellerProductDao;
 	@Autowired  
 	private HttpSession session; 
-
-	
-	/**
-	 * get current  user's cart??
-	 * 
-	 * TODO LPM
-	 * 
-	 * @return
-	 */
-	@ModelAttribute("myCart")
-	public Cart getCart(){
-		Cart c = new Cart();
-//		Principal principal = (Principal) SecurityContextHolder.getContext()
-//				.getAuthentication().getPrincipal();
-//		c.setBuyer((Buyer) principal.getUser());
-		UserDetail user = (UserDetail) session.getAttribute("logined_user");
-		c.setBuyer((Buyer) user);
-		return c;
-	}
-	
-	@RequestMapping(method = RequestMethod.POST, value = "{id}")
-	public void post(@PathVariable Long id, ModelMap modelMap,
-			HttpServletRequest request, HttpServletResponse response) {
-		System.out.println("======post");
-	}
+	@Autowired
+	ShoppingCartService shoppingCartService;
 
 	@RequestMapping(value="cartPage")
 	public String index() {
+		if(session.getAttribute("logined_user") == null){
+			return "redirect:toLoginPage";	
+		}
+		try {
+			shoppingCartService.calculateTotalMoney();
+		} catch (Exception e) {
+			return "/";	
+		}
 		return "cart/index";
 	}
 
+	
 	@RequestMapping(value = "cartAdd/productId={id}&amount={amount}", method = RequestMethod.GET)
 	public String addProduct(
 			@PathVariable("id") long id,
 			@PathVariable("amount") int amount,
-			@ModelAttribute("myCart") Cart cart,
 			Model uiModel,
 			HttpServletRequest httpServletRequest) {
-		CartTransaction ct = new CartTransaction();
-		ct.setCart(cart);
-		ct.setAmount(amount);
-		ct.setSellerProduct(sellerProductDao.findOne(id));
-		//wait for show all the product list
 		
+		Cart cart = (Cart) session.getAttribute("myCart");
+		if(cart == null){
+			return "redirect:../toLoginPage";
+		}
+		try{
+
+			CartTransaction ct = new CartTransaction();
+			ct.setCart(cart);
+			ct.setAmount(amount);
+			ct.setSellerProduct(sellerProductDao.findOne(id));
+			
+			//cartDao.saveAndFlush(cart);
+			
+		}catch(Exception e){
+			//can't get the sellerProduct from db
+			return "redirect:../toLoginPage";
+		}
+		shoppingCartService.calculateTotalMoney();
 		return "redirect:../cartPage";
 	}
 	
+	@RequestMapping(value="cartRest/productId={id}&type={type}", method = RequestMethod.GET)
+	public String addAmount(
+			@PathVariable("id") long id,
+			@PathVariable("type") int type,
+			Model uiModel,
+			HttpServletRequest httpServletRequest){
+		
+		Cart cart = (Cart) session.getAttribute("myCart");
+		
+		List<CartTransaction> all = cart.getCartTransaction();
+		for(CartTransaction item : all){
+			if(id == item.getSellerProduct().getId()){
+				if(type==1){
+					item.setAmount(item.getAmount()+1);//add
+				}
+				if(type == 2){
+					if(item.getAmount() > 0){
+						item.setAmount(item.getAmount()-1);//desc
+					}
+					
+				}	
+			}
+		}
+		cart.setCartTransaction(all);
+		session.setAttribute("myCart",cart);
+		shoppingCartService.calculateTotalMoney();
+		return "redirect:../cartPage";
+	}
 	
+	@RequestMapping(value="cartRemove/productId={id}", method = RequestMethod.GET)
+	public String remove(
+			@PathVariable("id") long id,
+			Model uiModel,
+			HttpServletRequest httpServletRequest){
+		
+		Cart cart = (Cart) session.getAttribute("myCart");
+		
+		List<CartTransaction> all = cart.getCartTransaction();
+//		for(CartTransaction item : all){
+//			if(id == item.getSellerProduct().getId()){
+//				all.remove(item);// can't delete the obj ---LPM
+//			}
+//		}
+		for(int i = 0;i<all.size();i++){
+			if(id == all.get(i).getSellerProduct().getId()){
+				all.remove(i);
+			}
+		}
+		cart.setCartTransaction(all);
+		session.setAttribute("myCart",cart);
+		shoppingCartService.calculateTotalMoney();
+		return "redirect:../cartPage";
+	}
 
 
 }

@@ -6,5 +6,5 @@ import edu.cmucdu.ecommerce.domain.logistic.PortTrip;
 
 @RooJpaRepository(domainType = edu.cmucdu.ecommerce.domain.logistic.Logistic.class)
 public interface LogisticDao {
-	PortTrip 
+
 }

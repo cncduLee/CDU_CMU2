@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -25,7 +26,7 @@ public class SellerProduct {
     @ManyToOne(cascade = CascadeType.ALL)
     private Product product;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sellerProduct")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sellerProduct",fetch=FetchType.EAGER)
     private Set<ProductPic> images = new HashSet<ProductPic>();
 
     @ManyToOne
@@ -48,4 +49,5 @@ public class SellerProduct {
 
     @ManyToOne
     private Description brandName;
+    
 }
