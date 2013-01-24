@@ -24,15 +24,6 @@
 				<h2>My shopping cart</h2>
 				<span class="fore" id="show2"> </span>
 			</div>
-			<%for(CartTransaction tra : ((Cart)session.getAttribute("myCart")).getCartTransaction()){
-				%>
-					productid:<%=tra.getSellerProduct().getId() %>
-					name:<%=tra.getSellerProduct().getProduct().getLocalName() %>
-					amount:<%=tra.getAmount() %>
-					price:<%=tra.getSellerProduct().getPrice() %>
-				<%
-			} %>
-			
 			<div id="show">
 				
 				<div class="cart-frame">
