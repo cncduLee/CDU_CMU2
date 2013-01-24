@@ -49,4 +49,5 @@ public class SellerProduct {
 
     @ManyToOne
     private Description brandName;
+    
 }
