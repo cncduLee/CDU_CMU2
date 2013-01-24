@@ -9,17 +9,28 @@ import org.springframework.stereotype.Service;
 
 import edu.cmucdu.ecommerce.dao.product.ProductDao;
 import edu.cmucdu.ecommerce.dao.product.ProductPicDao;
+import edu.cmucdu.ecommerce.dao.product.PromotionDao;
+import edu.cmucdu.ecommerce.dao.product.SellerProductDao;
 import edu.cmucdu.ecommerce.domain.product.Product;
 import edu.cmucdu.ecommerce.domain.product.ProductPic;
+import edu.cmucdu.ecommerce.domain.product.Promotion;
+import edu.cmucdu.ecommerce.domain.product.SellerProduct;
+
 
 @Service
 public class ProductServiceImpl implements ProductService {
 	
 	@Autowired
 	ProductDao productDao;
+	@Autowired
+	SellerProductDao sellerProductDao;
+	@Autowired
+	PromotionDao promotionDao;
+
 	
 	@Autowired
 	ProductPicDao productPicDao;
+
 	
 	@Override
 	public List<Product> getProductRandomly(int amount) {
@@ -78,6 +89,40 @@ public class ProductServiceImpl implements ProductService {
 			break;
 		}
 		return all;
+	}
+
+	@Override
+	public List<Promotion> getPromotionRandomly(int amount) {
+		List<Promotion> productList = promotionDao.findAll();
+		List<Promotion> randomList = new ArrayList<Promotion>();
+		
+		Random rd = new Random();
+		
+		for(int i = 0; i < amount; i++)
+		{
+			int index = (int) (rd.nextDouble() * productList.size());
+            randomList.add(productList.get(index));
+            productList.remove(index);
+		}
+		
+		return randomList;
+	}
+
+	@Override
+	public List<SellerProduct> getSellerPruductRandomly(int amount) {
+		List<SellerProduct> productList = sellerProductDao.findAll();
+		List<SellerProduct> randomList = new ArrayList<SellerProduct>();
+		
+		Random rd = new Random();
+		
+		for(int i = 0; i < amount; i++)
+		{
+			int index = (int) (rd.nextDouble() * productList.size());
+            randomList.add(productList.get(index));
+            productList.remove(index);
+		}
+		
+		return randomList;
 	}
 
 }

@@ -13,19 +13,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.cmucdu.ecommerce.dao.product.ProductDao;
+import edu.cmucdu.ecommerce.dao.product.SellerProductDao;
 import edu.cmucdu.ecommerce.domain.product.Product;
 import edu.cmucdu.ecommerce.domain.product.ProductPic;
+import edu.cmucdu.ecommerce.domain.product.SellerProduct;
 import edu.cmucdu.ecommerce.service.product.ProductService;
 import edu.cmucdu.ecommerce.web.util.WebUtil;
 
 @Controller
 public class ProductsController {
 	
+	
 	@Autowired
-	ProductDao productDao;
-	@Autowired
-	ProductService productService;
-
+	SellerProductDao sellerProductDao;
 	
 	@RequestMapping("/productList")
 	public String productsPresentation(
@@ -33,27 +33,28 @@ public class ProductsController {
 			@RequestParam(value = "size", required = false) Integer size,
 			Model uiModel, HttpServletRequest httpServletRequest){
 		
-		final int totle = productDao.findAll().size();
+		final int totle = sellerProductDao.findAll().size();
 		
 		if (page == null || size == null) {
 			page=1;
 			size=12;
 		}
+		
 		int sizeNo = size == null ? 1 : size.intValue();//12 products every page
 		final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
-		List<Product> all = productDao.findAll(
+		List<SellerProduct> all = sellerProductDao.findAll(
 				new org.springframework.data.domain.PageRequest(firstResult
 						/ sizeNo, sizeNo)).getContent();
 		
-		for (Product product : all) {
-			product.setLocale(WebUtil.getLocaleEnum(httpServletRequest));
+		for (SellerProduct product : all) {
+			product.getProduct().setLocale(WebUtil.getLocaleEnum(httpServletRequest));
 		}
 		
 		uiModel.addAttribute("products", all);
 		uiModel.addAttribute("currentPage",page);
 		uiModel.addAttribute("totle",totle);
 		
-		float nrOfPages = (float) productDao.count() / sizeNo;
+		float nrOfPages = (float) sellerProductDao.count() / sizeNo;
 		uiModel.addAttribute(
 				"maxPages",
 				(int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1

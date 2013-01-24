@@ -15,18 +15,29 @@
 
 <div id="templatemo_main_wrapper">
     <div id="templatemo_main">
-         
-  
+        <!-- choose way start --> 
+  		<div class="button_add">
+				<ul>
+					<li class="button_radio_all"><input type="radio" name="select" checked="checked" id="All_Product"></input><span><label for="All_Product">All Product</label></span></li>
+					<li class="button_radio"><input type="radio" name="select" id="hot"></input><span><label for="hot">Hot</label></span></li>
+					<li class="button_radio"><input type="radio" name="select" id="Upcoming"></input><span><label for="Upcoming">Upcoming</label></span></li>
+					<li class="button_submit"><input type="submit" name="select_button" value="Submit" class="submit"> </input> </li>
+				</ul>
+		</div>
+  		<!-- choose way end -->
+  		
 		<c:forEach items="${products}" var="productx"> 
 			<div class="gallery_box">
-				   <c:forEach items="${productx.images}" var="pic"> 
-				   		<a href="./productpics/showpic/${pic.id}" rel="lightbox[portfolio]"><img src="./productpics/showpic/${pic.id}" class="imgage-with-frame" width="200px" height="112px"/></a>	
+				   <c:forEach items="${productx.product.images}" var="pic"  varStatus="status">
+						<c:if test="${status.index==0}">
+							<a href="./goodsDetail?productId=${productx.product.id}&sellerId=${productx.seller.id}" rel="lightbox[portfolio]"><img src="./productpics/showpic/${pic.id}" class="imgage-with-frame" width="200px" height="112px"/></a>
+						</c:if>
 				   </c:forEach>
 				     
                     
-                    <h5>${productx.localName}</h5>
-                    <p>${productx.localDescription}</p>
-					<a href="#" title="Read more" class="more">Read more</a>
+                    <h5>${productx.product.localName}</h5>
+                    <p>${productx.product.localDescription}</p>
+					
 			</div>
 		</c:forEach>
 		

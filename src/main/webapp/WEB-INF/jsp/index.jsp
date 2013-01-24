@@ -28,31 +28,17 @@
 					<div class="details_wrapper">
 
 						<div class="details">
-
-							<!-- <div class="detail">
-							<h2><a href="#">${product.localName }</a></h2>
-                            <p>${product.localDescription}</p>
-							<a href="#" title="Read more" class="more">Read more</a>
-							</div> -->
-							<!-- /detail -->
-
 							<c:forEach items="${products}" var="productx">
 								<div class="detail">
 									<h2>
-										<a href="#">${productx.localName }</a>
+										<a href="#">${productx.name }</a>
 									</h2>
-									<p>${productx.localDescription}</p>
+									<p>${productx.description}</p>
 									<a href="#" title="Read more" class="more">Read more</a>
 								</div>
-								<!-- /detail -->
 							</c:forEach>
-
 						</div>
-						<!-- /details -->
-
 					</div>
-					<!-- /details_wrapper -->
-
 					<div class="paging">
 						<div id="numbers"></div>
 						<a href="javascript:void(0);" class="previous" title="Previous">Previous</a>
@@ -70,20 +56,15 @@
 				<div id="slider-image-frame">
 					<div class="backgrounds">
 						<c:set var="i" value="1"></c:set>
-						<c:forEach items="${pics}" var="pic">
+					
+						 <c:forEach items="${picAndSellers}" var="item">
 							<div class="item item_${i}">
-								<a href="./goodsDetail?productId=${pic.product.id}"> <img
-									src="./productpics/showpic/${pic.id}"
-									alt="${pic.localDescription}" />
+								<a href="./goodsDetail?productId=${item['pic'].id }&sellerId=${item['seller'] }">
+									<img src="./productpics/showpic/${item['pic'].id }" alt="${item['pic'].localDescription }" />
 								</a>
 							</div>
-							<!-- /item -->
 							<c:set var="i" value="${i+1}"></c:set>
-						</c:forEach>
-						<!-- <div class="item item_2">
-                        <img src="images/slider/03.jpg" alt="Image 02" />
-                    </div>  -->
-						<!-- /item -->
+						</c:forEach>					
 
 						<!-- <div class="item item_3">
                         <img src="images/slider/01.jpg" alt="Image 03" />

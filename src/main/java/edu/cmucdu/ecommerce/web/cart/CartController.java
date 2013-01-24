@@ -42,6 +42,9 @@ public class CartController {
 
 	@RequestMapping(value="cartPage")
 	public String index() {
+		if(session.getAttribute("logined_user") == null){
+			return "redirect:toLoginPage";	
+		}
 		try {
 			shoppingCartService.calculateTotalMoney();
 		} catch (Exception e) {
@@ -59,7 +62,7 @@ public class CartController {
 			HttpServletRequest httpServletRequest) {
 		
 		Cart cart = (Cart) session.getAttribute("myCart");
-		if(cart.getBuyer() == null){
+		if(cart == null){
 			return "redirect:../toLoginPage";
 		}
 		try{
