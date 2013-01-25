@@ -78,7 +78,7 @@
 				</ul>
 
 
-				<a href="cartAdd/productId=2&amount=1"> <img
+				<a href="cartAdd/productId=${productid} &amount=1"> <img
 					src="images/blog/shoppingcart.jpg" border="0"
 					style="margin-left: 9px;"></img>
 				</a>
@@ -175,119 +175,71 @@
 						<img alt="products pictrue" src="images/templatemo_image_02.jpg">
 				</div>
 
-				<div class="comment">
+
+
+<!-- comment List start -->
+
+			<div class="comment">
 		
 			<div class="comment_title">Comment</div>
-			<!-- people comment one -->
-			<div class="comment_info">
-				<div class="people_left">
-					<img  src="images/templatemo_image_01.jpg">
-				</div>
-				
-				<div class="people_right">
-				<table>
-					<tr>
-						<td class="people_height">
-							<span class="people_name">Steven</span>
-							<span class="people_date">November 22.2048</span>
-							<span class="people_time">10:52 pm</span>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="people_say">This is stage 4 sleep.You do not remain at this deep forth atage all night long. but instead zbout 80 minutes after you fall into slumber.</span>
-						</td>
-					</tr>
-				</table>
-				</div>
-			</div>
-			<!-- end people comment one -->
-			<!-- people comment two -->
-			<div class="comment_info">
-				<div class="people_left">
-					<img  src="images/templatemo_image_01.jpg">
-				</div>
-				
-				<div class="people_right">
-				<table>
-					<tr>
-						<td class="people_height">
-							<span class="people_name">Steven</span>
-							<span class="people_date">November 22.2048</span>
-							<span class="people_time">10:52 pm</span>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="people_say">This is stage 4 sleep.You do not remain at this deep forth atage all night long. but instead zbout 80 minutes after you fall into slumber.</span>
-						</td>
-					</tr>
-				</table>
-				</div>
-			</div>
-			<!-- end people comment two -->
-			<!-- people comment three -->
-			<div class="comment_info">
-				<div class="people_left">
-					<img  src="images/templatemo_image_01.jpg">
-				</div>
-				
-				<div class="people_right">
-				<table>
-					<tr>
-						<td class="people_height">
-							<span class="people_name">Steven</span>
-							<span class="people_date">November 22.2048</span>
-							<span class="people_time">10:52 pm</span>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="people_say">This is stage 4 sleep.You do not remain at this deep forth atage all night long. but instead zbout 80 minutes after you fall into slumber.</span>
-						</td>
-					</tr>
-				</table>
-				</div>
-			</div><!-- end people comment three -->
-			<!-- 123 -->
-			<div class="comment_number">
-				<ul>
-					<li><a href="#" target="_parent">Previous</a></li>
-					<li><a href="#" target="_parent">1</a></li>
-					<li><a href="#" target="_parent">2</a></li>
-					<li><a href="#" target="_parent">3</a></li>
-					<li><a href="#" target="_parent">Next</a></li>
-				</ul>
-			</div>
-			<!-- end 123 -->
-			<div class="cleaner"></div>
-		</div>
-		<!-- Leave your comment -->
-		<div class="leave_comment">
 			
+			
+			<c:forEach items="${commentList }" var="commentx">
+				
+				<div class="comment_info">
+					<div class="people_left">
+						<img  src="images/templatemo_image_01.jpg">
+					</div>
+					<div class="people_right">
+					<table>
+						<tr>
+							<td class="people_height">
+								<span class="people_name">${commentx.commenter.localName }</span>
+							
+								<span class="people_time">${commentx.submitDate }</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span class="people_say">${commentx.comment }</span>
+							</td>
+						</tr>
+					</table>
+					</div>
+				</div>
+				
+			
+			</c:forEach>
+			
+		<div class="cleaner"></div>
+	</div>
+<!-- comment List start -->
+		
+
+<!-- Leave your comment start -->
+		<div class="leave_comment">
+			<form action="addComment" method="get">
 			<div class="leave_comment_title">Leave your comment</div>
 			
 			<div class="leave_comment_name">Name(*required)<br/>
-				<input type="text" name="comment_name" class="comment_text"/>
+				<input type="text"  class="comment_text"/>
+				<input type="hidden" name="productid" value="${productid}"/>
+				<input type="hidden" name="sellerid" value="${seller.id}"/>
 			</div>
-			<div class="leave_comment_email">Email(*required)<br/>
-				<input type="text" name="comment_email" class="comment_text"/>
-			</div>
+			
 			
 			<div class="cleaner"></div>
 			
 			<div class="leave_comment_textarea">Comment<br/>
-				<textarea rows="10" cols="80" class="comment_textarea"></textarea>
+				<input type="text" rows="10" cols="80" class="comment_textarea" name="cotent"></textarea>
 			</div>
 			<div class="leave_comment_submit">
-				<form action="#">
-					<input type="submit" value="Submit" name="comment_submit" class="comment_submit"/>
-				</form>
+				<input type="submit" value="Submit" class="comment_submit"/>
 			</div>
-			
-		</div>
-		
+			</form>
+		</div>		
 	</div>
+<!-- Leave your comment end -->	
 	
 	<div class="cleaner"></div>
 	
