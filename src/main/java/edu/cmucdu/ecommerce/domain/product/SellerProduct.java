@@ -51,6 +51,8 @@ public class SellerProduct {
     @ManyToOne
     private Description brandName;
     
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "sellerProduct",fetch=FetchType.EAGER)
     private Set<Comment> comments;
+
 }
