@@ -1,9 +1,12 @@
 package edu.cmucdu.ecommerce.domain.product.comment;
 
+import edu.cmucdu.ecommerce.domain.product.SellerProduct;
 import edu.cmucdu.ecommerce.domain.user.UserDetail;
 import edu.cmucdu.ecommerce.domain.util.LocaleEnum;
 
 import java.util.Date;
+
+import javax.persistence.CascadeType;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -21,7 +24,11 @@ public class Comment {
 
     @ManyToOne
     private UserDetail commenter;
+    
+    @ManyToOne(cascade = CascadeType.ALL )
+    private SellerProduct sellerProduct;
 
+    
     private String comment;
 
     @Transient

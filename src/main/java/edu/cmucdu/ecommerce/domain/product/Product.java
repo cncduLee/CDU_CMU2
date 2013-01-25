@@ -30,7 +30,6 @@ public class Product {
     private Description description;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy="product")
-
     private Set<SellerProduct> sellerProducts = new HashSet<SellerProduct>();
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy="product")

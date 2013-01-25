@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.cmucdu.ecommerce.dao.user.BuyerDao;
 import edu.cmucdu.ecommerce.dao.user.SellerDao;
+import edu.cmucdu.ecommerce.dao.user.UserDetailDao;
 import edu.cmucdu.ecommerce.domain.product.shoppingcart.Cart;
 import edu.cmucdu.ecommerce.domain.user.Buyer;
 import edu.cmucdu.ecommerce.domain.user.UserDetail;
@@ -20,6 +21,9 @@ import edu.cmucdu.ecommerce.domain.user.UserDetail;
 @Controller
 public class LoginController {
 
+	@Autowired
+	UserDetailDao userDetailDao;
+	
 	@Autowired
 	SellerDao sellerDao;
 	@Autowired
@@ -59,6 +63,9 @@ public class LoginController {
 				// buyer login
 				user = buyerDao.findByPrincipleUsernameAndPrinciplePassword(username, password);
 			}
+			
+//			user = userDetailDao.findByPrincipleUsernameAndPrinciplePassword(username, password);
+			
 			if(user != null){
 				//login success
 				//add login user to session

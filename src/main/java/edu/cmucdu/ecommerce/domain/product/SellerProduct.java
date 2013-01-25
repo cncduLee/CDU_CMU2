@@ -1,5 +1,6 @@
 package edu.cmucdu.ecommerce.domain.product;
 
+import edu.cmucdu.ecommerce.domain.product.comment.Comment;
 import edu.cmucdu.ecommerce.domain.user.Seller;
 import edu.cmucdu.ecommerce.domain.util.Description;
 import java.util.Date;
@@ -49,4 +50,7 @@ public class SellerProduct {
 
     @ManyToOne
     private Description brandName;
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sellerProduct",fetch=FetchType.EAGER)
+    private Set<Comment> comments;
 }
