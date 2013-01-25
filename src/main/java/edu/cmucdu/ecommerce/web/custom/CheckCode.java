@@ -9,7 +9,7 @@ public class CheckCode {
 	
 	@RequestMapping("/checkCode")
 	public String getCheckCode(){
-		System.out.println("==========");
+		System.out.println("===========");
 		return "commom/image";
 	}
 }

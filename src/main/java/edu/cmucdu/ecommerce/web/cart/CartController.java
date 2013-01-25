@@ -65,6 +65,10 @@ public class CartController {
 		if(cart == null){
 			return "redirect:../toLoginPage";
 		}
+		
+		
+		System.out.println("id:"+id+"------"+sellerProductDao.findOne(id).getId());
+		
 		try{
 
 			CartTransaction ct = new CartTransaction();
@@ -78,6 +82,7 @@ public class CartController {
 			//can't get the sellerProduct from db
 			return "redirect:../toLoginPage";
 		}
+		
 		shoppingCartService.calculateTotalMoney();
 		return "redirect:../cartPage";
 	}

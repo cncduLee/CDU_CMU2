@@ -12,5 +12,6 @@
         <field:datetime dateTimePattern="${sellerProduct_durationoffruit_date_format}" field="durationOfFruit" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_durationOfFruit" z="eNzZIbDxTdFnVTRSkZwmzXj9A54="/>
         <field:datetime dateTimePattern="${sellerProduct_readytime_date_format}" field="readyTime" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_readyTime" z="U2yZb593jqMuNvPv+U3HtVbPsoo="/>
         <field:select field="brandName" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_brandName" itemValue="id" items="${descriptions}" path="/descriptions" z="zjrGYGb71pbYlX6o+u3DLcbVmz0="/>
+        <field:simple field="comments" id="c_edu_cmucdu_ecommerce_domain_product_SellerProduct_comments" messageCode="entity_reference_not_managed" messageCodeAttribute="Comment" z="4CxXQE9vbE09Wrm1cH1YVmwgJd8="/>
     </form:update>
 </div>

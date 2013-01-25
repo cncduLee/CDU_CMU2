@@ -1,5 +1,6 @@
 package edu.cmucdu.ecommerce.web.custom;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,9 +9,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.cmucdu.ecommerce.dao.user.BuyerDao;
 import edu.cmucdu.ecommerce.dao.user.SellerDao;
+import edu.cmucdu.ecommerce.dao.user.UserDetailDao;
 import edu.cmucdu.ecommerce.domain.product.shoppingcart.Cart;
 import edu.cmucdu.ecommerce.domain.user.Buyer;
 import edu.cmucdu.ecommerce.domain.user.UserDetail;
@@ -19,14 +22,23 @@ import edu.cmucdu.ecommerce.domain.user.UserDetail;
 public class LoginController {
 
 	@Autowired
+	UserDetailDao userDetailDao;
+	
+	@Autowired
 	SellerDao sellerDao;
 	@Autowired
 	BuyerDao buyerDao;
 	@Autowired  
-	private HttpSession session;  
+	private HttpSession session;
+	@Autowired  
+	private HttpServletRequest request;  
+	
+	private String refererPage = "/";
 	
 	@RequestMapping("/toLoginPage")
 	public String goToLoginPage() {
+		refererPage = request.getHeader("referer");
+		System.out.println("--"+refererPage);
 		return "login";// redirect login page
 	}
 
@@ -36,11 +48,10 @@ public class LoginController {
 			@RequestParam String typeName,
 			@RequestParam String ccode,
 			ModelMap errorMap) {
-		// get the data from page
+		
 		int type = Integer.parseInt(typeName.trim());
 		UserDetail user = null;
 		
-//		System.out.println(username+"==="+password);
 		String checkCode = (String) session.getAttribute("checkcode");
 		if(ccode != null && ccode.trim().equals(checkCode)){
 			//ccode is right
@@ -52,6 +63,9 @@ public class LoginController {
 				// buyer login
 				user = buyerDao.findByPrincipleUsernameAndPrinciplePassword(username, password);
 			}
+			
+//			user = userDetailDao.findByPrincipleUsernameAndPrinciplePassword(username, password);
+			
 			if(user != null){
 				//login success
 				//add login user to session
@@ -62,7 +76,7 @@ public class LoginController {
 					session.setAttribute("myCart", c);
 				}
 				//redirect
-				return "redirect:/";//redirect homepage
+				return "redirect:"+loginSuccessDirect();//redirect homepage
 			}else{
 				//error
 				errorMap.addAttribute("error", "can't find the user!");
@@ -72,9 +86,9 @@ public class LoginController {
 			errorMap.addAttribute("error", "checkCode is wrong!");
 			return "login";
 		}
-		
-		
-		
 	}
 	
+	private String loginSuccessDirect(){
+		return refererPage==null?"/":refererPage.substring(refererPage.lastIndexOf("/"),refererPage.length());
+	}
 }

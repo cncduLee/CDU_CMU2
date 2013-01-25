@@ -30,7 +30,7 @@
 			<div class="gallery_box">
 				   <c:forEach items="${productx.product.images}" var="pic"  varStatus="status">
 						<c:if test="${status.index==0}">
-							<a href="./goodsDetail?productId=${productx.product.id}&sellerId=${productx.seller.id}" rel="lightbox[portfolio]"><img src="./productpics/showpic/${pic.id}" class="imgage-with-frame" width="200px" height="112px"/></a>
+							<a href="./goodsDetail?productId=${productx.id}&sellerId=${productx.seller.id}" rel="lightbox[portfolio]"><img src="./productpics/showpic/${pic.id}" class="imgage-with-frame" width="200px" height="112px"/></a>
 						</c:if>
 				   </c:forEach>
 				     
@@ -50,7 +50,7 @@
                 </c:if>
                 
                 <c:if test="${totle <= 10 }">
-                	<c:forEach var="i" begin="1" end="${totle}" step="1"> 
+                		<c:forEach var="i" begin="1" end="${totle}" step="1"> 
 			      		<li><a href="productList?page=${i}" target="_parent"> ${i} </a></li> 
 			    	</c:forEach>	
                 </c:if>
