@@ -35,7 +35,7 @@ public class Principal  implements UserDetails{
     private UserDetail user;
     @Transient
     Collection< GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-
+    @Transient
 	private EntityManager entityManager;
 	@Override
 	public Collection<GrantedAuthority> getAuthorities() {

@@ -1,4 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@page import="edu.cmucdu.ecommerce.domain.user.UserDetail"%>
+
 <div id="templatemo_header_wrapper">
     
 	<div id="templatemo_header">
@@ -45,8 +48,7 @@
 	xmlns:spring="http://www.springframework.org/tags"
 	xmlns:sec="http://www.springframework.org/security/tags"
 	xmlns:jsp="http://java.sun.com/JSP/Page">
-	<jsp:directive.page contentType="text/html;charset=UTF-8" />
-	<jsp:output omit-xml-declaration="yes" />
+	
 
 	<spring:url var="banner" value="/resources/images/banner-graphic.png" />
 	<spring:url var="home" value="/" />
