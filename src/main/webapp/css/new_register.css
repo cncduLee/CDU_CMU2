@@ -1,498 +1,154 @@
-<<<<<<< HEAD
 @charset "utf-8";
 /* CSS Document */
-html {
-	background-color:#fcfcfc;
-}
-.LRtop {
-	height:89px;
-	width:100%;
-	border-bottom:1px solid #dedede;
-	background:url(../images/ltop_bg.jpg) repeat-x bottom;
-}
-.Lrt_logo {
-	width:970px;
-	margin:auto;
-	padding:30px 0px 0px 30px;
-	height:59px
-}
-.Lmain {
-	width:895px;
-	margin:auto;
-	background:url(../images/test/login_banner.jpg) no-repeat 0px 20px;
-	height:500px;
-	padding-right:105px
-}
-.Lm_box {
-	width:326px;
-	float:right;
-	border:1px solid #dedede;
-	background-color:#f9f9f9;
-	box-shadow:0px 0px 3px #f3f3f3 inset;
-	margin:80px 0px 0px 0px;
-}
-.Lm_box h2.f24red {
-	text-align:center;
-	padding:28px 0px 15px;
-}
-.Lm_box ul.lmb_input li {
-	padding:7px 0px 7px 32px;
-	clear:both
-}
-.Lm_box ul.lmb_input li input {
-	width:255px;
-	height:36px;
-	border:1px solid #ccc;
-	box-shadow:2px 2px 1px 0px #f3f3f3 inset;
-	border-radius:2px;
-	padding-left:7px;
-	line-height:36px;
-	font-size:14px;
-}
-.Lm_box ul.lmb_input li input:focus,.Rtext:focus{box-shadow:0 0 5px rgba(84, 189, 242, 0.6), 0 1px 3px rgba(0, 0, 0, 0.2) inset; border-color:#56BDF3}
-.Lmb_rem {
-	padding:7px 0px 7px 32px;
-	font-size:14px;
-	color:#666;
-}
-.lm_btn {
-	padding:0px 0px 10px 32px;
-	border-bottom:1px solid #dedede;
-}
-.lm_btn input {
-	background-image:url(../images/btn_bg.jpg);
-	background-color:#ea1e1d;
-	height:40px;
-	color:#fff;
-	padding:0px 30px;
-	border:1px solid #cb1919;
-	_border:0px;
-	border-radius:2px;
-	cursor:pointer;
-	font: 700 16px/40px 微软雅黑, 黑体, 文泉驿黑体;
-}
-.lm_btn input:hover {
-	background-position:0px -41px;
-}
-.lm_btn a {
-	line-height:40px;
-	font-size:14px;
-	margin-left:5px;
-}
-.lm_other_login {
-	font-size:14px;
-	color:#333;
-	padding:15px 7px 30px 32px;
-	border-top:1px solid #fff;
-}
-.lm_other_login a {
-	background-image:url(../images/Lico.gif);
-	background-repeat:no-repeat;
-	padding-left:25px;
-	margin:0px 5px;
-}
-.lm_other_login a.qq {
-	background-position:2px -1px;
-}
-.lm_other_login a.qq:hover {
-	background-position:2px -31px;
-}
-.lm_other_login a.wb {
-	background-position:0px -65px
-}
-.lm_other_login a.wb:hover {
-	background-position:0px -95px
-}
 .Lm_register {
-	border-top:1px solid #dedede;
-	padding-top:15px;
+	border-top: 1px solid #dedede;
+	padding-top: 10px;
 }
+
 .Lm_register a {
-	background-image:url(../images/btn_bg.jpg);
-	height:36px;
-	line-height:36px;
-	font-size:16px;
-	color:#e10000;
-	width:166px;
-	margin:0px auto 15px;
-	display:block;
-	text-align:center;
-	background-position:0px -82px;
-	border:1px solid #dedede;
-	font-weight:500;
+	height: 36px;
+	line-height: 36px;
+	font-size: 16px;
+	color: #e10000;
+	width: 166px;
+	margin: 0px auto 15px;
+	display: block;
+	text-align: center;
+	background-position: 0px -82px;
+	border: 1px solid #dedede;
+	font-weight: 500;
 }
+
 .Lm_register a:hover {
-	background-position:0px -119px;
+	background-position: 0px -119px;
 }
+
 .Lm_register b {
-	display:block;
-	text-align:center;
-	font-size:12px;
-	font-weight:normal
+	display: block;
+	text-align: center;
+	font-size: 12px;
+	font-weight: normal
 }
 /*注册*/
 .Rmain {
-	width:798px;
-	border:1px solid #dedede;
-	overflow:hidden;
-	margin:70px auto 45px;
-	background:url(../images/Regist_bg.png) repeat-x top left;
+	width: 598px;
+	border: 1px solid #dedede;
+	overflow: hidden;
+	margin: 70px auto 45px;
 }
+
 .Rmain h2.f24red {
-	padding:20px 20px 50px;
+	padding: 20px 20px 50px;
 }
+
 .Rm_tab {
-	width:628px; overflow:hidden; padding:0px 0px 10px 170px;
+	width: 628px;
+	overflow: hidden;
+	padding: 0px 0px 10px 170px;
 }
+
 .Rm_tab label {
-	margin-right:60px; background-image:url(../images/Rtab_ico.gif); background-repeat:no-repeat; float:left;  padding-left:25px; line-height:30px; font-size:14px; background-position:0px -16px;
+	margin-right: 60px;
+	background-repeat: no-repeat;
+	float: left;
+	padding-left: 25px;
+	line-height: 30px;
+	font-size: 14px;
+	background-position: 0px -16px;
 }
-.Rm_tab label.hver{background-position:0px 8px;}
+
+.Rm_tab label.hver {
+	background-position: 0px 8px;
+}
+
 ul.Rm_input {
-	font-size:14px;
+	font-size: 14px;
 }
+
 ul.Rm_input li {
-	width:798px;
-	line-height:35px;
-	padding:10px 0px;
-	overflow:hidden;
+	width: 598px;
+	line-height: 35px;
+	padding: 10px 0px;
+	overflow: hidden;
 }
+
 ul.Rm_input li label {
-	width:160px;
-	float:left;
-	padding-right:10px;
-	text-align:right;
-	font-weight:600
+	width: 160px;
+	float: left;
+	padding-right: 10px;
+	text-align: right;
+	font-weight: 600
 }
+
 ul.Rm_input li span {
-	float:left;
-	padding-left:10px;
-	font-size:12px;
-	color:#666;
+	float: left;
+	padding-left: 10px;
+	font-size: 12px;
+	color: #666;
 }
-ul.Rm_input li span.red{ color:#e10000}
+
+ul.Rm_input li span.red {
+	color: #e10000
+}
+
 ul.Rm_input li span.yzm {
-	line-height:35px
+	line-height: 35px
 }
+
 ul.Rm_input li span.yzm img {
-	float:left;
-	margin:2px 8px 0px 0px
+	float: left;
+	margin: 2px 8px 0px 0px
 }
+
 .w300 {
-	width:300px
+	width: 300px
 }
+
 .w150 {
-	width:150px;
+	width: 150px;
 }
+
 .Rtext {
-	height:33px;
-	border:1px solid #ccc;
-	box-shadow:2px 2px 1px 0px #f3f3f3 inset;
-	padding-left:7px;
-	line-height:33px;
-	font-size:14px;
-	float:left
+	height: 33px;
+	border: 1px solid #ccc;
+	box-shadow: 2px 2px 1px 0px #f3f3f3 inset;
+	padding-left: 7px;
+	line-height: 33px;
+	float: left;
+	font-family: Verdana;
+	font-size: 12px;
+	line-height: 1.4em; 
 }
-.setEmail {
-	background-image:url(../images/btn_bg.jpg);
-	background-position:0px -82px;
-	border:1px solid #dedede;
-	line-height:35px;
-	height:35px;
-	float:left;
-	margin-left:5px;
-	border-radius:2px;
-	padding:0px 10px;
-	cursor:pointer;
-	font-weight:700;
+
+.Rm_submit {
+	text-align: center;
+	padding: 10px 0px 50px;
 }
-.Rm_submit{ text-align:center; padding:10px 0px 50px;}
+
 .Rm_submit p {
-	padding:30px 0px 5px;
-	font-size:14px;
+	padding: 30px 0px 5px;
+	font-size: 14px;
 }
+
 .Rm_submit p a:hover {
-	text-decoration:underline
+	text-decoration: underline;
 }
+
 .Rms_btn {
-	margin:10px auto;
-	background-image:url(../images/btn_bg.jpg);
-	background-color:#ea1e1d;
-	height:40px;
-	line-height:40px;
-	font-size:16px;
-	font-weight:700px;
-	cursor:pointer;
-	border:1px solid #cb1919;
-	color:#fff;
-	padding:0px 30px;
-	border-radius:2px;
-}
-.Rms_btn:hover{ background-position:0px -41px;}
-.LRfooter {
-	text-align:center;
-	color:#666;
-	padding:20px 0px;
-	border-top:1px solid #dedede;
+	margin: 10px auto;
+	background-color: #ea1e1d;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	font-weight: 700px;
+	cursor: pointer;
+	border: 1px solid #cb1919;
+	color: #fff;
+	padding: 0px 30px;
+	border-radius: 2px;
+	font-family: Verdana;
 }
 
-/*邮箱激活*/
-.sentTop{ text-align:center; font-size:16px; color:#333; line-height:30px; padding:20px 0px 40px; width:750px; margin:auto; border-bottom:1px solid #dcdcdc;}
-.sentTop a{ text-decoration:underline; color:#0057a0; margin:0px 5px;}
-.sentMain{ line-height:32px; font-size:14px; color:#666; padding:25px 0px 50px 200px;}
-.sentMain p{ padding-left:40px;}
-.sentMain a.sMbtn{ background-image:url(../images/btn_bg.jpg); background-position:0px -81px; padding:0px 15px; border-radius:3px; line-height:30px; display:inline-block; border:1px solid #dedede;}
-
-.Succeed{ padding:180px 0px 270px; text-align:center}
-.Succeed h2{ font-size:20px; padding:28px 0px; font-weight:700}
-.Succeed p{ font-size:14px; color:#666;}
-=======
-@charset "utf-8";
-/* CSS Document */
-html {
-	background-color:#fcfcfc;
+.Rms_btn:hover {
+	background-position: 0px -41px;
 }
-.LRtop {
-	height:89px;
-	width:100%;
-	border-bottom:1px solid #dedede;
-	background:url(../images/ltop_bg.jpg) repeat-x bottom;
-}
-.Lrt_logo {
-	width:970px;
-	margin:auto;
-	padding:30px 0px 0px 30px;
-	height:59px
-}
-.Lmain {
-	width:895px;
-	margin:auto;
-	background:url(../images/test/login_banner.jpg) no-repeat 0px 20px;
-	height:500px;
-	padding-right:105px
-}
-.Lm_box {
-	width:326px;
-	float:right;
-	border:1px solid #dedede;
-	background-color:#f9f9f9;
-	box-shadow:0px 0px 3px #f3f3f3 inset;
-	margin:80px 0px 0px 0px;
-}
-.Lm_box h2.f24red {
-	text-align:center;
-	padding:28px 0px 15px;
-}
-.Lm_box ul.lmb_input li {
-	padding:7px 0px 7px 32px;
-	clear:both
-}
-.Lm_box ul.lmb_input li input {
-	width:255px;
-	height:36px;
-	border:1px solid #ccc;
-	box-shadow:2px 2px 1px 0px #f3f3f3 inset;
-	border-radius:2px;
-	padding-left:7px;
-	line-height:36px;
-	font-size:14px;
-}
-.Lm_box ul.lmb_input li input:focus,.Rtext:focus{box-shadow:0 0 5px rgba(84, 189, 242, 0.6), 0 1px 3px rgba(0, 0, 0, 0.2) inset; border-color:#56BDF3}
-.Lmb_rem {
-	padding:7px 0px 7px 32px;
-	font-size:14px;
-	color:#666;
-}
-.lm_btn {
-	padding:0px 0px 10px 32px;
-	border-bottom:1px solid #dedede;
-}
-.lm_btn input {
-	background-image:url(../images/btn_bg.jpg);
-	background-color:#ea1e1d;
-	height:40px;
-	color:#fff;
-	padding:0px 30px;
-	border:1px solid #cb1919;
-	_border:0px;
-	border-radius:2px;
-	cursor:pointer;
-	font: 700 16px/40px 微软雅黑, 黑体, 文泉驿黑体;
-}
-.lm_btn input:hover {
-	background-position:0px -41px;
-}
-.lm_btn a {
-	line-height:40px;
-	font-size:14px;
-	margin-left:5px;
-}
-.lm_other_login {
-	font-size:14px;
-	color:#333;
-	padding:15px 7px 30px 32px;
-	border-top:1px solid #fff;
-}
-.lm_other_login a {
-	background-image:url(../images/Lico.gif);
-	background-repeat:no-repeat;
-	padding-left:25px;
-	margin:0px 5px;
-}
-.lm_other_login a.qq {
-	background-position:2px -1px;
-}
-.lm_other_login a.qq:hover {
-	background-position:2px -31px;
-}
-.lm_other_login a.wb {
-	background-position:0px -65px
-}
-.lm_other_login a.wb:hover {
-	background-position:0px -95px
-}
-.Lm_register {
-	border-top:1px solid #dedede;
-	padding-top:15px;
-}
-.Lm_register a {
-	background-image:url(../images/btn_bg.jpg);
-	height:36px;
-	line-height:36px;
-	font-size:16px;
-	color:#e10000;
-	width:166px;
-	margin:0px auto 15px;
-	display:block;
-	text-align:center;
-	background-position:0px -82px;
-	border:1px solid #dedede;
-	font-weight:500;
-}
-.Lm_register a:hover {
-	background-position:0px -119px;
-}
-.Lm_register b {
-	display:block;
-	text-align:center;
-	font-size:12px;
-	font-weight:normal
-}
-/*注册*/
-.Rmain {
-	width:798px;
-	border:1px solid #dedede;
-	overflow:hidden;
-	margin:70px auto 45px;
-	background:url(../images/Regist_bg.png) repeat-x top left;
-}
-.Rmain h2.f24red {
-	padding:20px 20px 50px;
-}
-.Rm_tab {
-	width:628px; overflow:hidden; padding:0px 0px 10px 170px;
-}
-.Rm_tab label {
-	margin-right:60px; background-image:url(../images/Rtab_ico.gif); background-repeat:no-repeat; float:left;  padding-left:25px; line-height:30px; font-size:14px; background-position:0px -16px;
-}
-.Rm_tab label.hver{background-position:0px 8px;}
-ul.Rm_input {
-	font-size:14px;
-}
-ul.Rm_input li {
-	width:798px;
-	line-height:35px;
-	padding:10px 0px;
-	overflow:hidden;
-}
-ul.Rm_input li label {
-	width:160px;
-	float:left;
-	padding-right:10px;
-	text-align:right;
-	font-weight:600
-}
-ul.Rm_input li span {
-	float:left;
-	padding-left:10px;
-	font-size:12px;
-	color:#666;
-}
-ul.Rm_input li span.red{ color:#e10000}
-ul.Rm_input li span.yzm {
-	line-height:35px
-}
-ul.Rm_input li span.yzm img {
-	float:left;
-	margin:2px 8px 0px 0px
-}
-.w300 {
-	width:300px
-}
-.w150 {
-	width:150px;
-}
-.Rtext {
-	height:33px;
-	border:1px solid #ccc;
-	box-shadow:2px 2px 1px 0px #f3f3f3 inset;
-	padding-left:7px;
-	line-height:33px;
-	font-size:14px;
-	float:left
-}
-.setEmail {
-	background-image:url(../images/btn_bg.jpg);
-	background-position:0px -82px;
-	border:1px solid #dedede;
-	line-height:35px;
-	height:35px;
-	float:left;
-	margin-left:5px;
-	border-radius:2px;
-	padding:0px 10px;
-	cursor:pointer;
-	font-weight:700;
-}
-.Rm_submit{ text-align:center; padding:10px 0px 50px;}
-.Rm_submit p {
-	padding:30px 0px 5px;
-	font-size:14px;
-}
-.Rm_submit p a:hover {
-	text-decoration:underline
-}
-.Rms_btn {
-	margin:10px auto;
-	background-image:url(../images/btn_bg.jpg);
-	background-color:#ea1e1d;
-	height:40px;
-	line-height:40px;
-	font-size:16px;
-	font-weight:700px;
-	cursor:pointer;
-	border:1px solid #cb1919;
-	color:#fff;
-	padding:0px 30px;
-	border-radius:2px;
-}
-.Rms_btn:hover{ background-position:0px -41px;}
-.LRfooter {
-	text-align:center;
-	color:#666;
-	padding:20px 0px;
-	border-top:1px solid #dedede;
-}
-
-/*邮箱激活*/
-.sentTop{ text-align:center; font-size:16px; color:#333; line-height:30px; padding:20px 0px 40px; width:750px; margin:auto; border-bottom:1px solid #dcdcdc;}
-.sentTop a{ text-decoration:underline; color:#0057a0; margin:0px 5px;}
-.sentMain{ line-height:32px; font-size:14px; color:#666; padding:25px 0px 50px 200px;}
-.sentMain p{ padding-left:40px;}
-.sentMain a.sMbtn{ background-image:url(../images/btn_bg.jpg); background-position:0px -81px; padding:0px 15px; border-radius:3px; line-height:30px; display:inline-block; border:1px solid #dedede;}
-
-.Succeed{ padding:180px 0px 270px; text-align:center}
-.Succeed h2{ font-size:20px; padding:28px 0px; font-weight:700}
-.Succeed p{ font-size:14px; color:#666;}
->>>>>>> solve product detail page to link with css file
-.Succeed p a{ margin:0px 5px;}

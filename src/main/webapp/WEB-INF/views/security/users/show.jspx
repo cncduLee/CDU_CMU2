@@ -11,6 +11,5 @@
         <field:display field="isAccountNonExpired" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_isAccountNonExpired" object="${principal}" z="5yOuPeGKMwAqYApahdfYVU+mVoY="/>
         <field:display field="isAccountNonLocked" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_isAccountNonLocked" object="${principal}" z="qXia8BElDdsDCp3qZLY558M+aDI="/>
         <field:display field="isCredentialsNonExpired" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_isCredentialsNonExpired" object="${principal}" z="l4m3Wj6oWI2tYO/wgYgCN/xudCU="/>
-        <field:display field="entityManager" id="s_edu_cmucdu_ecommerce_domain_user_security_Principal_entityManager" object="${principal}" z="H7vKwZRrpe9h3uNoMKTbOaj5tP0="/>
     </page:show>
 </div>

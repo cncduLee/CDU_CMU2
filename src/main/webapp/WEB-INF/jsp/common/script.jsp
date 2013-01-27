@@ -1,13 +1,7 @@
-<link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
+ <link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
+
 <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
 <link rel="stylesheet" type="text/css" media="all" href="css/new_register.css" />
-<link rel="stylesheet" type="text/css" media="all" href="css/Screening_of_goods.css" />
-
-
-<link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="css/demo.css" />
-<link rel="stylesheet" type="text/css" href="css/style4.css" />
-
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/ddsmoothmenu.js">

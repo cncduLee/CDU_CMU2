@@ -30,6 +30,7 @@ public class Product {
     private Description description;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy="product")
+
     private Set<SellerProduct> sellerProducts = new HashSet<SellerProduct>();
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy="product")
@@ -40,6 +41,8 @@ public class Product {
 	public void setLocale(LocaleEnum locale){
 		this.locale = locale;
 	}
+
+
 	
 	public String getLocalName(){
 		return name.getLocalDescription();

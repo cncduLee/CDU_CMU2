@@ -11,6 +11,5 @@
         <field:checkbox field="isAccountNonExpired" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_isAccountNonExpired" z="faHlTJXgAoVEyZtajOp3awgJKmc="/>
         <field:checkbox field="isAccountNonLocked" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_isAccountNonLocked" z="74tfbWDILxoy1O3SVSGWV/VouSg="/>
         <field:checkbox field="isCredentialsNonExpired" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_isCredentialsNonExpired" z="kQeBPJyFGuYDR6sLUGKLnMBdyNI="/>
-        <field:input field="entityManager" id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_entityManager" z="7XxuP8ivHmhxB3j3T+ldwfS5L0k="/>
     </form:update>
 </div>

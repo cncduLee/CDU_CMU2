@@ -9,7 +9,7 @@
             <table:column id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_username" property="username" z="7DP5Az/X8kcGiHv3O5QLdX6rXgc="/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_checkEnabled" property="checkEnabled" z="yM4CqOt2myxQSfAkOj4vO/FXOy4="/>
             <table:column id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_user" property="user" z="uvBoNG+i64a2pVQUjGhyxkPFUdU="/>
-            <table:column id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_entityManager" property="entityManager" z="FGJdI7Vn79U3GWmWX2vtgNkDe8w="/>
+            <table:column id="c_edu_cmucdu_ecommerce_domain_user_security_Principal_isAccountNonExpired" property="isAccountNonExpired" z="9nSlO1dWbrehW8Z75QoMcBVzYlk="/>
         </table:table>
     </page:list>
 </div>

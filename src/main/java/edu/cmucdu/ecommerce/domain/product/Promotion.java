@@ -4,7 +4,6 @@ import edu.cmucdu.ecommerce.domain.util.Description;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -17,6 +16,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooToString
 @RooJpaEntity
 public class Promotion {
+
     @OneToOne(cascade = CascadeType.ALL)
     private SellerProduct product;
 
