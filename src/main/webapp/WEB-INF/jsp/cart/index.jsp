@@ -106,7 +106,7 @@
 				<div class="cart-button clearfix">
 					<a id="continue" href="productList" class="btn continue">
 						<span class="btn-text">Continue Shopping</span></a> 
-						<a id="toSettlement" href="#" class="checkout">gotoOrderInfo</a>
+						<a id="toSettlement" href="makeOrder" class="checkout">gotoOrderInfo</a>
 				</div>
 			</div>
 

@@ -41,7 +41,7 @@
     </div> <!-- END of templatemo_header -->
 </div> <!-- END of templatemo_header_wrapper -->
 <!--  code security from tile -->
-<div id="header"
+<div style="display:none" id="header"
 	xmlns:jsp="http://java.sun.com/JSP/Page"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
