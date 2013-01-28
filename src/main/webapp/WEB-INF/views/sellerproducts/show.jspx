@@ -8,5 +8,8 @@
         <field:display field="price" id="s_edu_cmucdu_ecommerce_domain_product_SellerProduct_price" object="${sellerproduct}" z="swUPU8Hfz2BHPeQmp3gBLn15cOU="/>
         <field:display field="weight" id="s_edu_cmucdu_ecommerce_domain_product_SellerProduct_weight" object="${sellerproduct}" z="MiwQCWFtBuarlS8t9dqN+9sQHB4="/>
         <field:display field="promotion" id="s_edu_cmucdu_ecommerce_domain_product_SellerProduct_promotion" object="${sellerproduct}" z="zh7ypdgBY6XgW+lRluB5FbBXagQ="/>
+        <field:display date="true" dateTimePattern="${sellerProduct_durationoffruit_date_format}" field="durationOfFruit" id="s_edu_cmucdu_ecommerce_domain_product_SellerProduct_durationOfFruit" object="${sellerproduct}" z="GZPkb6SwVe3UfnyNv0MvyjXGhfs="/>
+        <field:display date="true" dateTimePattern="${sellerProduct_readytime_date_format}" field="readyTime" id="s_edu_cmucdu_ecommerce_domain_product_SellerProduct_readyTime" object="${sellerproduct}" z="/xS8tnDHXWQA5q8ei1JWv91ltqY="/>
+        <field:display field="brandName" id="s_edu_cmucdu_ecommerce_domain_product_SellerProduct_brandName" object="${sellerproduct}" z="sqNfrzbW8+rRU52ql4nE5Rhz0bY="/>
     </page:show>
 </div>

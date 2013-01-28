@@ -11,6 +11,5 @@
         <field:input field="telephoneNo" id="c_edu_cmucdu_ecommerce_domain_user_Seller_telephoneNo" z="ymhrQvpHQQAofiumt4LA9SnGEHQ="/>
         <field:select field="address" id="c_edu_cmucdu_ecommerce_domain_user_Seller_address" itemValue="id" items="${descriptions}" path="/descriptions" z="n3iBwOenNmCJXQ4hIn5Jsb5XbJ0="/>
         <field:simple field="products" id="c_edu_cmucdu_ecommerce_domain_user_Seller_products" messageCode="entity_reference_not_managed" messageCodeAttribute="Seller Product" z="XcFhhoX7FdM9RBwZHXFrGS5wsS0="/>
-        <field:input field="email" id="c_edu_cmucdu_ecommerce_domain_user_Seller_email" validationMessageCode="field_invalid_email" z="to0qnJe8o3QDyuH0CwXcRGN8PyQ="/>
     </form:update>
 </div>

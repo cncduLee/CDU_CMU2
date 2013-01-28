@@ -37,7 +37,8 @@ function tb_init(domChunk){
 	}).removeClass('thickbox');
 }
 
-function tb_show(caption, url, imageGroup) {//function called when the user clicks on a thickbox link
+function tb_show(caption, url, imageGroup) {
+	//function called when the user clicks on a thickbox link
 
 	try {
 		if (typeof document.body.style.maxHeight === "undefined") {//if IE 6

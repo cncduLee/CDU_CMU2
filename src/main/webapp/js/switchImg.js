@@ -9,5 +9,6 @@ $(function(){
 //		  var imgSrc_big = imgSrc + "_big"+ unit;
 		  $("#bigImg").attr({"src": imgSrc ,"jqimg": imgSrc });
 		  $("#thickImg").attr("href", imgSrc);
+		  $(".jqzoom").attr("href", imgSrc);
 	});
 });

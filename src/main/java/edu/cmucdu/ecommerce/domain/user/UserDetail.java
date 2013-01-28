@@ -27,6 +27,8 @@ public abstract class UserDetail {
 	@OneToOne(cascade = CascadeType.ALL)
 	private Principal principle;
 
+	
+
 	@Transient
 	LocaleEnum locale = LocaleEnum.CHINESE;
 	 @OneToMany(cascade = CascadeType.ALL)
@@ -57,5 +59,5 @@ public abstract class UserDetail {
 			return address.getLocalDescription();
 	}
 	
-	public String email;
+//	public String email;
 }

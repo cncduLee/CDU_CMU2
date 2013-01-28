@@ -3,6 +3,7 @@ package edu.cmucdu.ecommerce.domain.loader;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,12 +15,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 import edu.cmucdu.ecommerce.dao.product.ProductDao;
 import edu.cmucdu.ecommerce.dao.product.ProductPicDao;
+import edu.cmucdu.ecommerce.dao.product.PromotionDao;
 import edu.cmucdu.ecommerce.dao.security.AuthorityDao;
 import edu.cmucdu.ecommerce.dao.security.AuthorityPrincipalAssignmentDao;
 import edu.cmucdu.ecommerce.dao.user.BuyerDao;
 import edu.cmucdu.ecommerce.dao.user.SellerDao;
 import edu.cmucdu.ecommerce.domain.product.Product;
 import edu.cmucdu.ecommerce.domain.product.ProductPic;
+import edu.cmucdu.ecommerce.domain.product.Promotion;
 import edu.cmucdu.ecommerce.domain.product.SellerProduct;
 import edu.cmucdu.ecommerce.domain.user.Buyer;
 import edu.cmucdu.ecommerce.domain.user.Seller;
@@ -32,7 +35,7 @@ import edu.cmucdu.ecommerce.domain.util.Description;
  * Preload test data for in-mem db,<br>
  * <a href="http://forum.springsource.org/showthread.php?84312-How-to-store-sample-data/page2">acknowledgement: this technique</a>
  */
-//@Component
+@Component
 public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 
 	@Autowired
@@ -43,8 +46,8 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 	AuthorityDao authorityDao;
 	@Autowired
 	AuthorityPrincipalAssignmentDao authorityPrincipalAssignmentDao;
-//	@Autowired
-//	PromotionDao promotionDao;
+	@Autowired
+	PromotionDao promotionDao;
 	@Autowired
 	BuyerDao buyerDao;
 	@Autowired
@@ -226,45 +229,45 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 		b2p1.setUser(s5);
 		authorityPrincipalAssignmentDao.save(apa4);
 		sellerDao.save(s5);
-//		// ########## Create Promotion ##########
-//		Promotion pro1 = new Promotion();
-//		pro1.setAbsoluteDiscount(10.0);
-//		pro1.setDescription(new Description(Messages.getString("Loader.34"), Messages.getString("Loader.35"), Messages.getString("Loader.36")));
-//		pro1.setPercentDiscount(10.0);
-//		pro1.setProduct(sp1);
-//		Date date = new Date();
-//		date.setTime(0);
-//		pro1.setStartDate(date);
-//		date.setTime(1);
-//		pro1.setStopDate(date);
-//		promotionDao.save(pro1);
+		// ########## Create Promotion ##########
+		Promotion pro1 = new Promotion();
+		pro1.setAbsoluteDiscount(10.0);
+		pro1.setDescription(new Description(Messages.getString("Loader.34"), Messages.getString("Loader.35"), Messages.getString("Loader.36")));
+		pro1.setPercentDiscount(10.0);
+		pro1.setProduct(sp1);
+		Date date = new Date();
+		date.setTime(0);
+		pro1.setStartDate(date);
+		date.setTime(1);
+		pro1.setStopDate(date);
+		promotionDao.save(pro1);
 		
-//		// Create test picture
-//		ProductPic pp = new ProductPic();
-//		pp.loadFile("/images/test/test.jpg");
-//		productPicDao.save(pp);
+		// Create test picture
+		ProductPic ppp = new ProductPic();
+		ppp.loadFile("/images/test/test.jpg");
+		productPicDao.save(ppp);
 		
 		
 	}
 	
 	private String getMD5Encode(String password){
-//		byte[] bytesOfMessage;
-//		try {
-//			bytesOfMessage = password.getBytes("UTF-8");
-//			MessageDigest md = MessageDigest.getInstance("MD5");
-//			byte[] thedigest = md.digest(bytesOfMessage);
-//			return new String(thedigest);
-			return password;
-//		} catch (UnsupportedEncodingException e) {
-//			// TODO Auto-generated catch block
-//		
-//			e.printStackTrace();
-//			return null;
-//		} catch (NoSuchAlgorithmException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//			return null;
-//		}
+		byte[] bytesOfMessage;
+		try {
+			bytesOfMessage = password.getBytes("UTF-8");
+			MessageDigest md = MessageDigest.getInstance("MD5");
+			byte[] thedigest = md.digest(bytesOfMessage);
+			return new String(thedigest);
+//			return password;
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+		
+			e.printStackTrace();
+			return null;
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
 
 		
 	}

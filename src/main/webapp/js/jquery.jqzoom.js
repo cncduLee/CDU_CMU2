@@ -33,6 +33,8 @@
                 
 		    var imageLeft = $(this).offset().left;                
 		    var imageTop = $(this).offset().top;
+		    
+		    
 
                
 		    var imageWidth = $(this).children('img').get(0).offsetWidth;
@@ -59,22 +61,26 @@
 
             if(imageLeft + imageWidth + settings.offset + settings.xzoom > screen.width){
 
-            leftpos = imageLeft  - settings.offset - settings.xzoom;
+            	leftpos = imageLeft  - settings.offset - settings.xzoom;
+            	//alert(imageTop+"----------"+leftpos);
 
             }else{
 
-		    leftpos = imageLeft + imageWidth + settings.offset;
+            	leftpos = imageLeft + imageWidth + settings.offset;
+            	//alert(imageTop+"----@@------"+leftpos);
+            	
             }
+            
 		    }else{
-		    leftpos = imageLeft - settings.xzoom - settings.offset;
+		    	leftpos = imageLeft - settings.xzoom - settings.offset;
 		    if(leftpos < 0){
 
-            leftpos = imageLeft + imageWidth  + settings.offset;
+		    	leftpos = imageLeft + imageWidth  + settings.offset;
 
 		    }
 
 		    }
-
+		    
 		    $("div.zoomdiv").css({ top: imageTop,left: leftpos });
 
 		    $("div.zoomdiv").width(settings.xzoom);
@@ -122,7 +128,7 @@
 		    		$("div.jqZoomPup").height((settings.yzoom)/scaley);
 
                     if(settings.lens){
-                    $("div.jqZoomPup").css('visibility','visible');
+                    	$("div.jqZoomPup").css('visibility','visible');
 					}
 
 				   }
@@ -144,7 +150,7 @@
 
                     if(settings.lens){
 
-                    $("div.jqZoomPup").css({ top: ypos,left: xpos });
+                    	$("div.jqZoomPup").css({ top: ypos,left: xpos });
 
                     }
 

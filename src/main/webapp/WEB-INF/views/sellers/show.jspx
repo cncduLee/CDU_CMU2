@@ -9,6 +9,5 @@
         <field:display field="description" id="s_edu_cmucdu_ecommerce_domain_user_Seller_description" object="${seller}" z="jXJELeo3iw5d5ZkMfE+JXiuJQ0Y="/>
         <field:display field="telephoneNo" id="s_edu_cmucdu_ecommerce_domain_user_Seller_telephoneNo" object="${seller}" z="dJCYkTuAFKtX0xX3tVwrqx5f6qA="/>
         <field:display field="address" id="s_edu_cmucdu_ecommerce_domain_user_Seller_address" object="${seller}" z="Vp3VictsCMJoazjT4eS4HNhJ/iI="/>
-        <field:display field="email" id="s_edu_cmucdu_ecommerce_domain_user_Seller_email" object="${seller}" z="/YSnJrHmXTEKRM6a/YRyyhn6Ac0="/>
     </page:show>
 </div>
