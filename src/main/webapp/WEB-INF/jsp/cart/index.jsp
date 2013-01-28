@@ -55,7 +55,7 @@
 										<a target="_blank" href="#">									
 										<c:forEach items="${myCartx.sellerProduct.images}" var="img" varStatus="status">
 											<c:if test="${status.index==0}">
-												<img src="./productpics/showpic/${img.id}"  alt="${img.localDescription}" />
+												<img src="./productpics/showpic/${img.id}"  alt="${img.localDescription}" width="50px" height="50px" />
 											</c:if>
 										</c:forEach>
 										</a>
