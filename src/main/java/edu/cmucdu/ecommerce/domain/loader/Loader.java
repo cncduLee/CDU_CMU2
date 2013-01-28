@@ -42,7 +42,7 @@ import edu.cmucdu.ecommerce.service.logistic.LogisticService;
  * Preload test data for in-mem db,<br>
  * <a href="http://forum.springsource.org/showthread.php?84312-How-to-store-sample-data/page2">acknowledgement: this technique</a>
  */
-@Component
+//@Component
 public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 
 	@Autowired
