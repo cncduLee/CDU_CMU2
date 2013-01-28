@@ -6,7 +6,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>CMU_CDU</title>
+<%
+long total = 0l;
+Cart cart = (Cart) session.getAttribute("myCart");
 
+for(CartTransaction t : cart.getCartTransaction()){
+	total += t.getAmount() * t.getSellerProduct().getPrice();
+}
+
+%>
 <!-- Include Script in folder common -->
 <jsp:include page="../common/script.jsp" />
 <jsp:include page="../common/orderSuccessScript.jsp" />
@@ -25,10 +33,10 @@
 				<div class="mc">
 					<s class="icon-succ02"></s>
 					<div class="fore">
-						<h3 class="ftx-02">Orders submitted successfully,please pay for it on timeï¼</h3>
+						<h3 class="ftx-02">Orders submitted successfully,please pay for it on time</h3>
 						<ul class="list-h">
-							<li class="fore1">Orders' numberï¼š362821854</li>
-							<li class="fore3">Amout payableï¼š<strong class="ftx-01">99.00å…ƒ</strong></li>
+							<li class="fore1">Orders' number š362821854</li>
+							<li class="fore3">Amout payable <strong class="ftx-01"><%=total %> $</strong></li>
 							
 						</ul>
 						<p id="p_show_info">&nbsp;</p>
@@ -38,10 +46,10 @@
 			<div id="qpay02" class="m">
 				<div class="mt">
 					<h3>
-						Only after pay for<strong class="ftx-01">99.00$</strong>can you finish your order ã€‚
+						Only after pay for<strong class="ftx-01"><%=total %> $</strong>can you finish your order€‚
 					</h3>
 					<div class="extra">
-						Please pay for your order within<strong class="ftx-01">24 hours</strong>,otherwise, the order will be automatically canceledã€‚
+						Please pay for your order within<strong class="ftx-01">24 hours</strong>,otherwise, the order will be automatically canceled€‚
 					</div>
 					<div class="fr">
 						<s class="icon-ques05"></s> <a href="#" target="_blank">Manage my fast payment </a>
@@ -55,10 +63,8 @@
 			<input id="ruCreditFlag" name="ruCreditFlag" type="hidden" value="0" />
 
 			<div class="o-mb">
-				After finish orders ,you can look over ï¼š <a href="#" target="_blank">Order details</a> <input
-					type="hidden" id="contextPath" name="contextPath"
-					value="http://jd2008.360buy.com/jdhome/orderinfo.aspx?orderid=362821854" />
-				&nbsp;&nbsp;<a href="#" target="_blank">Pay survey</a>
+				After finish orders ,you can look over š <a href="makeOrder" target="_blank">Order details</a>
+				&nbsp;&nbsp;<a href="ruleDetailPage" target="_blank">Pay survey</a>
 			</div>
 		</div>
 		

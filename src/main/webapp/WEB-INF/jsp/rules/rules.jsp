@@ -52,7 +52,7 @@
 								now. We said we'd say it was the snow that killed the other two,
 								but it wasn't. Nature is lethal but it doesn't hold a candle to
 								man.</p>
-							<p><a>read more >></a></p>
+							<p><a href="ruleDetailPage">read more >></a></p>
 							<h3>Policy</h3>
 							<p>Like you, I used to think the world was this great place
 								where everybody lived by the same standards I did, then some kid
@@ -71,7 +71,7 @@
 								put quarters in it? No? Well, that's what you see at a toy
 								store. And you must think you're in a toy store, because you're
 								here shopping for an infant named Jeb.</p>
-							<p><a>read more >></a></p>
+							<p><a href="ruleDetailPage">read more >></a></p>
 							<h3>Excellence</h3>
 							<p>Like you, I used to think the world was this great place
 								where everybody lived by the same standards I did, then some kid
@@ -92,7 +92,7 @@
 								those who would attempt to poison and destroy My brothers. And
 								you will know My name is the Lord when I lay My vengeance upon
 								thee.</p>
-							<p><a>read more >></a></p>
+							<p><a href="ruleDetailPage">read more >></a></p>
 							<h3>Examples</h3>
 							<p>Now that we know who you are, I know who I am. I'm not a
 								mistake! It all makes sense! In a comic, you know how you can
@@ -113,7 +113,7 @@
 								anyone. And if we never told anyone it means we never made it
 								back. Hence we die down here. Just as a matter of deductive
 								logic.</p>
-							<p><a>read more >></a></p>
+							<p><a href="ruleDetailPage">read more >></a></p>
 							<h3>Get in touch</h3>
 							<p>Well, the way they make shows is, they make one show. That
 								show's called a pilot. Then they show that show to the people
@@ -121,19 +121,13 @@
 								if they're going to make more shows. Some pilots get picked and
 								become television programs. Some don't, become nothing. She
 								starred in one of the ones that became nothing.</p>
-							<p><a>read more >></a></p>
+							<p><a href="ruleDetailPage">read more >></a></p>
 						</div>
 					</div>
 				</section>
 			</div>
 
-	<div id="templatemo_footer_wrapper">
-		<div id="templatemo_footer">
-			Copyright © 2048 <a href="#">CDU CMU</a> | <a
-				href="http://www.cdu.edu.cn" target="_parent">Fresh Fruit </a>
-		</div>
-		<!-- END of templatemo_footer -->
-	</div>
-	<!-- END of templatemo_footer_wrapper -->
+	<!-- Include footer in folder common -->
+	<jsp:include page="../common/footer.jsp" />
 </body>
 </html>

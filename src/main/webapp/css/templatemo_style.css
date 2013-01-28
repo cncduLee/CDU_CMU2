@@ -54,7 +54,9 @@ cite span {
 
 .imgage-with-frame { 
 	padding: 4px; 
-	border: 1px solid #a6a28d; 
+	border: 1px solid #a6a28d;
+	width:210px; 
+	height: 122px;
 }
 
 .image_fl { 

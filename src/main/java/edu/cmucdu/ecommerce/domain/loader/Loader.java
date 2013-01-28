@@ -1,10 +1,15 @@
 package edu.cmucdu.ecommerce.domain.loader;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +25,7 @@ import edu.cmucdu.ecommerce.dao.security.AuthorityDao;
 import edu.cmucdu.ecommerce.dao.security.AuthorityPrincipalAssignmentDao;
 import edu.cmucdu.ecommerce.dao.user.BuyerDao;
 import edu.cmucdu.ecommerce.dao.user.SellerDao;
+import edu.cmucdu.ecommerce.domain.logistic.PortTrip;
 import edu.cmucdu.ecommerce.domain.product.Product;
 import edu.cmucdu.ecommerce.domain.product.ProductPic;
 import edu.cmucdu.ecommerce.domain.product.Promotion;
@@ -30,6 +36,7 @@ import edu.cmucdu.ecommerce.domain.user.security.Authority;
 import edu.cmucdu.ecommerce.domain.user.security.AuthorityPrincipalAssignment;
 import edu.cmucdu.ecommerce.domain.user.security.Principal;
 import edu.cmucdu.ecommerce.domain.util.Description;
+import edu.cmucdu.ecommerce.service.logistic.LogisticService;
 
 /**
  * Preload test data for in-mem db,<br>
@@ -52,6 +59,9 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 	BuyerDao buyerDao;
 	@Autowired
 	ProductPicDao productPicDao;
+	
+	@Autowired
+	LogisticService logisticService;
 	
 	@Override
 	@Transactional
@@ -101,13 +111,13 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 				sp1.setProduct(p1);
 				sp1.setPrice(100);
 				sp1.setWeight(100);
-				SellerProduct sp2 = new SellerProduct();
-				sp2.setSeller(s2);
-				sp2.setProduct(p1);
-				sp2.setPrice(200);
-				sp2.setWeight(1000);
+//				SellerProduct sp2 = new SellerProduct();
+//				sp2.setSeller(s2);
+//				sp2.setProduct(p1);
+//				sp2.setPrice(200);
+//				sp2.setWeight(1000);
 			sellerlist.add(sp1);
-			sellerlist.add(sp2);
+//			sellerlist.add(sp2);
 			//Add product picture
 			ProductPic pp = new ProductPic();
 			pp.loadFile("/images/fruits/longan.jpg");
@@ -160,6 +170,28 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 			productPicDao.save(pp3);
 		p3.getImages().add(pp3);
 		productDao.save(p3);
+		
+		Product p4 = new Product();
+		p4.setName(new Description(Messages.getString("Loader.28"), Messages.getString("Loader.29"), Messages.getString("Loader.30"))); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		p4.setDescription(new Description(Messages.getString("Loader.28"), Messages.getString("Loader.29"), Messages.getString("Loader.30"))); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		Set<SellerProduct> sellerlist4 = new HashSet<SellerProduct>();
+		p4.setSellerProducts(sellerlist4);
+			//Create Seller Product
+			SellerProduct sp5 = new SellerProduct();
+			sp5.setSeller(s1);
+			sp5.setProduct(p4);
+			sp5.setPrice(10.5);
+			sp5.setWeight(10);
+			sellerlist4.add(sp5);
+			//Add product picture
+			ProductPic pp4 = new ProductPic();
+			pp4.loadFile("/images/fruits_images/Durian.jpg");
+			pp4.setProduct(p4);
+			pp4.setSellerProduct(sp5);
+			pp4.setDescription(new Description(Messages.getString("Loader.52"), Messages.getString("Loader.53"), Messages.getString("Loader.54")));
+			productPicDao.save(pp4);
+			p4.getImages().add(pp4);
+		productDao.save(p4);
 		
 		// ########## Create Buyer ############
 		Buyer b1 = new Buyer();
@@ -243,9 +275,27 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
 		promotionDao.save(pro1);
 		
 		// Create test picture
-		ProductPic ppp = new ProductPic();
-		ppp.loadFile("/images/test/test.jpg");
-		productPicDao.save(ppp);
+//		ProductPic ppp = new ProductPic();
+//		ppp.loadFile("/images/test/test.jpg");
+//		productPicDao.save(ppp);
+		
+		
+		//add logistic info
+//		Set<List<PortTrip>> output = logisticService.findPort("a", "e");
+//		assertEquals(3, output.size());
+//		List<PortTrip> expected = new ArrayList<PortTrip>();
+//		expected.add(new PortTrip("a","e"));
+//		assertTrue(output.contains(expected));
+//		expected = new ArrayList<PortTrip>();
+//		expected.add(new PortTrip("a","d"));
+//		expected.add(new PortTrip("d","c"));
+//		expected.add(new PortTrip("c","e"));
+//		assertTrue(output.contains(expected));
+//		expected = new ArrayList<PortTrip>();
+//		expected.add(new PortTrip("a","b"));
+//		expected.add(new PortTrip("b","c"));
+//		expected.add(new PortTrip("c","e"));
+//		assertTrue(output.contains(expected));
 		
 		
 	}

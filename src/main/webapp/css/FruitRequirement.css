@@ -1,0 +1,113 @@
+/*Fruit requirement title*/
+.requirement_information {
+	margin: 0 auto;
+	width: 960px;
+	font-family: Verdana;
+}
+
+.requirement_title {
+	background: #ff6700;
+	margin-top: 30px;
+	height: 45px;
+	line-height: 45px;
+	word-spacing: 3px;
+}
+
+.requirement_name_css {
+	color: #fff;
+	margin-left: 50px;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.requirement_info_1 {
+	border-bottom: 2px dotted #38362D;
+	margin-top: 3px;
+	margin-bottom: 5px;
+	float: left;
+}
+
+.requirement_info_title {
+	background: #38362D;
+	height: 30px;
+	line-height: 30px;
+	word-spacing: 3px;
+	margin-bottom: 5px;
+	border-bottom: 2px solid #38362D;
+}
+
+.requirement_info_name {
+	margin-left: 50px;
+	color: #fff;
+	margin-left: 50px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.requirement_info_left {
+	margin-left: 50px;
+	width: 80px;
+	margin-top: 15px;
+	margin-bottom: 20px;
+	float: left;
+}
+
+.requirement_info_left img {
+	width: 80px;
+	height: 80px;
+}
+
+.requirement_info_right {
+	width: 780px; margin-top : 15px;
+	margin-bottom: 20px;
+	margin-left: 50px;
+	float: left;
+	margin-top: 15px;
+}
+
+.requirement_info_product {
+	padding-right: 50px;
+}
+
+.requirement_info_person_name {
+	font-size: 16px;
+	font-weight: bold;
+	color: #ff6700;
+	margin-right: 10px;
+}
+
+.requirement_info_main {
+	font-size: 14px;
+	font-weight: bold;
+	word-spacing: 3px;
+}
+
+.requirement_info_bottom {
+	margin-top: 8px;
+	margin-bottom: 5px;
+	width: 780px;
+	float: left;
+}
+
+.requirement_info_time {
+	width: 780px;
+	text-align: right;
+	margin-right: 50px;
+	float: right;
+	font-size: 14px;
+}
+
+.requirement_info_month {
+	color: #7E7C76;
+	margin-left: 5px;
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+
+.requirement_info_date {
+	color: #7E7C76;
+	margin-left: 5px;
+	font-weight: bold;
+	margin-right: 10px;
+	margin-bottom: 30px;
+}

@@ -40,6 +40,7 @@ public class IndexController {
 		List<IndexProductEntity> idp = new ArrayList<IndexProductEntity>();
 		List<HashMap<String,Object>> picAndSellers = new ArrayList<HashMap<String,Object>>();
 
+		List<SellerProduct> pds = sellerProductDao.findAll();
 		
 		for (SellerProduct product : products) {
 			idp.add(new IndexProductEntity(
@@ -59,7 +60,8 @@ public class IndexController {
 
 		uiModel.addAttribute("products", idp);
 		uiModel.addAttribute("picAndSellers",picAndSellers);
-	
+		uiModel.addAttribute("gallery",pds);
+		
 		return "index";
 	}
 

@@ -53,31 +53,92 @@
 				<h1>${product.name.localDescription}</h1>
 				<div style="height: 30px;"></div>
 				<ul class="cdu_list">
-					<li>Price ：<em> 20$/kg</em></li>
-					<li>Promotion : <em style="color: #16b7df;"> 20%</em></li>
-					<li>Evaluation : <em style="color: #0bda4a"> 350 times</em></li>
-					<li>Quantity : <input type="text" name="quantity"
+					<li>Price: <em> 20$ / kg</em></li>
+					<li>Promotion: <em style="color: #16b7df;"> 20%</em></li>
+					<li>Evaluation: <em style="color: #0bda4a"> 350 times</em></li>
+					<li>Quantity: <input type="text" name="quantity"
 						class="quantity_text" /> kg
 					</li>
 				</ul>
 				<ul class="cdu_list_1">
-					<li>Harbor ：<select>
-							<option>KunMing</option>
-							<option>ShangHai</option>
+					<li>Destination:<select name="grant_type_id"
+						id="grant_type_id" class="form-select required">
+							<option value="">- select -</option>
+							<option value="1">Guangzhou</option>
+							<option value="2">Chengdu</option>
+							<option value="3">Kunming</option>
+							<option value="4">Shanghai</option>
+							<option value="5">Fujian</option>
 					</select>
+
 					</li>
-					<li>Destination ：<select>
-							<option>GuangZhou</option>
-							<option>ShangHai</option>
-					</select>
+					<li>
+						<div id="number1" class="number">
+							<form action="">
+								<input type="radio" checked="checked" name="radio1" id="radio_1" />
+								<label for="radio_1">test Guangzhou 100,000B</label><br /> <input
+									type="radio" name="radio1" id="radio_2" /> <label
+									for="radio_2">Bkk to Port and Port to Local 100,000B</label><br />
+								<input type="radio" name="radio1" id="radio_3" /> <label
+									for="radio_3">Bkk to Port and Port to Local 100,000B</label><br />
+							</form>
+						</div>
 					</li>
-					<li>Titally Price ：<em> 37$</em></li>
-					<li>Riping Time ：<em style="color: #64BC68"> 2 days
-							later</em></li>
-					<li>Inventory ：<em style="color: #F03C3E"> No</em></li>
+					<li>
+						<div id="number2" class="number">
+							<form action="">
+								<input type="radio" checked="checked" name="radio2" id="radio_4" />
+								<label for="radio_4">test Chengdu 100,000B</label><br /> <input
+									type="radio" name="radio2" id="radio_5" /> <label
+									for="radio_5">Bkk to Port and Port to Local 100,000B</label><br />
+								<input type="radio" name="radio2" id="radio_6" /> <label
+									for="radio_6">Bkk to Port and Port to Local 100,000B</label><br />
+							</form>
+						</div>
+					</li>
+					<li>
+						<div id="number3" class="number">
+							<form action="">
+								<input type="radio" checked="checked" name="radio3" id="radio_7" />
+								<label for="radio_7">test Kunming 100,000B</label><br /> <input
+									type="radio" name="radio3" id="radio_8" /> <label
+									for="radio_8">Bkk to Port and Port to Local 100,000B</label><br />
+								<input type="radio" name="radio3" id="radio_9" /> <label
+									for="radio_9">Bkk to Port and Port to Local 100,000B</label><br />
+							</form>
+						</div>
+					</li>
+
+					<li>
+						<div id="number4" class="number">
+							<form action="">
+								<input type="radio" checked="checked" name="radio4" id="radio_10" />
+								<label for="radio_10">test Shanghai 100,000B</label><br /> <input
+									type="radio" name="radio4" id="radio_11" /> <label
+									for="radio_11">Bkk to Port and Port to Local 100,000B</label><br />
+								<input type="radio" name="radio4" id="radio_12" /> <label
+									for="radio_12">Bkk to Port and Port to Local 100,000B</label><br />
+							</form>
+						</div>
+					</li>
+
+					<li>
+						<div id="number5" class="number">
+							<form action="">
+								<input type="radio" checked="checked" name="radio5" id="radio_13" />
+								<label for="radio_13">test Fujian 100,000B</label><br /> <input
+									type="radio" name="radio5" id="radio_14" /> <label
+									for="radio_14">Bkk to Port and Port to Local 100,000B</label><br />
+								<input type="radio" name="radio5" id="radio_15" /> <label
+									for="radio_15">Bkk to Port and Port to Local 100,000B</label><br />
+							</form>
+						</div>
+					</li>
+
+					<li>Titally Price:<em> 37$</em></li>
+					<li>Riping Time:<em style="color: #64BC68"> 2 days later</em></li>
+					<li>Inventory:<em style="color: #F03C3E"> No</em></li>
 				</ul>
-
-
 				<a href="cartAdd/productId=${productid} &amount=1"> <img
 					src="images/blog/shoppingcart.jpg" border="0"
 					style="margin-left: 9px;"></img>
@@ -102,7 +163,7 @@
 
 				<table>
 					<tr>
-						<td>Product Name: <em>Orange</em></td>
+						<td>Product Name: <em>${product.name.localDescription}</em></td>
 						<td id="product_parameters_info_right">Product Company:
 							ChiangMai University and ChengDu University</td>
 					</tr>
@@ -130,7 +191,7 @@
 					</tr>
 					<tr>
 						<td>Producer Company: XXXXX</td>
-						<td id="product_parameters_info_right">保质期: XXXXX</td>
+						<td id="product_parameters_info_right">ä¿è´¨æ: XXXXX</td>
 					</tr>
 				</table>
 
@@ -170,6 +231,7 @@
 				</div>
 				<div class="cleaner"></div>
 
+<!-- 商品图片 -->
 				<div class="product_images">
 					<img alt="products pictrue" src="images/templatemo_image_01.jpg">
 						<img alt="products pictrue" src="images/templatemo_image_02.jpg">

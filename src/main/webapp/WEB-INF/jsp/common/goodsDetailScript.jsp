@@ -39,3 +39,14 @@ ddsmoothmenu.init({
 <script src="js/jquery.jqzoom-core.js" type="text/javascript"></script>
 <script src="js/use_jqzoom.js" type="text/javascript"></script>
 <script src="js/switchImg.js" type="text/javascript"></script>
+
+<!-- select transport -->
+<script type="text/javascript">
+$(function() {
+      $('#grant_type_id').change(function() {
+            $('div.number').hide();
+            $('#number' + $(this).val()).show();
+      }).change(); // Invoke it now
+});
+</script>
+	

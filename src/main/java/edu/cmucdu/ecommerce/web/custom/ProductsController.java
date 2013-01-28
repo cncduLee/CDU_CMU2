@@ -37,14 +37,14 @@ public class ProductsController {
 		
 		if (page == null || size == null) {
 			page=1;
-			size=12;
+			size=8;
 		}
 		
-		int sizeNo = size == null ? 1 : size.intValue();//12 products every page
+		int sizeNo = size == null ? 4: size.intValue();//12 products every page
 		final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
 		List<SellerProduct> all = sellerProductDao.findAll(
-				new org.springframework.data.domain.PageRequest(firstResult
-						/ sizeNo, sizeNo)).getContent();
+				new org.springframework.data.domain.PageRequest(firstResult / sizeNo, sizeNo)).getContent();
+		
 		
 		for (SellerProduct product : all) {
 			product.getProduct().setLocale(WebUtil.getLocaleEnum(httpServletRequest));
@@ -52,15 +52,23 @@ public class ProductsController {
 		
 		uiModel.addAttribute("products", all);
 		uiModel.addAttribute("currentPage",page);
-		uiModel.addAttribute("totle",totle);
-		
+	
 		float nrOfPages = (float) sellerProductDao.count() / sizeNo;
 		uiModel.addAttribute(
-				"maxPages",
+				"totle",
 				(int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1
 						: nrOfPages));
 		
 		
 		return "products";
 	}
+	
+	@RequestMapping(value = "searchFoods" )
+	public String searchFoods(
+			@RequestParam(value = "searchFoods", required = true) String foodsName,
+			Model uiModel, HttpServletRequest httpServletRequest){
+		
+		return "products";
+	}
+	
 }

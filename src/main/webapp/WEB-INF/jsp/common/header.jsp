@@ -25,21 +25,27 @@
 				
     	<div id="site_title"><a href=".">CDMU</a></div>
     	<div id="templatemo_seach">
-        <input type="text" placeholder="search fruits" size="20" maxlength="20" class="text"></input>
-           <input type="submit" value="Go" class="sub"></input>
+        	<form action="searchFoods" action="get">
+        		<input type="text" name="foodsName" placeholder="search fruits" size="20" maxlength="20" class="text"></input>
+            	<input type="submit" value="Go" class="sub"></input>
+        	</form>
         </div>
         <div id="templatemo_menu" class="ddsmoothmenu">
             <ul>
                 <li><a href=".">Home</a></li>
                 <li><a href="productList">Products</a></li>
-                <li><a href="rulesPage">Regulations</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="recomment">Recommend</a></li>
+                <li><a href="aboutPage">About</a></li>
+                <li><a href="contact">Contact</a></li>
             </ul>
             <br style="clear: left" />
         </div> <!-- end of templatemo_menu -->
     </div> <!-- END of templatemo_header -->
 </div> <!-- END of templatemo_header_wrapper -->
+
+
+
+
 <!--  code security from tile -->
 <div style="display:none" id="header"
 	xmlns:jsp="http://java.sun.com/JSP/Page"

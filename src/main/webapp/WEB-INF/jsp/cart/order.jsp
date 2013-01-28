@@ -1,12 +1,22 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:spring="http://www.springframework.org/tags">
+<jsp:directive.page import="edu.cmucdu.ecommerce.web.cart.OrderController"/>
+<jsp:directive.page import="edu.cmucdu.ecommerce.web.cart.CartController"/>
 <jsp:directive.page import="edu.cmucdu.ecommerce.domain.product.shoppingcart.CartTransaction"/>
 <jsp:directive.page import="edu.cmucdu.ecommerce.domain.product.shoppingcart.Cart"/>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>CMU_CDU</title>
+<%
+long total = 0l;
+Cart cart = (Cart) session.getAttribute("myCart");
 
+for(CartTransaction t : cart.getCartTransaction()){
+	total += t.getAmount() * t.getSellerProduct().getPrice();
+}
+
+%>
 <!-- Include Script in folder common -->
 <jsp:include page="../common/orderScript.jsp" />
  
@@ -29,7 +39,7 @@
 						<strong>Please check you order information</strong>
 					</h2>
 					<div class="cart_table">
-						<!--收货人地址开始-->
+						
 						<div id="part_consignee">
 							<div class="o_write">
 								<h1>
@@ -42,32 +52,32 @@
 									<div id="nomal_address">
 										<table>
 											<tr>
-												<td style="width: 155px;" align="left">Receiver Name：</td>
+												<td style="width: 155px;" align="left">Receiver Name : </td>
 												<td>Jone</td>
 											</tr>
 											<tr>
-												<td style="width: 155px;" align="left">Province：</td>
+												<td style="width: 155px;" align="left">Province : </td>
 												<td>Heibei</td>
 											</tr>
 											<tr>
-												<td style="width: 155px;" align="left">Address：</td>
+												<td style="width: 155px;" align="left">Address : </td>
 												<td>Chengdu City</td>
 											</tr>
 											<tr>
-												<td style="width: 155px;" align="left">Mobile Number：</td>
+												<td style="width: 155px;" align="left">Mobile Number : </td>
 												<td>74854675</td>
 											</tr>
 											<tr>
 												<td style="width: 155px;" align="left">Telephone
-													Number：</td>
+													Number : </td>
 												<td>13540449833</td>
 											</tr>
 											<tr>
-												<td style="width: 155px;" align="left">E-mail：</td>
+												<td style="width: 155px;" align="left">E-mail : </td>
 												<td>1187495@qq.com</td>
 											</tr>
 											<tr>
-												<td style="width: 155px;" align="left">Postal Code：</td>
+												<td style="width: 155px;" align="left">Postal Code : </td>
 												<td>6475654</td>
 											</tr>
 										</table>
@@ -76,85 +86,16 @@
 										<table border="0" cellspacing="0" width="100%">
 												<tr>
 													<td align="right" valign="middle" width="85"><font
-														color="red">*</font>Receiver name：</td>
+														color="red">*</font>Receiver name : </td>
 													<td align="left" valign="middle"><input
 														onblur="check_addressName()" value="wang" maxlength="20"
 														class="txt" id="consignee_addressName" type="text" />&nbsp;
 
 													</td>
 												</tr>
+												
 												<tr>
-													<td align="right" valign="middle"><font color="red">*</font>Province：</td>
-													<td align="left" valign="middle"><span
-														id="consignee_arae">
-															<table>
-																<tr>
-																	<td>
-																		<div id="div_Province">
-																			<select onchange="changeProvince(this)"
-																				id="consignee_province"><option value="-22">select</option>
-																				<option value="1">Beijing</option>
-																				<option selected="selected" value="2">Shanghai</option>
-																				<option value="3">Tianjin</option>
-																				<option value="4">Chongqing</option>
-																				<option value="5">Hebei</option>
-																				<option value="6">Shanxi</option>
-																				<option value="7">Henan</option>
-																				<option value="8">liaoning</option>
-																				<option value="9">Jilin</option>
-																				<option value="10">Heilongjiang</option>
-																				<option value="11">Neimenggu</option>
-																				<option value="12">Jiangsu</option>
-																				</select>
-																		</div>
-																	</td>
-																	<td>
-																		<div id="div_City">
-																			<select onchange="changeCity(this)"
-																				id="consignee_city"><option
-																					selected="selected" value="-22">select</option>
-																				<option value="72">朝阳区</option>
-																				<option value="2800">海淀区</option>
-																				<option value="2801">西城区</option>
-																				<option value="2802">东城区</option>
-																				<option value="2803">崇文区</option>
-																				</select>
-																		</div>
-																	</td>
-																	<td>
-																		<div id="div_County">
-																			<select onchange="changeCounty(this)"
-																				id="consignee_county"><option
-																					selected="selected" value="-22">select</option>
-																				<option value="2799">三环以内*</option>
-																				<option value="2819">三环到四环之间*</option>
-																				<option value="2839">四环到五环之间*</option>
-																				<option value="2840">五环到六环之间*</option>
-																				</select>
-																		</div>
-																	</td>
-																	<td>
-																		<div id="div_Towns" style="display: none">
-																			<select onchange="changeTowns(this)"
-																				id="consignee_towns">
-																				<option selected="selected" value="-22">select</option>
-																			</select>
-																		</div>
-																	</td>
-																	<td>&nbsp;&nbsp;Note:Mark"*"means the areas of
-																		supporting cash on delivery,check the areas of
-																		supporting cash on delivery<a class="link_005AA0"
-																		target="_blank"
-																		clstag="checkout|keycount|jiesuan|link005aa0"
-																		href="#">Check
-																			the area of cash on delivery.</a>
-																	</td>
-																</tr>
-															</table>
-													</span></td>
-												</tr>
-												<tr>
-													<td align="right" valign="middle"><font color="red">*</font>Address：</td>
+													<td align="right" valign="middle"><font color="red">*</font>Address : </td>
 													<td align="left" valign="middle"><span
 														id="consigneeShow_addressName">Inner Ring
 															3,Chaoyang District ,Beijing</span> <input
@@ -164,18 +105,18 @@
 												</tr>
 												<tr>
 													<td align="right" valign="middle"><font color="red">*</font>Mobile
-														Number：</td>
+														Number : </td>
 													<td align="left" valign="middle"><input
 														onblur="check_message()" maxlength="20"
 														value="12343322222" class="txt" id="consignee_message"
-														type="text" /> &nbsp;or Telephone Number： <input
+														type="text" /> &nbsp;or Telephone Number :  <input
 														onblur="check_phone()" maxlength="20" value="3333333"
 														class="txt" id="consignee_phone" type="text" />&nbsp;<font
 														color="#000000">Be used for short message of
 															dispatching and confirmation before dispatching.</font></td>
 												</tr>
 												<tr>
-													<td align="right" valign="middle">Email：</td>
+													<td align="right" valign="middle">Email : </td>
 													<td align="left" valign="middle"><input
 														onblur="check_email()" maxlength="50" class="txt"
 														id="consignee_email" type="text" /> &nbsp;<font
@@ -184,7 +125,7 @@
 															list.</font></td>
 												</tr>
 												<tr>
-													<td align="right" valign="middle">Postal Code：</td>
+													<td align="right" valign="middle">Postal Code : </td>
 													<td align="left" valign="middle"><input maxlength="20"
 														id="consignee_postcode" onblur="check_postcode()"
 														style="width: 77px" class="txt" type="text" />&nbsp;<font
@@ -209,9 +150,7 @@
 
 							</div>
 						</div>
-						<!--收货人地址结束-->
 						
-						<!--支付方式及配送方式开始-->
 						
 						<div id="part_payTypeAndShipType">
 							<div class="o_show">
@@ -320,8 +259,7 @@
 								<div class="footer"></div>
 							</div>
 						</div>
-						<!--支付方式及配送方式结束-->
-						<!--发票信息开始-->
+						
 						<div id="part_invoice">
 
 							<div class="o_show">
@@ -330,15 +268,15 @@
 									<table style="width: 100%;">
 											<tr>
 												<td style="text-align: left; width: 155px;">Invoice
-													Type：</td>
+													Type : </td>
 												<td>commom</td>
 											</tr>
 											<tr>
-												<td style="text-align: left;">Invoice Title：</td>
+												<td style="text-align: left;">Invoice Title : </td>
 												<td>Personal</td>
 											</tr>
 											<tr>
-												<td style="text-align: left;">Invoice Content：</td>
+												<td style="text-align: left;">Invoice Content : </td>
 												<td></td>
 											</tr>
 									</table>
@@ -353,16 +291,12 @@
 								<div class="footer"></div>
 							</div>
 						</div>
-						<!--发票信息结束-->
-						<!--Cart信息开始-->
+						
 						<div id="part_cart">
 							<div class="o_show">
 								<h1>
-									<span style="margin-right: 580px;">Commodity list</span><a
-										id="backToCartBtn" href="javascript:void();"
-										onclick="toCart();"
-										clstag="checkout|keycount|jiesuan|backtocartbtn"
-										style="color: #0070D7">Return/Modify Shopping Cart </a>
+									<span style="margin-right: 570px;">Commodity list</span>
+									<a id="backToCartBtn" href="cartPage" style="color: #0070D7">Return/Modify Shopping Cart</a>
 								</h1>
 								<div id="promiseDate" style="color: #FF9900"></div>
 								<div class="middle">
@@ -378,43 +312,42 @@
 												<td width="9%">Commodity Quantity</td>
 											</tr>
 
-
-											<tr class="align_Center">
-												<td style="padding: 5px 0 5px 0;">1005367078</td>
-												<td><a target="_blank" href="#" onclick="this.blur();"
-													clstag="clickcart|keycount|shoppingcartpop|productnamelinklistcart">super
-														specy pepper in the world</a></td>
-												<td><span class="price">￥99.00</span></td>
-												<td>￥0.00</td>
-												<td>0</td>
-												<td>right now</td>
-												<td>1</td>
-											</tr>
+											<c:forEach items="${sessionScope.myCart.cartTransaction}" var="myCartx">
+												<tr class="align_Center">
+													<td style="padding: 5px 0 5px 0;"><%=(int)(Math.random()*10000000) %></td>
+													<td><a target="_blank" href="goodsDetail?productId=${myCartx.sellerProduct.id }&sellerId=${myCartx.sellerProduct.seller.id }">${myCartx.sellerProduct.product.localName }</a></td>
+													<td> $ ${myCartx.sellerProduct.price * myCartx.amount}</span></td>
+													<td> $ 0.00</td>
+													<td>0</td>
+													<td>right now</td>
+													<td>${ myCartx.amount}</td>
+												</tr>	
+											</c:forEach>
+												
+											
+											
 									</table>
 								</div>
 								<!-- </div> -->
 							</div>
 						</div>
-						<!--Cart信息结束-->
-
-						<!--有货先发开始-->
+						
+						
 						<div id="part_FirstInstockShip"
 							style="padding: 8px 0 8px 30px; color: red; display: none;"></div>
-						<!--有货先发结束-->
-
-						<!-- 结算信息开始 -->
+						
+						
 						<div id="ware_info">
 							<div
 								style="background: #fff; font-size: 14px; font-weight: bold; padding-left: 2px;">Settlement
 								Information</div>
 							<h1></h1>
 							<div class="middle">
-								<!--金额信息-->
+							
 								<span id="moneyArea">
 									<ul id="part_info">
-										<li class="info1" style="padding-bottom: 5px">Commodity
-											Value：99.00 RMB + Transportation Charge：0.00 RMB - Coupon：
-											0.00 RMB - Gift Card：0.00 RMB - Cash Return：0.00 RMB <br/>
+										<li class="info1" style="padding-bottom: 5px">
+										Commodity Value :<%=total %>  $ + Transportation Charge : 0.00 $ - Coupon :0.00 $ - Gift Card : 0.00 $ - Cash Return : 0.00 $ <br/>
 										</li>
 									</ul>
 								</span>
@@ -450,7 +383,7 @@
 										</table>
 									</div>
 								</div>
-								<!--提交结束-->
+								
 
 							</div>
 							<div class="round">

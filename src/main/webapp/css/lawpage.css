@@ -1,0 +1,14 @@
+.main_lawpage{
+	text-align: center;
+	width: 960px;
+}
+
+.left{
+	width: 313px;
+	float: left;
+	padding-left: 100px;
+}
+
+.right{
+	float: right;
+}
