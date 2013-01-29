@@ -44,7 +44,11 @@ public class SellerProduct {
     
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
-    private Date readyDate;
+    private Date readyTime;
+    
+//    @Temporal(TemporalType.TIMESTAMP)
+//    @DateTimeFormat(style = "M-")
+//    private Date durationOfFruit;
     
     @Transient
 	LocaleEnum locale =LocaleEnum.CHINESE;
